@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.12.1)
-project (Ant)
+project (AtC)
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -32,8 +32,5 @@ if (CMAKE_VERSION VERSION_LESS 2.8.11)
 endif()
 
 enable_testing()
-add_subdirectory(src/chapter1)
-add_subdirectory(tests/chapter1)
-
-add_subdirectory(src/chapter2)
-add_subdirectory(tests/chapter2)
+add_subdirectory(src/abc132)
+add_subdirectory(tests/abc132)
