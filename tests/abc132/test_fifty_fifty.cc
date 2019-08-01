@@ -5,12 +5,27 @@
 #include "abc132/fifty_fifty.h"
 
 TEST(TestFiftyFifty, First) {
-    /* 
-    char s[] = {'A', 'C', 'D', 'B', 'C','B'};
-    EXPECT_EQ(ans, solve_best_cow_line(6,s));
-    */
     std::string arg = "ASSA";
     EXPECT_EQ("Yes", solve_fifty_fifty(arg));
 }
 
+TEST(TestFiftyFifty, Second) {
+    std::string arg = "STOP";
+    EXPECT_EQ("No", solve_fifty_fifty(arg));
+}
+
+TEST(TestFiftyFifty, Third) {
+    std::string arg = "FFEE";
+    EXPECT_EQ("Yes", solve_fifty_fifty(arg));
+}
+
+TEST(TestFiftyFifty, Fourth) {
+    std::string arg = "FREE";
+    EXPECT_EQ("No", solve_fifty_fifty(arg));
+}
+
+TEST(TestFiftyFifty, Fifth) {
+    std::string arg = "FFFE";
+    EXPECT_EQ("No", solve_fifty_fifty(arg));
+}
 
