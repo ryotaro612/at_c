@@ -4,6 +4,7 @@ project (AtC)
 set(CMAKE_CXX_FLAGS "-std=c++14 -Wall")
 
 # Download and unpack googletest at configure time
+# https://cmake.org/cmake/help/latest/command/configure_file.html
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
@@ -30,9 +31,9 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
 # The gtest/gtest_main targets carry header search path
 # dependencies automatically when using CMake 2.8.11 or
 # later. Otherwise we have to add them here ourselves.
-if (CMAKE_VERSION VERSION_LESS 2.8.11)
-  include_directories("${gtest_SOURCE_DIR}/include")
-endif()
+#if (CMAKE_VERSION VERSION_LESS 2.8.11)
+#  include_directories("${gtest_SOURCE_DIR}/include")
+#endif()
 
 enable_testing()
 add_subdirectory(src/abc132)
