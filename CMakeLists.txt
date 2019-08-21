@@ -5,16 +5,16 @@ set(CMAKE_CXX_FLAGS "-std=c++14 -Wall")
 
 # Download and unpack googletest at configure time
 # https://cmake.org/cmake/help/latest/command/configure_file.html
-configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
+configure_file(libs/Googletest.txt.in googletest/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
-  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
+  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest)
 if(result)
   message(FATAL_ERROR "CMake step for googletest failed: ${result}")
 endif()
 execute_process(COMMAND ${CMAKE_COMMAND} --build .
   RESULT_VARIABLE result
-  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
+  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest)
 if(result)
   message(FATAL_ERROR "Build step for googletest failed: ${result}")
 endif()
@@ -35,9 +35,10 @@ endif()
 
 # Add googletest directly to our build. This defines
 # the gtest and gtest_main targets.
-add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
-                 ${CMAKE_BINARY_DIR}/googletest-build
+add_subdirectory(${CMAKE_BINARY_DIR}/googletest/base/src/googletest
                  EXCLUDE_FROM_ALL)
+
+include_directories(${CMAKE_BINARY_DIR}/boost/base/src/boost)
 
 enable_testing()
 add_subdirectory(src/abc132)

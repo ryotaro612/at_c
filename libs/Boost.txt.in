@@ -6,7 +6,8 @@ include(ExternalProject)
 ExternalProject_Add(boost
   GIT_REPOSITORY    https://github.com/boostorg/boost.git
   GIT_TAG           boost-1.70.0
-  CONFIGURE_COMMAND "cd;../boost;&&;./bootstrap.sh;--prefix=${CMAKE_BINARY_DIR}/boost/boost-prefix/src/boost-build"
-  BUILD_COMMAND "cd;../boost;&&;./b2;--prefix=${CMAKE_BINARY_DIR}/boost/boost-prefix/src/boost-build"
-  INSTALL_COMMAND ""
+  PREFIX            ${CMAKE_BINARY_DIR}/boost/base
+  CONFIGURE_COMMAND "cd;../boost;&&;./bootstrap.sh;--prefix=${CMAKE_BINARY_DIR}/boost/base"
+  BUILD_COMMAND     "cd;../boost;&&;./b2;--prefix=${CMAKE_BINARY_DIR}/boost/base"
+  INSTALL_COMMAND   ""
 )
