@@ -1,3 +1,5 @@
 # at_c
 
-<!-- https://atcoder.jp/contests/abc132 --
+Solutions to problems listed on AtCoder.
+
+    make
