@@ -4,8 +4,12 @@ target_link_libraries(TestFiftyFifty FiftyFifty gtest_main)
 add_executable(TestOrdinaryNumber test_ordinary_number.cc)
 target_link_libraries(TestOrdinaryNumber OrdinaryNumber gtest_main)
 
+add_executable(TestDivideTheProblem test_divide_the_problem.cc)
+target_link_libraries(TestDivideTheProblem DivideTheProblem gtest_main)
+
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include(GoogleTest)
 
 gtest_discover_tests(TestFiftyFifty)
 gtest_discover_tests(TestOrdinaryNumber)
+gtest_discover_tests(TestDivideTheProblem)
