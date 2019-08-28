@@ -7,9 +7,13 @@ target_link_libraries(TestOrdinaryNumber OrdinaryNumber gtest_main)
 add_executable(TestDivideTheProblem test_divide_the_problem.cc)
 target_link_libraries(TestDivideTheProblem DivideTheProblem gtest_main)
 
+add_executable(TestBlueAndRedBalls test_blue_and_red_balls.cc)
+target_link_libraries(TestBlueAndRedBalls BlueAndRedBalls gtest_main)
+
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include(GoogleTest)
 
 gtest_discover_tests(TestFiftyFifty)
 gtest_discover_tests(TestOrdinaryNumber)
 gtest_discover_tests(TestDivideTheProblem)
+gtest_discover_tests(TestBlueAndRedBalls)
