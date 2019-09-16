@@ -15,13 +15,11 @@ std::vector<int> solve_blue_and_red_balls(int n, int k) {
             }
         }
     }
-
     std::vector<int> ans(k);
 
     for(int i =0; i<=k;i++) {
         ans[i] = comb[n-k+1][i+1] * comb[k-1][i];
         ans[i] = ans[i]%(1000000000+7);
     }
-
     return ans;
 }
