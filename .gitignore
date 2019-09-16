@@ -1,3 +1,9 @@
+#cquery
+.cquery_cached_index
+compile_commands.json
+# emacs
+.projectile
+
 build
 .vscode
 # Prerequisites
@@ -32,3 +38,5 @@ build
 *.exe
 *.out
 *.app
+
+
