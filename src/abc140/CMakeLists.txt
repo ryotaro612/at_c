@@ -2,3 +2,4 @@
 
 cmake_minimum_required (VERSION 3.12.1)
 add_library(MaximalValue STATIC maximal_value.cc)
+add_library(FaceProducesUnhappiness STATIC face_produces_unhappiness.cc)
