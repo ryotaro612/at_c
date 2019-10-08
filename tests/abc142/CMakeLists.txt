@@ -1,0 +1,7 @@
+add_executable(TestDisjointSetOfCommonDivisors test_disjoint_set_of_common_divisors.cc)
+target_link_libraries(TestDisjointSetOfCommonDivisors DisjointSetOfCommonDivisors gtest_main)
+
+include_directories(${PROJECT_SOURCE_DIR}/src)
+include(GoogleTest)
+
+gtest_discover_tests(TestDisjointSetOfCommonDivisors)
