@@ -28,7 +28,6 @@ void handle_l_array(int begin_l, int end_l, vector<int> * ans) {
 }
 
 /**
- * n(s) >= 2
  * https://atcoder.jp/contests/abc136/tasks/abc136_d
  */
 vector<int> gathering_children(vector<char> s) {
@@ -46,10 +45,8 @@ vector<int> gathering_children(vector<char> s) {
 	  ans[s.size() - 1] +=  1;
 	}
       }
-    } else { // former_char == 'L'
-      //if(s.at(i) == 'R') || i == s.size() - 1) {
+    } else {
       if(s.at(i) == 'R') {
-	// ???
 	handle_l_array(start, i-1, &ans);
 	start = i;
 	formar_char = 'R';
