@@ -3,6 +3,7 @@
 compile_commands.json
 # emacs
 .projectile
+*~
 
 build
 .vscode
@@ -38,5 +39,3 @@ build
 *.exe
 *.out
 *.app
-
-
