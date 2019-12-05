@@ -1,9 +1,9 @@
 #include <iostream>
 #include <climits>
+#include <algorithm>
 #include <vector>
 #include <utility>
 #include <queue>
-#include <set>
 #include <map>
 
 using namespace std;
@@ -16,18 +16,24 @@ vector<int> coloring_edges_on_tree(int n, int a[], int b[]) {
     graph[vertex_a].push_back(vertex_b);
     graph[vertex_b].push_back(vertex_a);
   }
-  int color_num = INT_MAX;  
+  int color_num = 0;  
   queue<int> que;
+  map<pair<int, int>, int> mp;
   que.push(0);
-  // 色の最大はn以下
   vector<int> ans;
   while(!que.empty()) {
     int vertex = que.front();
+    vector<int> vertex_vec = graph[vertex];
+    int degree = vertex_vec.size();
+    color_num = color_num > degree ? color_num : degree;
+
+    for(int i=0; i< vertex_vec.size(); i++){
+      int vertex2 = vertex_vec[i];
+      make_pair(_T1 &&__t1, _T2 &&__t2)
+    }
+
     que.pop();
   }
-  set<int> a{1, 2};
-  map<set<int>, int> mp;
-
 
   return ans;
 }
