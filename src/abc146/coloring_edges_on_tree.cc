@@ -9,7 +9,6 @@
 
 using namespace std;
 
-
 pair<int, int> get_key(int a, int b) {
   if(a > b)
     return make_pair(b, a);
@@ -33,13 +32,11 @@ vector<int> coloring_edges_on_tree(int n, vector<int> a, vector<int> b) {
   que.push(0);
   vector<int> ans;  
   while(!que.empty()) {
-    //    cout << "@@@@@@111111111111111" << endl;    
     int vertex = que.front();
     que.pop();    
     vector<int> vertex_vec = graph[vertex];
     int degree = vertex_vec.size();
-    color_num = color_num > degree ? color_num : degree; //最大はあっている。
-    // cout << "@@@@@@22222222222" << endl;
+    color_num = color_num > degree ? color_num : degree;
     set<int> colors;
     int color_index = 1;
     for(int j=0;j<vertex_vec.size();j++) {
@@ -47,14 +44,6 @@ vector<int> coloring_edges_on_tree(int n, vector<int> a, vector<int> b) {
       if(used[vertex2] == 1)
 	colors.insert(mp[get_key(vertex, vertex2)]);
     }
-    //
-    cout << vertex << "#####" << endl;
-    set<int>::iterator iter = colors.begin();
-    while (iter != colors.end())
-      cout << *iter++ << " ";
-    cout << endl;
-    cout << "#####" << endl;
-    // cout << "@@@@@" << endl;
     for(int i=0;i<vertex_vec.size();i++) {
       int vertex2 = vertex_vec[i];
       if(used[vertex2] == 1)
@@ -72,8 +61,7 @@ vector<int> coloring_edges_on_tree(int n, vector<int> a, vector<int> b) {
 	  break;
 	}
       }
-      mp[key] = color_index++;
-      
+      mp[key] = color_index++; 
     }
     used[vertex] = 1;
   }
@@ -83,3 +71,25 @@ vector<int> coloring_edges_on_tree(int n, vector<int> a, vector<int> b) {
   }
   return ans;
 }
+
+/**
+int main() {
+  int n;
+  cin >> n;
+  vector<int> a;
+  vector<int> b;
+  for(int i=0;i<n-1;i++) {
+    int temp;
+    cin >> temp;
+    a.push_back(temp);
+    cin >> temp;
+    b.push_back(temp);
+  }
+  vector<int> ans = coloring_edges_on_tree(n, a, b);
+  for(int i=0;i<ans.size();i++) {
+    cout << ans[i];
+    if(ans.size() - 1 != i)
+      cout << endl;
+  }
+}
+**/
