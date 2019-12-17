@@ -27,13 +27,15 @@ long long xor_sum4(int n, long long a[]) {
 	count_one++;
     }
     // cout << i << " -> one: " << count_one << ", zero: " << count_zero << endl;
+    /*
     long long adder = (count_one * count_zero) * pow(2, i);
     adder = adder % divider;
     ans += adder;
-    // cout << ans << endl;
+    */
+    ans += (((count_one * count_zero) % divider) * ((1LL << i) % divider)) % divider;
     ans = ans % divider;
+    // cout << ans << endl;
   }
-
   return ans;
 }
 /*
