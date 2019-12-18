@@ -4,6 +4,8 @@ compile_commands.json
 # emacs
 .projectile
 *~
+# vim
+.vim
 
 build
 .vscode

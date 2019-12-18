@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// 解答をみると要素が一つでもいい
 long long enough_array(int a[], int n, int k) {
   long long answer = 0;
   for(int l=0;l<n;l++) {

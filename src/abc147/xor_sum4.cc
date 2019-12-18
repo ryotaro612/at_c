@@ -32,6 +32,7 @@ long long xor_sum4(int n, long long a[]) {
     adder = adder % divider;
     ans += adder;
     */
+    // 演算ごとに割るのか
     ans += (((count_one * count_zero) % divider) * ((1LL << i) % divider)) % divider;
     ans = ans % divider;
     // cout << ans << endl;

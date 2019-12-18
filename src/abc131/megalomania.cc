@@ -9,7 +9,6 @@ using namespace std;
 std::string megalomania(std::vector<int> a, std::vector<int> b) {
   using Pair  = std::pair<int, int>;
   vector<Pair> works;
-
   for(int i = 0;i<a.size();i++) {
     works.push_back(Pair(b.at(i), a.at(i)));
   }
