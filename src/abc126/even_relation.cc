@@ -12,7 +12,6 @@ void dfs(int p, long long cost) {
       continue;
     }
     long long c_cost = graph[p][i].second + cost;
-    // cout << "cost: " << graph[p][i].first << " -> " << c_cost << endl;
     ans[graph[p][i].first] = c_cost % 2 == 0 ? 0 : 1;
     dfs(graph[p][i].first, c_cost);
   }
@@ -30,18 +29,9 @@ vector<int> even_relation(int n, int u[], int v[], long long w[]) {
   }
   ans[0] = 0;
   dfs(0, 0);
-  /*
-  for(int i=0;i<graph.size();i++) {
-      cout << i << " -> ";
-    for(int j=0;j<graph[i].size();j++) {
-      cout << graph[i][j].first << " ";
-    }
-    cout << endl;
-  }
-  */
   return ans;
 }
-
+/*
 int main(){
   int n;
   cin >> n; 
@@ -60,3 +50,4 @@ int main(){
     cout << ans[i];
   }
 }
+*/

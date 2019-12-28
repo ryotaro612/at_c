@@ -18,6 +18,6 @@ TEST(TestEvenRelation, Second) {
   int u[] = {2, 2, 1, 3};
   int v[] = {5, 3, 3, 4};
   long long w[] = {2, 10, 8, 2};
-  vector<int> ans = {1, 0, 1, 0, 1};
+  vector<int> ans = {0, 0, 0, 0, 0};
   EXPECT_EQ(ans, even_relation(n, u, v, w));
 }
