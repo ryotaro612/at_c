@@ -1,0 +1,7 @@
+add_executable(TestPredictionAndRestriction test_prediction_and_restriction.cc)
+target_link_libraries(TestPredictionAndRestriction PredictionAndRestriction gtest_main)
+
+include_directories(${PROJECT_SOURCE_DIR}/src)
+include(GoogleTest)
+
+gtest_discover_tests(TestPredictionAndRestriction)
