@@ -1,7 +1,7 @@
 #include <iostream>
 #include <set>
+#include <algorithm>
 #include "disjoint_set_of_common_divisors.h"
-
 
 using namespace std;
 

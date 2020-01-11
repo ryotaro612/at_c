@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <algorithm>
 #include <map>
 #include <vector>
 #include "summer_vacation.h"
