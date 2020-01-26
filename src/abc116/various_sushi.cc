@@ -76,7 +76,7 @@ long long various_sushi(int n, int k, int t[], long long d[]) {
   }
   return ans;
 }
-
+/*
 int main() {
   int n, k;
   cin >> n;
@@ -89,3 +89,4 @@ int main() {
   }
   cout << various_sushi(n, k, t, d);
 }
+*/
