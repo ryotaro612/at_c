@@ -1,0 +1,7 @@
+add_executable(TestNumberOfAmidakuji test_number_of_amidakuji.cc)
+target_link_libraries(TestNumberOfAmidakuji NumberOfAmidakuji gtest_main)
+
+include_directories(${PROJECT_SOURCE_DIR}/src)
+include(GoogleTest)
+
+gtest_discover_tests(TestNumberOfAmidakuji)
