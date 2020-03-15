@@ -1,11 +1,10 @@
-cmake_minimum_required (VERSION 3.12.1)
+cmake_minimum_required (VERSION 3.13.4)
 
 project (AtC)
 set(CMAKE_CXX_FLAGS "-std=c++14 -Wall")
 
 # Download and unpack googletest at configure time
-# https://cmake.org/cmake/help/latest/command/configure_file.html
-configure_file(libs/Googletest.txt.in googletest/CMakeLists.txt)
+# https://cmake.org/cmake/help/latest/command/configure_file.html configure_file(libs/Googletest.txt.in googletest/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest)
@@ -99,7 +98,7 @@ add_subdirectory(src/abc130)
 add_subdirectory(tests/abc130)
 add_subdirectory(src/abc131)
 add_subdirectory(tests/abc131)
-add_subdirectory(src/abc132)
+#add_subdirectory(src/abc132)
 # add_subdirectory(tests/abc132)
 add_subdirectory(src/abc133)
 add_subdirectory(tests/abc133)
@@ -149,3 +148,5 @@ add_subdirectory(tests/abc154)
 # add_subdirectory(tests/abc155)
 add_subdirectory(src/abc156)
 add_subdirectory(tests/abc156)
+# add_subdirectory(src/abc157)
+#add_subdirectory(tests/abc157)
