@@ -1,0 +1,20 @@
+name: Tests
+
+on:
+  push:
+    branches: [ master ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      env:
+        cache-name: atcoder-build
+      with:
+        path: ./build
+        key: ${{ env.cache-name }}-${{ hashFiles('./libs/Boost.txt.in') }}-${{ hashFiles('./libs/Googletest.txt.in') }}
+    - name: make
+      run: make
