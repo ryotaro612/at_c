@@ -4,7 +4,8 @@ project (AtC)
 set(CMAKE_CXX_FLAGS "-std=c++14 -Wall")
 
 # Download and unpack googletest at configure time
-# https://cmake.org/cmake/help/latest/command/configure_file.html configure_file(libs/Googletest.txt.in googletest/CMakeLists.txt)
+# https://cmake.org/cmake/help/latest/command/configure_file.html 
+configure_file(libs/Googletest.txt.in googletest/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest)
