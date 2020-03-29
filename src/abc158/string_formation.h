@@ -1,4 +1,5 @@
 #include <vector>
+#include <deque>
 #include <stdexcept>
 #include <string>
 
@@ -45,4 +46,4 @@ class Query {
     }
 };
 
-string string_formation(string s, int q, Query queries[]);
+deque<char> string_formation(string s, int q, Query queries[]);

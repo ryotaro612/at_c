@@ -1,8 +1,19 @@
 #include<vector>
+#include<deque>
+#include<string>
 #include "gtest/gtest.h"
 #include "abc158/string_formation.h"
 
 using namespace std;
+
+string to(deque<char> d) {
+  string s = "";
+  while(!d.empty()) {
+    s = s + d.front();
+    d.pop_front();
+  }
+  return s;
+}
 
 TEST(StringFormation, 1) {
   Query queries[] = {
@@ -11,9 +22,10 @@ TEST(StringFormation, 1) {
     Query(false, "c"), 
     Query()
   };
+  
   EXPECT_EQ(
       "cpa", 
-      string_formation("a", 4, queries));
+      to(string_formation("a", 4, queries)));
 }
 
 TEST(StringFormation, 2) {
@@ -27,7 +39,7 @@ TEST(StringFormation, 2) {
   };
   EXPECT_EQ(
       "aabc", 
-      string_formation("a", 6, queries));
+      to(string_formation("a", 6, queries)));
 }
 
 TEST(StringFormation, 3) {
@@ -36,5 +48,5 @@ TEST(StringFormation, 3) {
   };
   EXPECT_EQ(
       "xy", 
-      string_formation("y", 1, queries));
+      to(string_formation("y", 1, queries)));
 }
