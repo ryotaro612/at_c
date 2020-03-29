@@ -1,5 +1,6 @@
 #include <iostream>
 #include <deque>
+#include <stdexcept>
 #include <vector>
 #include <string>
 #include "string_formation.h"
@@ -8,7 +9,7 @@ using namespace std;
 deque<char> string_formation(string s, int q, Query queries[]) {
   bool is_rev = false;
   deque<char> dq;
-  for(int i=0;i<s.size();i++) {
+  for(int i=0;i< (int) s.size();i++) {
     dq.push_back(s[i]);
   }
   for(int i=0;i<q;i++) {
@@ -43,9 +44,8 @@ deque<char> string_formation(string s, int q, Query queries[]) {
   }
   return rev_dq;
 }
-
 /*
-int main () {
+int main() {
   string s;
   cin >> s;
   int q;
@@ -67,7 +67,10 @@ int main () {
     }
     queries[i] = Query(false, c);
   }
-
-  cout << string_formation(s, q, queries);
+  deque<char> ans = string_formation(s, q, queries);
+  while(!ans.empty()) {
+    cout << ans.front();
+    ans.pop_front();
+  }
 }
 */
