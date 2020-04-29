@@ -1,0 +1,7 @@
+add_executable(TestSumOfLargeNumbers test_sum_of_lagre_numbers.cc)
+target_link_libraries(TestSumOfLargeNumbers SumOfLargeNumbers gtest_main)
+
+include_directories(${PROJECT_SOURCE_DIR}/src)
+include(GoogleTest)
+
+gtest_discover_tests(TestSumOfLargeNumbers)
