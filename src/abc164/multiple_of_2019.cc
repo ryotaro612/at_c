@@ -11,10 +11,7 @@ long long multiple_of_2019(string s) {
   m[0]=1;
   long long ten = 1;
   for(long long i=n-1;i>=0;i--) {
-    long long acc = 0;
-    if(i != n-1)
-      ten *=10;
-    acc = ten;
+    long long acc = ten;
     acc %= 2019;
     long long a = s[i] - '0';    
     acc *= a;
@@ -22,6 +19,7 @@ long long multiple_of_2019(string s) {
     t += acc;
     t = t % 2019;
     m[t] = m[t] + 1;
+    ten *=10;    
     cout << i << " -> a " << a << " t -> " << t << endl;
   }
   long long ans = 0;
@@ -40,5 +38,4 @@ int main() {
   cin >> s;
   cout << multiple_of_2019(s); 
 }
-
 */
