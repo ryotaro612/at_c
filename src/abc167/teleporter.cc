@@ -31,14 +31,16 @@ long long teleporter(long long n, long long k, vector<long long> a) {
     counter++;
     k--;
   }
+  /*
   cout << "=============" << endl;
   cout << "counter: " << counter << endl;
   cout << "point: " << point << endl;
   cout << "cycle: " << cycle << endl;
   cout << "visit: " << visit[point] -1 << endl;
   cout << "k: " << k << endl;
+  */
   k %= cycle;
-  cout << " div " << k << endl;
+  //cout << " div " << k << endl;
   while(true) {
     if(k==0) {
       return point + 1;
@@ -49,7 +51,6 @@ long long teleporter(long long n, long long k, vector<long long> a) {
 
   return -1;
 }
-/*
 
 int main() {
   long long n, k;
@@ -63,4 +64,3 @@ int main() {
   }
   cout << teleporter(n, k, a);
 }
-*/
