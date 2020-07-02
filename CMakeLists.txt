@@ -173,4 +173,6 @@ add_subdirectory(tests/abc165)
 #add_subdirectory(tests/abc167)
 #add_subdirectory(src/abc168)
 #add_subdirectory(tests/abc168)
+add_subdirectory(src/abc169)
+add_subdirectory(tests/abc169)
 #  https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0
