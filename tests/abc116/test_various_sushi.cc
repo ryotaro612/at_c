@@ -23,7 +23,7 @@ TEST(TestVariousSushi, Third) {
   long long d[] = {1000000000, 990000000, 980000000, 970000000, 960000000, 950000000};
   EXPECT_EQ(4900000016, various_sushi(6, 5, t, d));
 }
-
+/*
 TEST(TestVariousSushi, 4) {
   ifstream in("../../../tests/abc116/16_in.txt");
   std::cin.rdbuf(in.rdbuf());
@@ -41,3 +41,4 @@ TEST(TestVariousSushi, 4) {
   }
   cout << various_sushi(n, k, t, d);
 }
+*/
