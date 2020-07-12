@@ -1,2 +1,2 @@
 
-long long various_sushi(int n, int k, int t[], long long d[]);
+long long various_sushi(long long n, long long k, long long t[], long long d[]);

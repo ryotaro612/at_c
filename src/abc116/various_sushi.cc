@@ -1,87 +1,71 @@
 #include<iostream>
 #include<map>
+#include<unordered_set>
+#include<utility>
+#include<set>
 #include<algorithm>
 #include<vector>
+#include<queue>
 using namespace std;
 
-long long various_sushi(int n, int k, int t[], long long d[]) {
-  map<int, vector<long long>> mp;  
-  for(int i=0;i<n;i++) {
-    if(mp.find(t[i]) == mp.end()) {
-      vector<long long> m;
-      mp[t[i]] = m;
-    }
-    // cout << "t[i]: " << t[i] << " d[i]: " << d[i] << " size: " << mp[t[i]].size() << endl;
-    mp[t[i]].push_back(d[i]);
-  }
-  vector<long long> max_sushi;
-  vector<long long> not_max_sushi;
-  for(auto i = mp.begin(); i!= mp.end();i++) {
-    vector<long long> v = i->second;
-    vector<long long>::iterator max_v = max_element(v.begin(), v.end());
-    max_sushi.push_back(*max_v);
-    v.erase(max_v);
-    for(auto iv = v.begin(); iv != v.end(); iv++) {
-      not_max_sushi.push_back(*iv);
-    }
-  }
-  sort(max_sushi.begin(), max_sushi.end(), greater<long long>());
-  sort(not_max_sushi.begin(), not_max_sushi.end(), greater<long long>());
-  /*
-  for(int i=0;i<max_sushi.size();i++) {
-    cout << max_sushi[i] << endl;
-  }
-  cout << "=====" << endl;
-  for(int i=0;i<not_max_sushi.size();i++) {
-    cout << not_max_sushi[i] << endl;
-  }
-  */
-  vector<long long> sum_max_sushi;
-  vector<long long> sum_not_max_sushi;
-  for(int i=0;i<max_sushi.size();i++) {
-    if(i==0) {
-      sum_max_sushi.push_back(max_sushi[i]);
-      continue;
-    }
-    sum_max_sushi.push_back(sum_max_sushi[i-1] + max_sushi[i]);
-  }
-  for(int i=0;i<not_max_sushi.size();i++) {
-    if(i==0) {
-      sum_not_max_sushi.push_back(not_max_sushi[i]);
-      continue;
-    }
-    sum_not_max_sushi.push_back(sum_not_max_sushi[i-1] + not_max_sushi[i]);
-  }
-  /*
-  for(int i=0;i<sum_max_sushi.size();i++) {
-    cout << sum_max_sushi[i] << endl;
-  }
-  cout << "=====" << endl;
-  for(int i=0;i<sum_not_max_sushi.size();i++) {
-    cout << sum_not_max_sushi[i] << endl;
-  }
-  */
 
-  long long ans=0;
-
-  for(int i=1;i<=k;i++) {
-    if(i > sum_max_sushi.size())
-      continue;
-    long long point = sum_max_sushi[i-1];
-    if(i != k) {
-        point += sum_not_max_sushi[k-i-1];
-    }
-    // cout << "i: " << i << " ans: " << point + i*i << endl;
-    ans = max(ans, point + i*i);
+long long various_sushi(long long n, long long k, long long t[], long long d[]) {
+  priority_queue<pair<long long, long long>> oishisa_que;
+  for(long long i =0;i<n;i++) {
+    oishisa_que.push(make_pair(d[i], t[i]));
   }
-  return ans;
+  set<long long> sushi_base_set;
+  long long base_point =0;
+  priority_queue<pair<long long, long long>, vector<pair<long long, long long>>, greater<pair<long long, long long>>> chosen_que;
+
+  for(long long i=0;i<k;i++) {
+    pair<long long, long long> sushi_d = oishisa_que.top();
+    oishisa_que.pop();
+    base_point += sushi_d.first;
+    if(sushi_base_set.find(sushi_d.second) == sushi_base_set.end()) {
+      // new
+      sushi_base_set.insert(sushi_d.second);
+      continue;
+    }
+    // existing
+    chosen_que.push(sushi_d);
+  }
+  long long max_total_point = base_point + (sushi_base_set.size() * sushi_base_set.size());
+  cout << "base: " << max_total_point << endl;
+  cout << "size: "  << (sushi_base_set.size() * sushi_base_set.size()) << endl;
+
+  while(!oishisa_que.empty()) {
+    pair<long long, long long> sushi_d = oishisa_que.top();
+    oishisa_que.pop();
+    pair<long long, long long> min_sushi_d = chosen_que.top();
+    chosen_que.pop();
+    base_point -= min_sushi_d.first;
+    base_point += sushi_d.first;
+    cout << "====="<< endl;
+    cout << sushi_base_set.size() << " (base_size)" << endl;
+    cout << sushi_d.second << "(second)" << endl ;
+    cout << sushi_d.second + 9<< "(second)" << endl ;
+    cout << "doge" << endl;
+    cout << sushi_base_set.count(sushi_d.second) << endl;
+    cout << "+++++"<< endl;
+
+    if(sushi_base_set.find(sushi_d.second) == sushi_base_set.end()) {
+      sushi_base_set.insert(sushi_d.second);
+    } else {
+      chosen_que.push(sushi_d);
+    }
+    long long siz = (long long) (sushi_base_set.size() * sushi_base_set.size());
+    max_total_point = max(base_point + siz, max_total_point);
+  }
+
+  return max_total_point;
 }
-/*
+
 int main() {
-  int n, k;
+  long long n, k;
   cin >> n;
   cin >> k;
-  int t[n];
+  long long t[n];
   long long d[n];
   for(int i=0;i<n;i++) {
     cin >> t[i];
@@ -89,4 +73,3 @@ int main() {
   }
   cout << various_sushi(n, k, t, d);
 }
-*/
