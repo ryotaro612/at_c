@@ -10,7 +10,7 @@ execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
   RESULT_VARIABLE result
   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest)
 if(result)
-  message(FATAL_ERROR "CMake step for googletest failed: ${result}")
+  message(FATAL_ERROR "CMake step for googletest failed: ${result}") 
 endif()
 execute_process(COMMAND ${CMAKE_COMMAND} --build .
   RESULT_VARIABLE result
@@ -177,4 +177,6 @@ add_subdirectory(src/abc169)
 add_subdirectory(tests/abc169)
 add_subdirectory(src/abc170)
 add_subdirectory(tests/abc170)
+add_subdirectory(src/abc171)
+add_subdirectory(tests/abc171)
 #  https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0
