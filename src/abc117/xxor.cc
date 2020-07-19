@@ -1,48 +1,66 @@
 #include <iostream>
+#include <cmath>
+#include <limits>
 #include <vector>
 #include <algorithm>
 #include <cstring>
 using namespace std;
 
-long long xxor(long long n, long long k, long long a []) {
-  if(k==0) {
-    long long ans = 0; 
-    for(int i=0;i<n;i++) {
-      ans += a[i];
+
+int max_bit(long long k) {
+  int counter = 0;
+  while(k !=0) {
+    k = k >> 1;
+    counter++;
+  }
+  return counter;
+}
+
+long long xxor(long long n, long long k, long long a[]) {
+  int k_bit_peek = max_bit(k);
+
+  int begin = k_bit_peek;
+  for(long long i=0;i<n;i++) {
+    begin = max(begin, max_bit(a[i]));
+  }
+  // all zero
+  if(begin ==0) {
+    return 0;
+  }
+  //cout << "max_bit: " << begin << endl;
+  
+  long long res = 0;
+  for(int i=begin; i!=-1; i--) {
+    if(i != 0 && ( (k & (1LL << (i-1))) == 0)) {
+      continue;
     }
-    return ans;
-  }
-  auto kk = k;
-  int bit_count = 0;
-  while(kk > 0) {
-    kk = kk >> 1;
-    bit_count++;
-  }
-  long long dp[bit_count][2];
-  for(int i=bit_count;i>0;i--) {
-    long long mask = 1LL << (i-1);
-    long long count1 = 0;
-    for(int j=0;j<n;j++) {
-      if(mask & a[j]) {
-	count1++;
-	continue;
+    long long temp_ans = 0;
+    for(int j=begin; j!=0; j--) {
+      long long num_of_one = 0;
+      long long flag = 1LL << (j-1);
+      for(long long k = 0;k<n;k++) {
+	if (a[k] & flag) {
+	  num_of_one++;
+	}
+      }
+      if(j>i) {
+	if(k & flag) {
+	  temp_ans += flag * (n - num_of_one);
+	} else {
+	  temp_ans += flag * num_of_one;
+	}
+      } else if (j==i) {
+	//cout << "j==i " << flag * num_of_one << endl;
+	temp_ans += flag * num_of_one;
+      } else {
+	//cout << "j<i " << flag * max(num_of_one, n-num_of_one) << endl;
+	temp_ans += flag * max(num_of_one, n-num_of_one);
       }
     }
-    long long count0 = n - count1; 
-    if(i == bit_count) {
-      dp[i][0] = mask * count0;
-      dp[i][1] = mask * count1;
-      continue;
-    }
-    if(k & mask) {
-      dp[i][0] = dp[i+1][0] + mask*count0;
-      dp[i][1] = max(dp[i+1][0] + mask*count1, max(dp[i+1][1] + mask*count0, dp[i+1][1] + mask*count1));
-      continue;
-    }
-    dp[i][0] = dp[i+1][0] + mask*count1;
-    dp[i][1] = max(dp[i+1][1] + mask*count1, dp[i+1][1] + mask*count0);
+    // cout << "best: " << res << " current: " << temp_ans << " at " << i << endl;
+    res = max(res, temp_ans);
   }
-  return max(dp[1][0], dp[1][1]);
+  return res;
 }
 /*
 int main() {
