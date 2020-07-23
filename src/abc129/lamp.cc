@@ -2,10 +2,13 @@
 #include <algorithm>
 #include <vector>
 #include <iomanip>
+#include <string>
 
 using namespace std;
+typedef long long ll;
 
 long long lamp(vector<vector<char>> area) {
+  // split top bottom left right self
   int top[2000][2000] = {{0}};
   int bottom[2000][2000] = {{0}};
   int left[2000][2000] = {{0}};
@@ -42,3 +45,27 @@ long long lamp(vector<vector<char>> area) {
   }
   return ans;
 }
+
+/*
+int main() {
+  long long h, w;
+  cin >> h;
+  cin >> w;
+  string s;
+  getline(cin, s);
+  
+  vector<vector<char>> area(h);
+  for(ll i=0;i<h;i++) {    
+    getline(cin, s);
+    vector<char> v(w);
+    area[i] = v;
+    cout << s;
+    cout << endl;
+    for(ll j=0;j<w;j++) {
+      char ss = s[j];
+      v[j] = ss;
+    }
+  }
+  cout << lamp(area);
+}
+*/
