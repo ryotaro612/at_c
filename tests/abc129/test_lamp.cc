@@ -5,7 +5,7 @@
 
 using namespace std;
 
-TEST(TestLamp, First) {
+TEST(Lamp, 1) {
   vector<vector<char>> area;
   vector<char> row;
   row = {'#', '.', '.', '#', '.', '.'};
@@ -16,11 +16,10 @@ TEST(TestLamp, First) {
   area.push_back(row);
   row = {'#', '.', '#', '.', '.', '.'};
   area.push_back(row);
-
   EXPECT_EQ(8, lamp(area));
 }
 
-TEST(TestLamp, Second) {
+TEST(Lamp, 2) {
   vector<vector<char>> area;
   vector<char> row;
   row = {'.', '.', '#', '.', '.', '.', '#', '.'};
