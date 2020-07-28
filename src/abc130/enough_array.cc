@@ -1,23 +1,40 @@
 #include <iostream>
 #include <vector>
-#include "enough_array.h"
+typedef long long ll;
 
 using namespace std;
 
-long long enough_array(int a[], int n, int k) {
-  long long answer = 0;
-  for(int l=0;l<n;l++) {
-    int r = l;
-    int sum = 0;
+long long enough_array(ll a[], ll n, ll k) {
+  ll ans = 0;
+  ll sum = 0;
+  int r = 0;
 
-    while(r<n) {
-      sum += a[r];
-      if(sum >= k) {
-	answer += n - r;
+  for(int l=0;l<n;l++) {
+    while(sum < k) {
+      if(r >= n) {
 	break;
       }
+      sum += a[r];
       r++;
     }
+    if(sum >= k) {
+      sum -= a[l];
+      ans += n - r + 1;
+    }
+
   }
-  return answer;
+  return ans;
 }
+/*
+int main() {
+  ll n;
+  ll k;
+  cin >> n;
+  cin >> k;
+  ll a[n];
+  for(ll i=0;i<n;i++) {
+    cin >> a[i];
+  }
+  cout << enough_array(a, n, k);
+}
+*/

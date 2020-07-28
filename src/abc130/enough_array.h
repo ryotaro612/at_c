@@ -1,2 +1,2 @@
 
-long long enough_array(int a[], int n, int k);
+long long enough_array(long long  a[], long long n, long long k);
