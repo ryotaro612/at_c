@@ -1,3 +1,3 @@
 
 
-std::string megalomania(std::vector<int> a, std::vector<int> b);
+std::string megalomania(std::vector<long long> a, std::vector<long long> b);
