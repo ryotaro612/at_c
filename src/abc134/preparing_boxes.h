@@ -1,2 +1,2 @@
 
-std::vector<int> preparing_boxes(std::vector<int> a);
+std::vector<long long> preparing_boxes(std::vector<long long> a);

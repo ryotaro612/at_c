@@ -1,15 +1,16 @@
 #include <vector>
 #include "gtest/gtest.h"
+typedef long long ll;
 #include "abc134/preparing_boxes.h"
 
-TEST(TestPreparingBoxes, First) {
-  std::vector<int>  a{1, 0, 0};
-  std::vector<int> ans {1};
+TEST(PreparingBoxes, 1) {
+  std::vector<ll>  a{1, 0, 0};
+  std::vector<ll> ans {1};
     EXPECT_EQ(ans, preparing_boxes(a));
 }
 
-TEST(TestPreparingBoxes, Second) {
-  std::vector<int>  a{0, 0, 0, 0, 0};
-  std::vector<int> ans {};
+TEST(PreparingBoxes, 2) {
+  std::vector<ll>  a{0, 0, 0, 0, 0};
+  std::vector<ll> ans {};
   EXPECT_EQ(ans, preparing_boxes(a));
 }
