@@ -1,1 +1,1 @@
-int digits_parade(std::string s);
+unsigned long long digits_parade(std::string s);

@@ -3,19 +3,19 @@
 #include "abc135/digits_parade.h"
 
 
-TEST(TestDigitsParade, First) {
+TEST(abc135d, 1) {
   EXPECT_EQ(768, digits_parade("??2??5"));
 }
 
-TEST(TestDigitsParade, Second) {
+TEST(abc135d, 2) {
   EXPECT_EQ(1, digits_parade("?44"));
 }
 
-TEST(TestDigitsParade, Third) {
+TEST(abc135d, 3) {
   EXPECT_EQ(0, digits_parade("7?4"));
 }
 
-TEST(TestDigitsParade, Fourth) {
+TEST(abc135d, 4) {
   EXPECT_EQ(153716888, digits_parade("?6?42???8??2??06243????9??3???7258??5??7???????774????4?1??17???9?5?70???76???"));
 }
 
