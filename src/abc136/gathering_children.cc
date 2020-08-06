@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
-#include "gathering_children.h"
+typedef long long ll;
 
 using namespace std;
 
@@ -57,3 +57,22 @@ vector<int> gathering_children(vector<char> s) {
   }
   return ans;
 }
+/*
+int main() {
+  string s_in;
+  cin >> s_in;
+  ll length = s_in.size();
+  vector<char> s(length);
+  for(ll i= 0;i < length;i++) {
+    s[i] = (char) s_in[i];
+  }
+  vector<int> ans = gathering_children(s);
+  length = (ll) ans.size();
+  for(ll i =0;i<length;i++) {
+    cout << ans[i];
+    if(i != length - 1) {
+      cout << " ";
+    }
+  }
+}
+*/
