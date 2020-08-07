@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <map>
 #include <vector>
-#include "summer_vacation.h"
 
 using namespace std;
 
@@ -32,3 +31,15 @@ int summer_vacation(int n, int m, int a[], int b[]) {
   }
   return ans;
 }
+/*
+int main() {
+  int n, m;
+  cin >> n >> m;
+  int a[n];
+  int b[n];
+  for(int i= 0; i< n;i++) {
+    cin >> a[i] >> b[i];
+  }
+  cout << summer_vacation(n, m, a, b);
+}
+*/
