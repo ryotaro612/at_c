@@ -5,7 +5,7 @@
 
 using namespace std;
 
-TEST(TestKi, First){
+TEST(abc138d, 1){
   vector<int> ans {100, 110, 111, 110};
   int a[] = {1, 2, 2};
   int b[] = {2, 3, 4};
@@ -14,7 +14,7 @@ TEST(TestKi, First){
   EXPECT_EQ(ans, ki(4, 3, a, b, p, x));
 }
 
-TEST(TestKi, Second){
+TEST(abc138d, 2){
   vector<int> ans {20, 20, 20, 20, 20, 20};
   int a[] = {1, 1, 2, 3, 2};
   int b[] = {2, 3, 4, 6, 5};
