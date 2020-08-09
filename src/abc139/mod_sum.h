@@ -1,1 +1,1 @@
-int mod_sum(int n);
+long long mod_sum(long long n);
