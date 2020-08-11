@@ -27,3 +27,14 @@ int triangles(int n, int l[]) {
   }
   return ans;
 }
+/*
+int main() {
+  int n;
+  cin >> n;
+  int l[n];
+  for(int i= 0;i<n;i++) {
+    cin >> l[i];
+  }
+  cout << triangles(n, l);
+}
+*/
