@@ -1,6 +1,5 @@
 #include<iostream>
 #include<queue>
-#include "powerful_discount_tickets.h"
 
 using namespace std;
 
@@ -25,3 +24,15 @@ long powerful_discount_tickets(int n, int m, int a[]){
   }
   return ans;
 }
+/*
+int main () {
+  int n, m;
+  cin >> n >> m;
+  int a[n];
+
+  for(int i=0;i<n;i++) {
+    cin >> a[i];
+  }
+  cout << powerful_discount_tickets(n, m, a);
+}
+*/
