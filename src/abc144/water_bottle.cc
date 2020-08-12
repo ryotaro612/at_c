@@ -1,6 +1,5 @@
-#define _USE_MATH_DEFINES
-#include <iostream>
-#include <cmath>
+#include <bits/stdc++.h>
+typedef long double ld;
 
 using namespace std;
 
@@ -13,3 +12,11 @@ long double water_bottle( long double a, long double b, long double x){
   }
   return ans * 180 /M_PI;
 }
+/*
+int main() {
+  ld a, b, x;
+  cin >> a >> b >> x;
+  cout << fixed << setprecision(10);
+  cout << water_bottle(a, b, x);
+}
+*/
