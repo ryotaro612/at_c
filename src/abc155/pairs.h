@@ -1,3 +1,3 @@
 #include<vector>
 
-long long pairs(int n, int k, std::vector<long long> a);
+long long pairs(long long n, long long k, std::vector<long long> a);

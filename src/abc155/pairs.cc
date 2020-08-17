@@ -1,60 +1,55 @@
-#include <iostream>
-#include <algorithm>
-#include <cmath>
-#include <vector>
+#include <bits/stdc++.h>
+typedef long long ll;
 using namespace std;
+const ll INF = 1LL<<61;
 
-long long pairs(int n, int k, vector<long long> a) {
+long long pairs(ll n, ll k, vector<ll> a) {
   sort(a.begin(), a.end());
-  auto it = lower_bound(a.begin(), a.end(), 0);
-  vector<long long> minus_a(a.begin(), it);
-  auto it_n = upper_bound(a.begin(), a.end(), 0);
-  vector<long long> zero_a(it, it_n);
-  vector<long long> plus_a(it_n, a.end());
 
-  // マイナスか?
-  if(k <= minus_a.size()*plus_a.size()) {
-    cout << "===enter-minus====" << endl;
-    int left = minus_a[0] * plus_a[plus_a.size() - 1];
-    int right = 0;
-    int mid;
-    while(left +1 != right) {
-      mid = (left + right) / 2;
-      int count = 0;
-      for(int i=minus_a.size() - 1;i>=0;i--) {
-	for(int j=plus_a.size() - 1; j>=0;j--) {
-	  cout << "multiple: " << minus_a[i]*plus_a[j] << endl;
-	  long long mul = minus_a[i]*plus_a[j];
-	  if(mul <= mid) {
-	    count++;
-	    continue;
-	  }
-	  break;
+  long long left = -INF, right = INF;
+
+  while(right > left + 1) {
+    long long x = (left + right) / 2;
+    long long s = 0, t = 0;
+
+    for(int i=0;i<n;i++) {
+      if(a[i] > 0) {
+	ll l2 = -1, r2 = n;
+	while(r2 > l2 + 1) {
+	  ll m = (l2 + r2) / 2;
+	  if(a[i] * a[m] <= x) l2 = m;
+	  else r2 = m;
 	}
+	s += r2;
       }
-      cout << "left: " << left << " right: " << right << " mid: " << mid << " count: " << count << endl;
-      if(count >= k) {
-	right = mid;
-	continue;
+      else if (a[i] < 0) {
+	ll l2 = -1, r2 = n;
+	while(r2 > l2 + 1) {
+	  ll m = (l2 + r2) / 2;
+	  if(a[i] * a[m] <= x) {
+	    r2 = m;
+	  } else l2 = m;
+	}
+	s += n - r2;
       }
-      left = mid;
+      else if (x >= 0) s+= n;
+      if(a[i] * a[i] <= x) ++ t;
     }
-    return mid;
+    long long num = (s-t) / 2;
+    if(num >= k) right = x;
+    else left = x;
   }
 
-  return 0;
+  return right;
 }
-
 /*
 int main() {
-  int n, k;
+  ll n, k;
   cin >> n;
   cin >> k;
-  vector<long long> a;
-  for(int i=0;i<n;i++) {
-    long long temp;
-    cin >> temp;
-    a.push_back(temp);
+  vector<long long> a(n);
+  for(ll i=0;i<n;i++) {
+    cin >> a[i];
   }
   cout << pairs(n, k, a);
 }
