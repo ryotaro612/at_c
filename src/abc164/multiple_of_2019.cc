@@ -1,37 +1,29 @@
-#include<string>
-#include<iostream>
-#include<map>
+#include<bits/stdc++.h>
+typedef long long ll;
 
 using namespace std;
 
+ll dp[200001];
 long long multiple_of_2019(string s) {
-  map<long long, long long> m;
-  long long t = 0;
-  long long n = s.size();
-  m[0]=1;
-  long long ten = 1;
-  for(long long i=n-1;i>=0;i--) {
-    long long acc = ten;
-    acc %= 2019;
-    long long a = s[i] - '0';    
-    acc *= a;
-    acc = acc % 2019;
-    t += acc;
-    t = t % 2019;
-    m[t] = m[t] + 1;
-    ten *=10;    
-    cout << i << " -> a " << a << " t -> " << t << endl;
+  int n = (int) s.size();
+  int mul = 1;
+  for(int i=n-1;i>=0;i--) {
+    int digit = (int) s[i] - '0';
+    dp[i] = (digit * mul + dp[i+1]) % 2019;
+    mul = (mul * 10) % 2019;
   }
-  long long ans = 0;
-  for(auto i = m.begin();i != m.end();i++) {
-    long long v = i->second;
-    if(v == 0)
-      continue;
-    ans += (v * (v-1))/2;
+  map<int, ll> mp;
+  for(int i =0;i<=n;i++) {
+    mp[dp[i]] += 1; 
   }
+  ll ans = 0;
+  for(auto i = mp.begin(); i != mp.end();i++) {
+    ll a = i->second;
+    ans += a * (a -1) / 2;
+  }
+
   return ans;
 }
-
 /*
 int main() {
   string s;
