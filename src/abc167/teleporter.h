@@ -1,4 +1,4 @@
-#include<iostream>
 #include<vector>
 using namespace std;
-long teleporter(long long n, long long k, vector<long long> a);
+
+unsigned long long teleporter(unsigned long long n, unsigned long long k, vector<unsigned long long> a);

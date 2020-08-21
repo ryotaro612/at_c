@@ -1,66 +1,62 @@
 #include<iostream>
 #include<array>
 #include<vector>
+typedef unsigned long long  ull;
 using namespace std;
 
-long long teleporter(long long n, long long k, vector<long long> a) {
-  if(a[0] == 0) {
-    return 1;
-  }
-  long long visit[n];
-  for(long long i=0; i<n;i++) {
-    visit[i] = 0;
+
+ull cycle[200001];
+
+ull teleporter(ull n, ull k, vector<ull> a) {
+
+  for(ull i =0;i<n;i++) {
+    a[i] = a[i] - 1;
   }
 
-  visit[0] = 0;
-  long long point = a[0];
-  long long counter = 1;
-  long long cycle = -1;
-  k--;
+  ull count = 0;
+  ull cur = 0;
   while(true) {
-    if(k==0) {
-      return point;
-    }
-    //cout <<  "point: " << point << endl;
-    if(visit[point] != 0) {
-      cycle = counter - visit[point];
+    cur = a[cur];
+    count++;
+    if(cur == 0) {
       break;
     }
-    visit[point] = counter;
-    point = a[point];
-    counter++;
-    k--;
-  }
-  /*
-  cout << "=============" << endl;
-  cout << "counter: " << counter << endl;
-  cout << "point: " << point << endl;
-  cout << "cycle: " << cycle << endl;
-  cout << "visit: " << visit[point] -1 << endl;
-  cout << "k: " << k << endl;
-  */
-  k %= cycle;
-  //cout << " div " << k << endl;
-  while(true) {
-    if(k==0) {
-      return point + 1;
+    if(cycle[cur] != 0) {
+      break;
     }
+    cycle[cur] = count;
+  }
+  // loop point is cur.
+  ull loop_size = count - cycle[cur];
+  //cout << " loop size " << loop_size << endl;
+  //cout << " loop point " << cur << endl;
+
+  ull p = 0;
+  while(k > 0 && p != cur) {
+    p = a[p];
     k--;
-    point = a[point];
+  }
+  if(k == 0) {
+    return p + 1;
   }
 
-  return -1;
-}
+  k %= loop_size;
 
+  while(k > 0) {
+    p = a[p];
+    k--;
+  }
+  return p + 1;
+}
+/*
 int main() {
-  long long n, k;
-  vector<long long> a;
+  ull n, k;
   cin >> n;
   cin >> k;
-  for(int i=0;i<n;i++) {
-    long long aa;
-    cin >> aa;
-    a.push_back(aa - 1);
+  vector<ull> a(n);
+  for(ull i=0;i<n;i++) {
+    cin >> a[i];
   }
   cout << teleporter(n, k, a);
 }
+*/
