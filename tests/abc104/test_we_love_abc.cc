@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 TEST(WeLoveABC, 1) {
   EXPECT_EQ(8, we_love_abc("A??C"));
 }
