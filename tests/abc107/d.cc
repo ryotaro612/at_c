@@ -17,3 +17,16 @@ TEST(abc107d, 3) {
  EXPECT_EQ(8, ans);
 }
 
+TEST(abc107d, 4) {
+ auto ans = d(4, vector<ll> {1, 2, 3, 4});
+ EXPECT_EQ(3, ans);
+}
+
+TEST(abc107d, 5) {
+  vector<ll> a(100000);
+  for(ll i =0;i<100000;i++) {
+    a[i] = 100000 - i;
+  }
+  auto ans = d(100000, a);
+  EXPECT_EQ(50001, ans);
+}
