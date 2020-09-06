@@ -1,6 +1,5 @@
 #include<iostream>
 typedef long long ll;
-
 using namespace std;
 
 int a(int n) {
