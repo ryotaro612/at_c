@@ -3,11 +3,14 @@ using namespace std;
 typedef long long ll;
 
 string c(ll n);
+/*
 int main() {
   ll n;
   cin >> n;
   cout << c(n);
 }
+*/
+
 
 
 string c(ll n) {
