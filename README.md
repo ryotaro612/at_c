@@ -10,3 +10,7 @@ Solutions to problems listed on AtCoder.
 ## Build
 
     make
+
+## Coverage
+
+[coverage](https://kenkoooo.com/atcoder/#/table/nryotaro)
