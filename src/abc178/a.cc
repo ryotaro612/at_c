@@ -2,17 +2,13 @@
 using namespace std;
 typedef long long ll;
 
-
-int c(int n) {
-  int d = n / 3;
-
-  return -1;
+int a(int x) {
+  return x ==  0 ? 1 : 0;
 }
 /*
 int main() {
-  int n;
-  cin >> n;
-  cout << c(n);
-
+  int x;
+  cin >> x;
+  cout << a(x);
 }
 */
