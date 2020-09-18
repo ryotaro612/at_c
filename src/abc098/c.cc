@@ -25,10 +25,11 @@ ll solve(int n, string s) {
   res = min(res, w[n-2]);
   return res;
 }
-
+/*
 int main() {
   int n;
   string s;
   cin >> n >> s;
   cout << solve(n, s);
 }
+*/
