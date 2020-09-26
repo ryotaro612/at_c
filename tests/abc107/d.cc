@@ -30,3 +30,12 @@ TEST(abc107d, 5) {
   auto ans = d(100000, a);
   EXPECT_EQ(50001, ans);
 }
+
+TEST(abc107d, 6) {
+  vector<ll> a(100000);
+  for(ll i =1;i<=100000;i++) {
+    a[i-1] = i;
+  }
+  auto ans = d(100000, a);
+  EXPECT_EQ(50001, ans);
+}
