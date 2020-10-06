@@ -16,7 +16,6 @@ pair<ll, ll> solve(int n, vector<ll> a) {
     return make_pair(a_i, a_j);
   }
   for(int i=0;i<n-1;i++) {
-      //cout << a[i] << " " << abs(a[i]- a_i/2) << endl;
       if(abs(a[i]- a_i/2) < abs(a_j - a_i/2)) {
 	a_j = a[i];
       }
