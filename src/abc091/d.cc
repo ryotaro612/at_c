@@ -78,6 +78,7 @@ ll solve(int n, vector<ll> a, vector<ll> b) {
   }
   return res;
 }
+/*
 int main() {
   int n;
   cin >> n;
@@ -90,6 +91,7 @@ int main() {
   }
   cout << solve(n, a, b);
 }
+*/
 
 /*
 ll solve(int n, vector<ll> a, vector<ll> b) {
