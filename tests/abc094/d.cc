@@ -13,4 +13,3 @@ TEST(abc094d, 2) {
   EXPECT_EQ(100, res.first);
   EXPECT_EQ(0, res.second);
 }
-
