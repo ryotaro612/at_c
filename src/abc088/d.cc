@@ -21,25 +21,19 @@ int solve(int h, int w, vector<string> m) {
   queue<dot> que;
   que.push(dot(0, 0));
   d[0][0] = 1;
+  int dh[4] = {-1, 0, 1, 0};
+  int dw[4] = {0, 1, 0, -1};
   while (!que.empty()) {
     dot p = que.front();
     que.pop();
-
-    if (p.h != 0 && m[p.h - 1][p.w] == '.' && d[p.h][p.w] + 1 < d[p.h - 1][p.w]) {
-      d[p.h - 1][p.w] = d[p.h][p.w] + 1;
-      que.push(dot(p.h - 1, p.w));
-    }
-    if (p.w != w - 1 && m[p.h][p.w + 1] == '.' && d[p.h][p.w] + 1 < d[p.h][p.w + 1]) {
-      d[p.h][p.w + 1] = d[p.h][p.w] + 1;
-      que.push(dot(p.h, p.w + 1));
-    }
-    if (p.h != h - 1 && m[p.h + 1][p.w] == '.' && d[p.h][p.w] + 1 < d[p.h + 1][p.w]) {
-      d[p.h + 1][p.w] = d[p.h][p.w] + 1;
-      que.push(dot(p.h + 1, p.w));
-    }
-    if (p.w != 0 && m[p.h][p.w - 1] == '.' && d[p.h][p.w] + 1 < d[p.h][p.w - 1]) {
-      d[p.h][p.w - 1] = d[p.h][p.w] + 1;
-      que.push(dot(p.h, p.w - 1));
+    for (int i = 0; i < 4; i++) {
+      int nh = p.h + dh[i], nw = p.w + dw[i];
+      int current_dist = d[p.h][p.w];
+      if (nh < 0 || nh >= h || nw < 0 || nw >= w || m[nh][nw] == '#' || current_dist + 1 >= d[nh][nw]) {
+        continue;
+      }
+      d[nh][nw] = current_dist + 1;
+      que.push(dot(nh, nw));
     }
   }
   if (d[h - 1][w - 1] == mx) {
