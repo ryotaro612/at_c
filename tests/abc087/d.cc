@@ -1,5 +1,4 @@
 #include "abc087/d.cc"
-
 #include <gtest/gtest.h>
 
 TEST(abc087d, 1) {
