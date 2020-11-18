@@ -31,5 +31,4 @@ int main() {
     }
     cout << solve(n, w, s, t, p);
 }
-
 */
