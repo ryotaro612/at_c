@@ -1,2 +1,3 @@
 # https://atcoder.jp/contests/abc158
+add_library(abc158a STATIC a.cc)
 add_library(StringFormation STATIC string_formation.cc)
