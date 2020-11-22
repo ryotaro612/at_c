@@ -4,9 +4,9 @@ typedef long long ll;
 
 pair<int, int> solve(string s, string t, int a, int b, string u) {
     if(u == s) {
-        return make_pair(a- 1, b);
+        return make_pair(a - 1, b);
     }
-        return make_pair(a, b-1);
+    return make_pair(a, b - 1);
 }
 /*
 int main() {
