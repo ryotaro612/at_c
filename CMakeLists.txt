@@ -41,6 +41,8 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest/base/src/googletest
 include_directories(${CMAKE_BINARY_DIR}/boost/base/src/boost)
 
 enable_testing()
+add_subdirectory(src/abc065)
+add_subdirectory(tests/abc065)
 add_subdirectory(src/abc066)
 add_subdirectory(tests/abc066)
 add_subdirectory(src/abc067)
