@@ -7,88 +7,72 @@ const static ll MOD = 10e9 + 7;
 int num_bit(ll current) {
     int count = 0;
     while(current > 0) {
+        if(current & 1) {
+            count++;
+        }
         current = current >> 1;
-        count++;
     }
     return count;
 }
 
-vector<vector<bool>> revert(ll current) {
-    vector<vector<bool>> x(25, vector<bool>(25, false));
-    for(int i = 0; i < 25; i++) {
-        if(current & (1 << i)) {
-            x[i / 5][i % 5] = true;
-        }
-    }
-    return x;
-}
-/**
- * one origin
- */
-pair<int, int> revert_point(int idx) {
-    return make_pair((idx - 1) / 5, (idx - 1) % 5);
-}
+int bit_get(int value, int idx) { return (value & (1 << idx)) > 0 ? 1 : 0; }
 
-bool placeable(int idx_to_place, ll current, vector<int> used_map) {
-    int number = calc_number_to_place(current);
-    if(used_map[number] != -1 && used_map[number] != idx_to_place) {
+bool placeable(ll current, int idx, int current_mx, vector<int> &pos,
+               vector<vector<int>> &x) {
+    if(pos[current_mx] != -1 && pos[current_mx] != idx)
+        return false;
+    if(x[idx / 5][idx % 5] != 0 && x[idx / 5][idx % 5] != current_mx + 1) {
         return false;
     }
-    // TODO
-    vector<vector<bool>> x = revert(current);
-    pair<int, int> point = revert_point(idx_to_place);
-    bool result = true;
-    if(1 <= point.first && point.first <= 3) {
-        if(x[point.first - 1][point.second] &&
-           !x[point.first + 1][point.second]) {
-            result = false;
-        }
-        if(!x[point.first - 1][point.second] &&
-           x[point.first + 1][point.second]) {
-            result = false;
-        }
+    if(idx % 5 != 0 && idx % 5 != 4) {
+        int c = 0;
+        if(bit_get(current, idx - 1))
+            c++;
+        if(bit_get(current, idx + 1))
+            c++;
+        if(c == 1)
+            return false;
     }
-    return result;
-}
-/**
- * 1オリジンでnumber
- */
-vector<int> calc_used_map(vector<vector<int>> &x) {
-    vector<int> mp(26, -1);
-    for(int i = 0; i < 25; i++) {
-        int number = x[i / 5][i % 5];
-        if(number == 0) {
-            continue;
-        }
-        mp[number] = i + 1;
+    if(idx / 5 != 0 && idx / 5 != 4) {
+        int c = 0;
+        if(bit_get(current, idx - 5))
+            c++;
+        if(bit_get(current, idx + 5))
+            c++;
+        if(c == 1)
+            return false;
     }
-    return mp;
+    return true;
 }
 
 ll solve(vector<vector<int>> x) {
+    vector<int> pos(25, -1);
+    for(int i = 0; i < 5; i++) {
+        for(int j = 0; j < 5; j++) {
+            if(x[i][j] > 0) {
+                pos[x[i][j] - 1] = i * 5 + j;
+            }
+        }
+    }
     vector<ll> dp(1 << 25, 0);
     dp[0] = 1;
-    // XXX
-    vector<int> used_map = calc_used_map(x);
-
     for(ll i = 0; i < (1 << 25) - 1; i++) {
+        if(dp[i] == 0)
+            continue;
+        int num_numbers = num_bit(i);
+
         for(int j = 0; j < 25; j++) {
-            if(dp[i] == 0) {
+            if(bit_get(i, j) > 0)
                 continue;
-            }
-            ll current = i - pow(2, j - 1);
-            if(current < 0) { // iにはできない
-                continue;
-            }
-            // 使われている
-            if(dp[i] > 0 && placeable(j, current, used_map)) {
-                dp[i] = (dp[i] + dp[current]) % MOD;
+            if(placeable(i, j, num_numbers, pos, x)) {
+                dp[i | (1 << j)] = (dp[i] + dp[i | (1 << j)]) % MOD;
+                //cout << (i | (1 << j)) << " -> " << dp[i | (1 << j)] << endl;
             }
         }
     }
     return dp[(1 << 25) - 1];
 }
-/*
+
 int main() {
     vector<vector<int>> x(5, vector<int>(5, 0));
     for(int i = 0; i < 5; i++) {
@@ -99,4 +83,3 @@ int main() {
 
     cout << solve(x) << endl;
 }
-*/
