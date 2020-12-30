@@ -66,13 +66,13 @@ ll solve(vector<vector<int>> x) {
                 continue;
             if(placeable(i, j, num_numbers, pos, x)) {
                 dp[i | (1 << j)] = (dp[i] + dp[i | (1 << j)]) % MOD;
-                //cout << (i | (1 << j)) << " -> " << dp[i | (1 << j)] << endl;
+                // cout << (i | (1 << j)) << " -> " << dp[i | (1 << j)] << endl;
             }
         }
     }
     return dp[(1 << 25) - 1];
 }
-
+/*
 int main() {
     vector<vector<int>> x(5, vector<int>(5, 0));
     for(int i = 0; i < 5; i++) {
@@ -83,3 +83,4 @@ int main() {
 
     cout << solve(x) << endl;
 }
+*/
