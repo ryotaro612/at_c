@@ -1,75 +1,91 @@
-#include <bits/stdc++.h>
+#include <bitset>
+#include <cstring>
+#include <iostream>
+#include <vector>
 using namespace std;
-typedef long long ll;
 
-const static ll MOD = 10e9 + 7;
+const int MOD = 1000000007;
 
-int num_bit(ll current) {
-    int count = 0;
-    while(current > 0) {
-        if(current & 1) {
-            count++;
-        }
-        current = current >> 1;
-    }
-    return count;
-}
+int dx[4] = {1, 0, -1, 0};
+int dy[4] = {0, 1, 0, -1};
 
-int bit_get(int value, int idx) { return (value & (1 << idx)) > 0 ? 1 : 0; }
+int x[5][5];
+int iniPlaceI[30], iniPlaceJ[30];
 
-bool placeable(ll current, int idx, int current_mx, vector<int> &pos,
-               vector<vector<int>> &x) {
-    if(pos[current_mx] != -1 && pos[current_mx] != idx)
-        return false;
-    if(x[idx / 5][idx % 5] != 0 && x[idx / 5][idx % 5] != current_mx + 1) {
-        return false;
-    }
-    if(idx % 5 != 0 && idx % 5 != 4) {
-        int c = 0;
-        if(bit_get(current, idx - 1))
-            c++;
-        if(bit_get(current, idx + 1))
-            c++;
-        if(c == 1)
+static int dp[(1 << 25) + 10];
+
+inline int toInd(int i, int j) { return i * 5 + j; }
+
+bool check(int bit, int nextNum, int i, int j) {
+    // left-right check
+    int li = i, lj = j - 1;
+    int ri = i, rj = j + 1;
+    if(lj >= 0 && rj < 5) {
+        int leftBit = ((bit & (1 << toInd(li, lj))) != 0);
+        int rightBit = ((bit & (1 << toInd(ri, rj))) != 0);
+        if(leftBit + rightBit == 1)
             return false;
     }
-    if(idx / 5 != 0 && idx / 5 != 4) {
-        int c = 0;
-        if(bit_get(current, idx - 5))
-            c++;
-        if(bit_get(current, idx + 5))
-            c++;
-        if(c == 1)
+
+    // ue-shita check
+    int ui = i - 1, uj = j;
+    int si = i + 1, sj = j;
+    if(ui >= 0 && si < 5) {
+        int ueBit = ((bit & (1 << toInd(ui, uj))) != 0);
+        int shitaBit = ((bit & (1 << toInd(si, sj))) != 0);
+        if(ueBit + shitaBit == 1)
             return false;
     }
+
     return true;
 }
 
-ll solve(vector<vector<int>> x) {
-    vector<int> pos(25, -1);
-    for(int i = 0; i < 5; i++) {
-        for(int j = 0; j < 5; j++) {
-            if(x[i][j] > 0) {
-                pos[x[i][j] - 1] = i * 5 + j;
+int solve(vector<vector<int>> x) {
+    memset(iniPlaceI, -1, sizeof(iniPlaceI));
+    memset(iniPlaceJ, -1, sizeof(iniPlaceJ));
+    for(int i = 0; i < 5; ++i)
+        for(int j = 0; j < 5; ++j) {
+            if(x[i][j] != 0) {
+                iniPlaceI[x[i][j]] = i;
+                iniPlaceJ[x[i][j]] = j;
             }
         }
-    }
-    vector<ll> dp(1 << 25, 0);
-    dp[0] = 1;
-    for(ll i = 0; i < (1 << 25) - 1; i++) {
-        if(dp[i] == 0)
-            continue;
-        int num_numbers = num_bit(i);
 
-        for(int j = 0; j < 25; j++) {
-            if(bit_get(i, j) > 0)
+    memset(dp, 0, sizeof(dp));
+    dp[0] = 1;
+    for(int bit = 0; bit < (1 << 25); ++bit) {
+        if(dp[bit] == 0)
+            continue;
+        int nextNum = __builtin_popcount(bit) + 1;
+
+        // if (dp[bit]) cout << bitset<25>(bit) << ": " << dp[bit] << endl;
+
+        if(iniPlaceI[nextNum] != -1) {
+            if(bit & (1 << toInd(iniPlaceI[nextNum], iniPlaceJ[nextNum])))
                 continue;
-            if(placeable(i, j, num_numbers, pos, x)) {
-                dp[i | (1 << j)] = (dp[i] + dp[i | (1 << j)]) % MOD;
-                // cout << (i | (1 << j)) << " -> " << dp[i | (1 << j)] << endl;
+            if(check(bit, nextNum, iniPlaceI[nextNum], iniPlaceJ[nextNum])) {
+                int nextBit =
+                    bit | (1 << toInd(iniPlaceI[nextNum], iniPlaceJ[nextNum]));
+                dp[nextBit] += dp[bit];
+                if(dp[nextBit] >= MOD)
+                    dp[nextBit] -= MOD;
+            }
+        } else {
+            for(int i = 0; i < 5; ++i) {
+                for(int j = 0; j < 5; ++j) {
+                    if(bit & (1 << toInd(i, j)))
+                        continue;
+                    if(check(bit, nextNum, i, j)) {
+                        int nextBit = bit | (1 << toInd(i, j));
+                        dp[nextBit] += dp[bit];
+                        if(dp[nextBit] >= MOD)
+                            dp[nextBit] -= MOD;
+                    }
+                }
             }
         }
     }
+
     return dp[(1 << 25) - 1];
 }
 /*
