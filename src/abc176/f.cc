@@ -2,24 +2,25 @@
 using namespace std;
 typedef long long ll;
 
+int dp[2060][2020];
+int ma[2020];
+
 int solve(int n, vector<int> a) {
-    vector<vector<int>> dp(2060, vector<int>(2020, -1048576));
-    vector<int> ma(2020, -1048576);
     for(int i = 0; i < 3 * n; i++) {
-        a[i]--;
+        a[i] = a[i] - 1;
     }
 
-    dp[a[0]][a[1]] = ma[a[0]] = ma[a[1]] = 0;
     int ret = 0;
+    for(int x = 0; x < n; x++) {
+        for(int y = 0; y < n; y++) {
+            dp[x][y] = -1 << 20;
+        }
+        ma[x] = -1 << 20;
+    }
+    dp[a[0]][a[1]] = 0;
+    ma[a[0]] = ma[a[1]] = 0;
+
     for(int i = 2; i + 2 < 3 * n; i += 3) {
-        vector<int> temp(3);
-        temp[0] = a[i];
-        temp[1] = a[i + 1];
-        temp[2] = a[i + 2];
-        sort(temp.begin(), temp.end());
-        a[i] = temp[0];
-        a[i + 1] = temp[1];
-        a[i + 2] = temp[2];
         sort(a.begin() + i, a.begin() + i + 3);
         if(a[i] == a[i + 2]) {
             ret++;
@@ -43,12 +44,13 @@ int solve(int n, vector<int> a) {
                 cand.push_back({x, a[j], ma[x]});
             }
         }
+
         cand.push_back({a[i + 0], a[i + 1], dp[a[i + 2]][a[i + 2]] + 1});
         cand.push_back({a[i + 0], a[i + 2], dp[a[i + 1]][a[i + 1]] + 1});
         cand.push_back({a[i + 1], a[i + 2], dp[a[i + 0]][a[i + 0]] + 1});
 
         int tmp = -1;
-        for(int x = 0; i < n; i++) {
+        for(int x = 0; x < n; x++) {
             tmp = max(ma[x], tmp);
         }
         cand.push_back({a[i + 0], a[i + 1], tmp});
@@ -63,10 +65,10 @@ int solve(int n, vector<int> a) {
     }
 
     int ma2 = 0;
-    for(int x = 0; x < n; x++) {
+    for(int x = 0; x < n; x++)
         ma2 = max(ma2, ma[x]);
-    }
     ma2 = max(ma2, dp[a[3 * n - 1]][a[3 * n - 1]] + 1);
+
     return ma2 + ret;
 }
 /*
