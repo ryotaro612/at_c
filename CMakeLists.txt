@@ -304,4 +304,6 @@ add_subdirectory(src/abc185)
 add_subdirectory(tests/abc185)
 add_subdirectory(src/abc186)
 add_subdirectory(tests/abc186)
+add_subdirectory(src/abc187)
+add_subdirectory(tests/abc187)
 #  https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0
