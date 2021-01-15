@@ -17,6 +17,6 @@ TEST(abc009c, 6) { EXPECT_EQ("ba", solve(2, 1, "ba")); }
 
 TEST(abc009c, 7) { EXPECT_EQ("ab", solve(2, 2, "ba")); }
 
-TEST(abc009c, 8) { EXPECT_EQ("ABAABB", solve(6, 2, "BBAABA")); }
+TEST(abc009c, 8) { EXPECT_EQ("abaabb", solve(6, 2, "bbaaba")); }
 
 //TEST(abc009c, 9) { EXPECT_EQ("", solve(7, 3, "program")); }

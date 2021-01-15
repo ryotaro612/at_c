@@ -2,40 +2,48 @@
 using namespace std;
 typedef long long ll;
 
-int num_diff(string a, string b) {
-    int res = 0;
-    for(int i = 0; i < (int)a.size(); i++) {
-        if(a[i] != b[i])
-            res++;
-    }
-    return res;
-}
+bool ok(string head, string s, int k) {
+    int count = 0;
 
-string dfs(int from, int k, string s, string orig) {
-    if(from == (int)s.size() - 1)
-        return s;
-    int m = from;
-    for(int i = (int)s.size() - 1; i >= from + 1; i--) {
-        if(s[m] > s[i]) {
-            m = i;
+    vector<int> c_s(26, 0);
+    for(auto ss : s) {
+        c_s[ss - 'a']++;
+    }
+
+    for(int i = 0; i < (int)head.size(); i++) {
+        c_s[head[i] - 'a']--;
+        if(head[i] != s[i])
+            count++;
+    }
+
+    for(int i = head.size(); i < (int)s.size(); i++) {
+        int index = s[i] - 'a';
+        if(c_s[index] > 0) {
+            c_s[index]--;
         }
     }
-    if(m == from) {
-        return dfs(from + 1, k, s, orig);
+
+    for(auto aa : c_s) {
+        count += aa;
     }
-    char temp = s[from];
-    s[from] = s[m];
-    s[m] = temp;
-    int diff = num_diff(orig, s);
-    if(diff <= k) {
-        return dfs(from + 1, k, s, orig);
-    }
-    temp = s[from];
-    s[from] = s[m];
-    s[m] = temp;
-    return dfs(from + 1, k, s, orig);
+    return count <= k;
 }
-string solve(int n, int k, string s) { return dfs(0, k, string(s), s); }
+
+string solve(int n, int k, string s) {
+    string t = "";
+    string cands = string(s);
+    sort(cands.begin(), cands.end());
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < (int)cands.size(); j++) {
+            if(ok(t + cands[j], s, k)) {
+                t += cands[j];
+                cands.erase(cands.begin() + j);
+                break;
+            }
+        }
+    }
+    return t;
+}
 /*
 int main() {
     int n, k;
