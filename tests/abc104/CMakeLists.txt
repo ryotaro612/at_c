@@ -1,8 +1,8 @@
-# https://atcoder.jp/contests/abc105
-add_executable(TestWeLoveABC test_we_love_abc.cc)
-target_link_libraries(TestWeLoveABC WeLoveABC gtest_main)
+# https://atcoder.jp/contests/abc104
+add_executable(testabc104c c.cc)
+target_link_libraries(testabc104c abc104c gtest_main)
 
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include(GoogleTest)
 
-gtest_discover_tests(TestWeLoveABC)
+gtest_discover_tests(testabc104c)
