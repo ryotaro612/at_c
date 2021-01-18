@@ -15,6 +15,7 @@ ll solve(ll d, ll g, vector<ll> p, vector<ll> c) {
         }
         if(temp >= g) {
             res = min(count, res);
+            continue;
         }
         for(int j = d - 1; j >= 0; j--) {
             if((i & (1 << j)) == 0) {
@@ -27,6 +28,7 @@ ll solve(ll d, ll g, vector<ll> p, vector<ll> c) {
                     if((g - temp) % (100 * (j + 1)) != 0) {
                         count++;
                     }
+                    res = min(count, res);
                     break;
                 }
             }
