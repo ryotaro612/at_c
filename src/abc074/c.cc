@@ -2,30 +2,27 @@
 using namespace std;
 typedef long long ll;
 
-pair<int, int> solve(int a, int b, int c, int d, int e, int f) {
-    pair<int, int> res = make_pair(0, 0);
-    double density = 0.0;
-    for(int aa = 0; aa <= 30; aa++) {
-        for(int bb = 0; bb <= 30; bb++) {
-            for(int cc = 0; cc <= 30; cc++) {
-                for(int dd = 0; dd <= 30; dd++) {
-                    int water = 100 * aa + 100 * bb;
-                    int suger = cc + dd;
-                    if(water + suger > f || water == 0) {
+pair<ll, ll> solve(ll a, ll b, ll c, ll d, ll e, ll f) {
+    pair<ll, ll> res = make_pair(0, 0);
+    for(ll aa = 0; aa <= 30; aa++) {
+        for(ll bb = 0; bb <= 30; bb++) {
+            ll water = 100 * a * aa + 100 * b * bb;
+            if(water == 0 || water > f) {
+                continue;
+            }
+            ll max_salt = (aa * a + b * bb) * e;
+            for(ll cc = 0; cc * c <= max_salt; cc++) {
+                for(ll dd = 0; dd * d <= max_salt; dd++) {
+                    ll salt = c * cc + d * dd;
+                    if(salt > max_salt || water + salt > f) {
                         continue;
                     }
-                    if(suger > (water / 100) * e) {
+                    if(res.first == 0 && res.second == 0) {
+                        res = make_pair(water + salt, salt);
                         continue;
                     }
-                    double current = (double) suger / (double) (suger + water);
-                    if(current > density) {
-                        // update
-                        density = current;
-                        cout << "=======" << endl;
-                        cout << aa << " water: " << water << " suger: " << suger
-                             << endl;
-                        cout << "=======" << endl;
-                        res = make_pair(water + suger, suger);
+                    if(res.second * (water + salt) < salt * res.first) {
+                        res = make_pair(water + salt, salt);
                     }
                 }
             }
@@ -35,8 +32,9 @@ pair<int, int> solve(int a, int b, int c, int d, int e, int f) {
 }
 /*
 int main() {
-    int a, b, c, d, e, f;
+    ll a, b, c, d, e, f;
     cin >> a >> b >> c >> d >> e >> f;
-    cout << solve(a, b, c, d, e, f);
+    pair<ll, ll> res = solve(a, b, c, d, e, f);
+    cout << res.first << " " << res.second << endl;
 }
 */
