@@ -3,25 +3,54 @@ using namespace std;
 typedef long long ll;
 
 ll solve(int n, vector<ll> a) {
-    ll res = numeric_limits<ll>::max();
-    for(int pn = 0; pn < 2; pn++) {
-        ll sum = 0, count = 0;
-        for(int i = 0; i < n; i++) {
-            ll temp = sum + a[i];
-            cout << i << " -> current sum: " << temp << endl;
-            if((pn == 0 && temp > 0) || (pn == 1 && temp < 0)) {
+    ll sum = 0, count = 0;
+    for(int i = 0; i < n; i++) {
+        ll temp = sum + a[i];
+        if(i % 2 == 0) {
+            if(temp > 0) {
                 sum = temp;
                 continue;
             } else {
                 ll delta = abs(temp) + 1;
                 count += delta;
-                sum = temp + delta * (pn == 0 ? 1 : -1);
+                sum = temp + delta;
             }
-            cout << "modified -> " << sum << " current " << count << endl;
+        } else { // odd
+            if(temp < 0) {
+                sum = temp;
+                continue;
+            } else { // temp > 0
+                ll delta = -temp - 1;
+                count += abs(delta);
+                sum = temp + delta;
+            }
         }
-        res = min(count, res);
-        cout << " ====== " << endl;
     }
+    ll res = count;
+    sum = count = 0;
+    for(int i = 0; i < n; i++) {
+        ll temp = sum + a[i];
+        if(i % 2 == 1) { // odd
+            if(temp > 0) {
+                sum = temp;
+                continue;
+            } else {
+                ll delta = abs(temp) + 1;
+                count += delta;
+                sum = temp + delta;
+            }
+        } else { // odd
+            if(temp < 0) {
+                sum = temp;
+                continue;
+            } else { // temp > 0
+                ll delta = -temp - 1;
+                count += abs(delta);
+                sum = temp + delta;
+            }
+        }
+    }
+    res = min(res, count);
     return res;
 }
 /*
