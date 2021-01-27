@@ -11,7 +11,6 @@ ll solve(ll n, ll k, vector<ll> s) {
     for(;;) {
         if(from == to)
             sum = 0;
-        // cout << "top: " << from << " - " << to << " sum: " << sum << endl;
         while(to < n && (from == to ? s[to] : sum * s[to]) <= k) {
             if(from == to) {
                 sum = s[to];
@@ -19,13 +18,14 @@ ll solve(ll n, ll k, vector<ll> s) {
                 sum *= s[to];
             }
             to++;
-            // cout << "right: " << from << " - " << to << " sum: " << sum <<
-            // endl;
         }
-        if(sum > k || to == n) {
+        if(sum > k) {
             break;
         }
         res = max(res, to - from);
+        if(to == n) {
+            break;
+        }
         sum /= s[from];
         from++;
     }
