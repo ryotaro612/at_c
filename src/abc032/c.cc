@@ -3,39 +3,33 @@ using namespace std;
 typedef long long ll;
 
 ll solve(ll n, ll k, vector<ll> s) {
-    ll sum, res, begin, end;
-    for(ll i = 0; i < n; i++) {
-        if(s[i] <= k) {
-            begin = i;
-            end = begin + 1;
-            sum = s[begin];
-            res = 1;
+    for(int i = 0; i < n; i++) {
+        if(s[i] == 0)
+            return n;
+    }
+    ll from = 0, to = 0, sum = 0, res = 0;
+    for(;;) {
+        if(from == to)
+            sum = 0;
+        // cout << "top: " << from << " - " << to << " sum: " << sum << endl;
+        while(to < n && (from == to ? s[to] : sum * s[to]) <= k) {
+            if(from == to) {
+                sum = s[to];
+            } else {
+                sum *= s[to];
+            }
+            to++;
+            // cout << "right: " << from << " - " << to << " sum: " << sum <<
+            // endl;
+        }
+        if(sum > k || to == n) {
             break;
         }
-        if(i == n - 1)
-            return 0;
+        res = max(res, to - from);
+        sum /= s[from];
+        from++;
     }
-
-    for(;;) {
-        if(end != n && sum * s[end] < k) {
-            sum *= s[end];
-            end++;
-            res = max(end - begin, res);
-            if(end == n) {
-                break;
-            }
-        } else { // end == n || s[end] >= k
-            if(begin + 1 < end) {
-                sum /= s[begin];
-                begin++;
-            } else { // begin + 1>= end
-                sum /= s[begin];
-                begin++;
-                end++;
-            }
-        }
-    }
-    return end - begin;
+    return res;
 }
 /*
 int main() {
@@ -45,7 +39,7 @@ int main() {
     for(ll i = 0ll; i < n; i++) {
         cin >> s[i];
     }
-    cout << solve(n, k, s) << end;
+    cout << solve(n, k, s) << endl;
     return 0;
 }
 */
