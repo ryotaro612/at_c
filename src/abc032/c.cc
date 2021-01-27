@@ -3,27 +3,39 @@ using namespace std;
 typedef long long ll;
 
 ll solve(ll n, ll k, vector<ll> s) {
-    ll res = 0ll, sum = s[0];
-    int begin = 0, end = 1;
-    // s[0]がk以上のときを考える
+    ll sum, res, begin, end;
+    for(ll i = 0; i < n; i++) {
+        if(s[i] <= k) {
+            begin = i;
+            end = begin + 1;
+            sum = s[begin];
+            res = 1;
+            break;
+        }
+        if(i == n - 1)
+            return 0;
+    }
+
     for(;;) {
-        if(sum > k) {
-            while(begin < end) {
+        if(end != n && sum * s[end] < k) {
+            sum *= s[end];
+            end++;
+            res = max(end - begin, res);
+            if(end == n) {
+                break;
+            }
+        } else { // end == n || s[end] >= k
+            if(begin + 1 < end) {
                 sum /= s[begin];
                 begin++;
-                if(sum < k) {
-                    res = max(sum, res);
-                    break;
-                }
-            }
-            if(end > n + 1)
-                break;
-            if(begin == end)
+            } else { // begin + 1>= end
+                sum /= s[begin];
+                begin++;
                 end++;
-        } else {
+            }
         }
     }
-    return res;
+    return end - begin;
 }
 /*
 int main() {
