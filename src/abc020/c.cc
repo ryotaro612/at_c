@@ -15,26 +15,26 @@ ll shortest_path_search(int h, int w, ll black, vector<string> s) {
     int start = -1, goal = -1;
     for(int i = 0; i < h; i++) {
         for(int j = 0; j < w; j++) {
-            int index = h * i + w;
+            int index = w * i + j;
             if(s[i][j] == 'S')
                 start = index;
             if(s[i][j] == 'G')
                 goal = index;
             if(i != 0) {
                 edges[index].push_back(
-                    {h * (i - 1) + j, calc_cost(s[i - 1][j], black)});
+                    {w * (i - 1) + j, calc_cost(s[i - 1][j], black)});
             }
             if(j != w - 1) {
                 edges[index].push_back(
-                    {h * i + j + 1, calc_cost(s[i][j + 1], black)});
+                    {w * i + j + 1, calc_cost(s[i][j + 1], black)});
             }
             if(i != h - 1) {
                 edges[index].push_back(
-                    {h * (i + 1) + j, calc_cost(s[i + 1][j], black)});
+                    {w * (i + 1) + j, calc_cost(s[i + 1][j], black)});
             }
             if(j != 0) {
                 edges[index].push_back(
-                    {h * i + (j - 1), calc_cost(s[i][j - 1], black)});
+                    {w * i + (j - 1), calc_cost(s[i][j - 1], black)});
             }
         }
     }
@@ -67,7 +67,8 @@ ll solve(int h, int w, ll t, vector<string> s) {
 
     while(ub - lb > 1ll) {
         ll mid = (lb + ub) / 2ll;
-        if(shortest_path_search(h, w, mid, s) <= t) {
+        ll cost = shortest_path_search(h, w, mid, s);
+        if(cost <= t) {
             lb = mid;
         } else {
             ub = mid;
@@ -85,6 +86,6 @@ int main() {
     for(int i = 0; i < h; i++) {
         cin >> s[i];
     }
-    cout << solve(h, w, t, s);
+    cout << solve(h, w, t, s) << endl;
 }
 */
