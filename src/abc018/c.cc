@@ -14,12 +14,10 @@ ll solve(int r, int c, int k, vector<string> s) {
     for(int x = k - 1; x < r - k + 1; x++) {
         for(int y = k - 1; y < c - k + 1; y++) {
             bool ok = true;
-            //cout << "x : " << x << " y: " << y << endl;
             for(int i = x - k + 1; i < x + k; i++) {
                 int span = k - 1 - abs(i - x);
                 int from = y - span;
                 int to = y + span;
-                //cout << "i: " << i << " from: " << from << " to " << to << endl;
                 if(sum[i][to] - (from == 0 ? 0 : sum[i][from - 1]) > 0) {
                     ok = false;
                     break;
