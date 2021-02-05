@@ -1,0 +1,1 @@
+add_library(abc001d STATIC d.cc)
