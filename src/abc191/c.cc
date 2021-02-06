@@ -16,7 +16,6 @@ int solve(int h, int w, vector<string> s) {
             if(s[i + 1][j + 1] == '#')
                 black++;
             if(black == 1 || black == 3) {
-                //cout << "i: " << i << " J " << j << " -> " << black <<endl;
                 res++;
             }
         }
