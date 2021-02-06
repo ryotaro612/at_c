@@ -4,20 +4,15 @@ typedef long long ll;
 
 ll solve(double x, double y, double r) {
     ll res = 0ll;
-
     ll top = floor(y + r);
-    ll bottom = ceil(y);
     ll under = ceil(y - r);
-    cout << y + r << "," << y - r << " -> " << top << " " << bottom << " "
-         << under << endl;
+    // cout << y + r << "," << y - r << " -> " << top << " " << bottom << " " <<
+    // under << endl;
 
-    for(ll i = top; i >= bottom; i--) {
-        double width = sqrt(r * r - abs(i - y) * abs(i - y));
-        res += floor(x + width) - ceil(x - width) + 1;
-    }
-    for(ll i = under; bottom > i; i++) {
-        double width = sqrt(r * r - abs(i - y) * abs(i - y));
-        res += floor(x + width) - ceil(x - width) + 1;
+    for(ll i = top; i >= under; i--) {
+        double diff = abs(((double)i) - y);
+        double width = sqrt(r * r - diff * diff);
+        res += floor(x + width) - ceil(x - width) + 1ll;
     }
 
     return res;
