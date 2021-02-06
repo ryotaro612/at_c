@@ -1,25 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+typedef long double ld;
 
-ll solve(double x, double y, double r) {
+ll solve(ld x, ld y, ld r) {
     ll res = 0ll;
     ll top = floor(y + r);
     ll under = ceil(y - r);
-    // cout << y + r << "," << y - r << " -> " << top << " " << bottom << " " <<
-    // under << endl;
+    r= nextafter(r, INFINITY);
 
     for(ll i = top; i >= under; i--) {
-        double diff = abs(((double)i) - y);
-        double width = sqrt(r * r - diff * diff);
-        res += floor(x + width) - ceil(x - width) + 1ll;
+        ld width = sqrt(r * r - abs(i - y) * abs(i - y));
+        res += floor(x + width) - ceil(x - width) + 1;
     }
 
     return res;
 }
 /*
 int main() {
-    double x, y, r;
+    ld x, y, r;
     cin >> x >> y >> r;
     cout << solve(x, y, r) << endl;
 }
