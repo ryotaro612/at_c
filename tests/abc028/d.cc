@@ -1,0 +1,14 @@
+#include "abc028/d.cc"
+#include <gtest/gtest.h>
+
+TEST(abc028d, 1) {
+    EXPECT_NEAR(0.48148148148148148148, solve(3, 2), 0.000000001);
+}
+
+TEST(abc028d, 2) {
+    EXPECT_NEAR(0.25925925925925925926, solve(3, 1), 0.000000001);
+}
+
+TEST(abc028d, 3) {
+    EXPECT_NEAR(0.00147697396984624371, solve(765, 573), 0.000000001);
+}
