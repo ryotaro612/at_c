@@ -12,7 +12,7 @@ int solve(int n, vector<int> a) {
 
     return size % 2 == 0 ? size - 1 : size;
 }
-
+/*
 int main() {
     int n;
     cin >> n;
@@ -22,3 +22,4 @@ int main() {
     }
     cout << solve(n, a) << endl;
 }
+*/
