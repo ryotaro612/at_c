@@ -60,7 +60,7 @@ vector<int> solve(int n, vector<vector<int>> d, int q, vector<int> p) {
      cout << query_area(1, 1, 1, 2, areas) << endl;
      */
     vector<int> cache(n + 1, 0);
-    for(int use = 1; use <= n; use++) {
+    for(int use = 1; use <= n*n; use++) {
         vector<pair<int, int>> rect_patterns = list_rect_patterns(use);
         /*
         for(auto x: rect_patterns) {
@@ -77,6 +77,7 @@ vector<int> solve(int n, vector<vector<int>> d, int q, vector<int> p) {
                 }
             }
         }
+        //cout << " temp: " << temp << endl;
         cache[use] = max(temp, cache[use - 1]);
     }
     vector<int> res(q);
