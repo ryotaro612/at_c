@@ -17,14 +17,71 @@ vector<vector<int>> calc_area(int n, vector<vector<int>> d) {
     return area;
 }
 
+vector<pair<int, int>> list_rect_patterns(int area) {
+    vector<pair<int, int>> patterns;
+    for(int w = 1; w <= area; w++) {
+        if(area % w == 0) {
+            patterns.push_back(make_pair(w, area / w));
+        }
+    }
+    return patterns;
+}
+int query_area(int x, int y, int width, int height,
+               vector<vector<int>> &areas) {
+    int res = areas[y + height - 1][x + width - 1];
+    if(y != 0) {
+        res -= areas[y - 1][x + width - 1];
+    }
+    if(x != 0) {
+        res -= areas[y + height - 1][x - 1];
+    }
+    if(y != 0 && x != 0) {
+        res += areas[y - 1][x - 1];
+    }
+    return res;
+}
+
 vector<int> solve(int n, vector<vector<int>> d, int q, vector<int> p) {
-    vector<int> res(q);
-    vector<vector<int>> area = calc_area(n, d);
+    vector<vector<int>> areas = calc_area(n, d);
+    /*
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             cout << area[i][j] << " ";
         }
         cout << endl;
+    }
+    */
+    /*
+     cout << query_area(0, 0, 1, 1, areas) << endl;
+     cout << query_area(0, 0, 3, 3, areas) << endl;
+     cout << query_area(0, 0, 1, 3, areas) << endl;
+     cout << query_area(0, 0, 3, 1, areas) << endl;
+     cout << query_area(0, 0, 2, 2, areas) << endl;
+     cout << query_area(1, 1, 1, 2, areas) << endl;
+     */
+    vector<int> cache(n + 1, 0);
+    for(int use = 1; use <= n; use++) {
+        vector<pair<int, int>> rect_patterns = list_rect_patterns(use);
+        /*
+        for(auto x: rect_patterns) {
+            cout << x.first << " " << x.second << endl;
+        }
+        cout << "  === " << endl;
+        */
+        int temp = 0;
+        for(auto pattern : rect_patterns) {
+            int width = pattern.first, height = pattern.second;
+            for(int x = 0; x + width - 1 < n; x++) {
+                for(int y = 0; y + height - 1 < n; y++) {
+                    temp = max(query_area(x, y, width, height, areas), temp);
+                }
+            }
+        }
+        cache[use] = max(temp, cache[use - 1]);
+    }
+    vector<int> res(q);
+    for(int i=0;i<q;i++) {
+        res[i] = cache[p[i]];
     }
     return res;
 }
