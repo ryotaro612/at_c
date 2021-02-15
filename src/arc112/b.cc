@@ -1,19 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-
+ 
 ll solve(ll b, ll c) {
-    if(b > 0) {
-        if(c>=b*2ll) {
-            return c + (b * 2ll - 1);
-        } else {
-            return 2ll* c - 1ll;
-        }
-    }
-    if(b == 0) {
+    if(b == 0ll) {
         return c;
     }
-    return c + min(c - 1ll, -b * 2ll);
+    if(c == 1) 
+        return 2;
+    if(b > 0ll) {
+        if(c > (b * 2ll)) {
+            return c + (b * 2ll - 1ll);
+        } else {
+            return 2ll * c - 1ll;
+        }
+    }
+    if(c > (-b * 2ll + 1ll)) {
+        return c + (-b * 2ll);
+    } else {
+        return 2ll * c - 1ll;
+    }
 }
 /*
 int main() {
