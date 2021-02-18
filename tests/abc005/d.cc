@@ -6,6 +6,7 @@ TEST(abc005d, 1) {
     vector<int> ans = {3, 9, 14};
     EXPECT_EQ(ans, res);
 }
+
 TEST(abc005d, 2) {
     vector<int> ans = {27};
     vector<int> res = solve(3, {{1, 1, 1}, {1, 1, 1}, {9, 9, 9}}, 1, {4});
