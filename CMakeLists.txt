@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.13.4)
 
 project (AtC)
-set(CMAKE_CXX_FLAGS "-std=c++14 -Wall -ftrapv")
+set(CMAKE_CXX_FLAGS "-D=_LOCAL -std=c++14 -Wall -ftrapv")
 
 # Download and unpack googletest at configure time
 # https://cmake.org/cmake/help/latest/command/configure_file.html 
