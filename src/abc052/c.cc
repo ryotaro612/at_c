@@ -4,29 +4,29 @@ using namespace std;
 typedef long long ll;
 static const ll MOD = 1000000007ll;
 
-vector<int> calc_divisor(int n) {
-    vector<int> res;
-    for(int i = 1; i * i <= n; i++) {
-        if(n % i == 0) {
-            res.push_back(i);
-            if(i * i != n) {
-                res.push_back(n / i);
+ll solve(ll n) {
+    if(n == 1) 
+        return 1ll;
+    vector<int> factors(n+1, 0);
+    for(int i = 2; i <= n; i++) {
+        int m = i;
+        for(ll a = 2; a * a <= m; a++) {
+            while(m % a == 0) {
+                factors[a]++;
+                m /= a;
             }
         }
+        if(m != 1)
+            factors[m]++;
     }
-    sort(res.begin(), res.end());
+    ll res = 1;
+    for(auto f : factors) {
+        if(f == 0)
+            continue;
+        res *= (f + 1);
+        res %= MOD;
+    }
     return res;
-}
-
-ll solve(ll n) {
-    set<ll> temp;
-    ll acc = 1;
-    for(int i = 1; i <= n; i++) {
-        acc *= i;
-        acc %= MOD;
-    }
-    cout << calc_divisor(acc).size() << endl;
-    return -1ll;
 }
 #ifndef _LOCAL
 int main() {
