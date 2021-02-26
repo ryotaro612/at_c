@@ -1,4 +1,3 @@
-#define _GLIBCXX_DEBUG
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -29,33 +28,20 @@ int l_search(ll v, vector<ll> a) {
 }
 
 ll solve(int n, vector<ll> a, vector<ll> b, vector<ll> c) {
-#ifdef _LOCAL
-/*
-    cout << search(3, {1, 3, 4}) << endl;
-    cout << search(3, {3, 3, 4}) << endl;
-    cout << search(3, {4, 5, 6}) << endl;
-    cout << l_search(3, {1, 3, 4}) << endl;
-    cout << l_search(3, {3, 3, 4}) << endl;
-    cout << l_search(3, {4, 5, 6}) << endl;
-    */
-#endif
     sort(a.begin(), a.end());
-    sort(b.begin(), b.end());
+    //sort(b.begin(), b.end());
     sort(c.begin(), c.end());
 
     ll res = 0ll;
 
     for(int i = 0; i < n; i++) {
-        int c_i =  search(b[i], c);
-        if(c_i == n)
+        auto a_iter = lower_bound(a.begin(), a.end(), b[i]);
+        if(a_iter == a.begin())
             continue;
-        int a_i = l_search(b[i], a);
-        if(a_i == -1)
+        auto c_iter = upper_bound(c.begin(), c.end(), b[i]);
+        if(c_iter == c.end())
             continue;
-#ifdef _LOCAL
-        cout << b[i] << "-> " << a_i << " " << c_i << endl;
-#endif
-        res += (a_i + 1) * (n - c_i);
+        res += ((a_iter - a.begin())) * (c.end() - c_iter);
     }
 
     return res;
