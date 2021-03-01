@@ -35,24 +35,27 @@ int solve(int n, vector<int> v) {
     for(auto p : mp_1) {
         q_1.push(make_pair(p.second, p.first));
     }
-
-    int half = n / 2;
+    int e = 0, o = 0;
     if(q_0.top().second != q_1.top().second) {
-        // cout << "q0 " << q_0.top().first << " - > " << q_1.top().first <<
-        // endl;
-        return (half - q_0.top().first) + (half - q_1.top().first);
-    }
-    if(q_0.top().first > q_1.top().first) {
+        e = q_0.top().first;
+        o = q_1.top().first;
+    } else if(q_0.top().first > q_1.top().first) {
+        e = q_0.top().first;
         q_1.pop();
-        if(q_1.empty())
-            return (half - q_0.top().first) + half;
-        return (half - q_0.top().first) + (half - q_1.top().first);
-    } else {
+        o = q_1.empty() ? n / 2 : q_1.top().first;
+
+    } else if(q_0.top().first < q_1.top().first) {
+        o = q_1.top().first;
         q_0.pop();
-        if(q_0.empty())
-            return half + (half - q_1.top().first);
-        return (half - q_0.top().first) + (half - q_1.top().first);
+        e = q_0.empty() ? n / 2 : q_0.top().first;
+    } else {
+        int larger = q_1.top().first;
+        q_0.pop();
+        q_1.pop();
+        e = larger;
+        o = max(q_0.top().first, q_1.top().first);
     }
+    return n - e - o;
 }
 
 #ifndef _LOCAL
