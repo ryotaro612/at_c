@@ -7,4 +7,3 @@ TEST(tenka1_2017c, 1) {
     EXPECT_EQ(2, res.n);
     EXPECT_EQ(2, res.w);
 }
-

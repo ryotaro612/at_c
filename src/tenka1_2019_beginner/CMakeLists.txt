@@ -1,0 +1,1 @@
+add_library(tenka1_2019_beginnerc STATIC c.cc)
