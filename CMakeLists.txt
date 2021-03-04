@@ -40,6 +40,7 @@ add_subdirectory(${CMAKE_BINARY_DIR}/googletest/base/src/googletest
 
 include_directories(${CMAKE_BINARY_DIR}/boost/base/src/boost)
 
+#  https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0
 enable_testing()
 add_subdirectory(src/arc112)
 add_subdirectory(tests/arc112)
@@ -407,4 +408,5 @@ add_subdirectory(src/abc192)
 add_subdirectory(tests/abc192)
 add_subdirectory(src/abc193)
 add_subdirectory(tests/abc193)
-#  https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0
+add_subdirectory(src/tenka1_2017)
+add_subdirectory(tests/tenka1_2017)
