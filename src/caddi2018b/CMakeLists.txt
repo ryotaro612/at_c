@@ -1,0 +1,1 @@
+add_library(caddi2018bd STATIC d.cc)
