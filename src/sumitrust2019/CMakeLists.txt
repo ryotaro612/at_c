@@ -1,0 +1,1 @@
+add_library(sumitrust2019d STATIC d.cc)
