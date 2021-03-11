@@ -1,0 +1,1 @@
+add_library(panasonic2020d STATIC d.cc)
