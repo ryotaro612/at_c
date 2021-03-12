@@ -5,31 +5,22 @@
 typedef long long ll;
 using namespace std;
 
-static ll MOD = 1000000007ll;
-
-ll mul(ll a, ll b) { return (a * b) % MOD; }
+int C[3];
+long long sum = 1;
 
 ll solve(ll n, vector<int> a) {
-    vector<int> c(n + 1, 0);
-    ll res = 1ll;
-    for(int i = 0; i < n; i++) {
-        if(a[i] == 0) {
-            if(c[0] == 0)
-                res = mul(res, 3);
-            else if(c[0] == 1)
-                res = mul(res, 2);
-        } else {
-            if(c[a[i] - 1] == 3 && c[a[i]] == 0)
-                res = mul(res, 3);
-            else if(c[a[i] - 1] == 3 && c[a[i]] == 1)
-                res = mul(res, 2);
-            else if(c[a[i] - 1] == 2 && c[a[i]] == 0)
-                res = mul(res, 2);
-        }
-        c[a[i]]++;
-        //cout << i << " -> " << res << endl;
-    }
-    return res;
+	for (int i = 0; i < n; i++) {
+		long long cnt = 0, id = -1;
+		if (a[i] == C[0]) { cnt++; id = 0; }
+		if (a[i] == C[1]) { cnt++; id = 1; }
+		if (a[i] == C[2]) { cnt++; id = 2; }
+		if (id == -1) {
+			return 0;
+		}
+		sum *= cnt; C[id]++;
+		sum %= 1000000007;
+	}
+    return sum;
 }
 
 #ifndef _LOCAL
