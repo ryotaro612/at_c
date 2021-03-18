@@ -13,34 +13,48 @@ bool same_cost(int m, vector<ll> &c, vector<ll> &d) {
     }
     return sum_c == sum_d;
 }
+static const int MX = 200001;
+
+int par[MX];
+
+void init(int n) {
+    for(int i = 0; i < n; i++)
+        par[i] = i;
+}
+
+int find(int x) {
+    if(par[x] == x)
+        return x;
+    return par[x] = find(par[x]);
+}
+
+void unite(int x, int y) {
+    x = find(x);
+    y = find(y);
+    if(x == y)
+        return;
+    par[x] = y;
+}
+
+bool is_same(int x, int y) { return find(x) == find(y); }
 
 string solve(int n, int m, vector<ll> a, vector<ll> b, vector<ll> c,
              vector<ll> d) {
-    if(!same_cost(n, a, b))
-        return "No";
-    vector<vector<int>> edges(n);
-    cout << "!!!foobar!!!" << endl;
+    init(n);
     for(int i = 0; i < m; i++) {
-        edges[c[i] - 1].push_back(d[i] - 1);
-        edges[d[i] - 1].push_back(c[i] - 1);
+        unite(c[i] - 1, d[i] - 1);
     }
-    vector<bool> used(n, false);
-    queue<int> que;
-    if(m > 0) {
-        que.push(c[0] - 1);
-    }
-    cout << "foobar!!!" << endl;
-    while(!que.empty()) {
-        int node = que.front();
-        que.pop();
-        used[node] = true;
-        for(int i = 0; i < (int)edges[node].size(); i++) {
-            if(!used[edges[node][i]])
-                que.push(edges[node][i]);
+    vector<vector<int>> nodes(n);
+    for(int i = 0; i < n; i++)
+        nodes[find(i)].push_back(i);
+    
+    for(auto group: nodes) {
+        ll sum_a = 0ll, sum_b = 0ll;
+        for(auto index: group) {
+            sum_a += a[index];
+            sum_b += b[index];
         }
-    }
-    for(auto u : used) {
-        if(!u)
+        if(sum_a != sum_b)
             return "No";
     }
     return "Yes";
