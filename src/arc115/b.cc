@@ -10,59 +10,26 @@ struct Res {
     vector<ll> a, b;
 };
 
-ll sum(vector<ll> x) {
-    ll res = 0ll;
-    for(int i = 0; i < (int)x.size(); i++)
-        res += x[i];
-    return res;
-}
-
-vector<vector<ll>> trans(vector<vector<ll>> m) {
-    int n = (int)m.size();
-    vector<vector<ll>> t(n, vector<ll>(n));
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++)
-            t[j][i] = m[i][j];
-    }
-    return t;
-}
-
-vector<ll> sub(ll n, vector<vector<ll>> c) {
-    vector<ll> a(n, -1);
-    ll base = sum(c[0]);
-    ll mini = 0ll;
-    vector<ll> offset(n);
-    offset[0] = 0ll;
-    for(int i = 1; i < n; i++) {
-        ll target = sum(c[i]);
-        if((target - base) % n != 0ll)
-            return a;
-        offset[i] = (target - base) / n;
-        mini = min(mini, offset[i]);
-    }
-    a[0] = -mini;
-    for(int i = 1; i < n; i++) {
-        a[i] = a[0] + offset[i];
-    }
-    return a;
-}
-
 Res solve(ll n, vector<vector<ll>> c) {
-    vector<ll> a = sub(n, c);
-    for(auto aa: a)
-        if(aa < 0)
-            return {"No", a, vector<ll>(n, -1)};
-    vector<ll> b(n, 0);        
-    /*
-    for(auto aa: a)
-        cout << aa << endl;
-        */
-    for(int i=0;i<n;i++) {
-        b[i] = c[i][i] - a[i];
+    ll mini = c[0][0];
+    for(int i = 1; i < n; i++) {
+        mini = min(mini, c[i][0]);
     }
-    for(auto bb: b)
-        if(bb < 0)
-            return {"No", a, vector<ll>(n, -1)};
+    vector<ll> a(n), b(n);
+    for(int i = 0; i < n; i++) {
+        a[i] = c[i][0] - mini;
+        if(a[i] < 0)
+            return {"No", a, b};
+    }
+    for(int i = 0; i < n; i++) {
+        b[i] = c[0][i] - a[0];
+        if(b[i] < 0)
+            return {"No", a, b};
+        for(int j = 1; j < n; j++) {
+            if(b[i] != c[j][i] - a[j])
+                return {"No", a, b};
+        }
+    }
     return {"Yes", a, b};
 }
 
@@ -77,16 +44,16 @@ int main() {
     Res res = solve(n, c);
     cout << res.yn << endl;
     if(res.yn == "Yes") {
-        for(int i=0;i<n;i++) {
+        for(int i = 0; i < n; i++) {
             cout << res.a[i];
-            if(i == n-1)
+            if(i == n - 1)
                 cout << endl;
             else
                 cout << " ";
         }
-        for(int i=0;i<n;i++) {
+        for(int i = 0; i < n; i++) {
             cout << res.b[i];
-            if(i == n-1)
+            if(i == n - 1)
                 cout << endl;
             else
                 cout << " ";
