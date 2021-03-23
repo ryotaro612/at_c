@@ -5,33 +5,30 @@
 typedef long long ll;
 using namespace std;
 
-int solve(int n, int m, vector<int> a) {
-    vector<ll> sum(n, 0);
-    vector<int> mex(n - m + 1);
-    for(int i = 0; i < m; i++) {
+int solve(ll n, ll m, vector<ll> a) {
+    vector<ll> sum(n + 1, 0ll);
+    vector<ll> mex(n - m + 1ll);
+    for(ll i = 0ll; i < m; i++) {
         sum[a[i]]++;
     }
-    int mv = 0;
-    while(sum[mv] > 0) {
+    ll mv = 0ll;
+    while(sum[mv] > 0ll) {
         mv++;
     }
     mex[0] = mv;
-#ifdef _LOCAL
-    cout << "initial mex: " << mex[0] << endl;
-#endif
-    for(int i = m; i < n; i++) {
+    for(ll i = m; i < n; i++) {
         sum[a[i]]++;
         sum[a[i - m]]--;
-        if(a[i - m] == 0 && a[i - m] < mv)
+        if(sum[a[i - m]] == 0ll && a[i - m] < mv)
             mv = a[i - m];
 
-        while(sum[mv] > 0) {
+        while(sum[mv] > 0ll) {
             mv++;
         }
         mex[i - m + 1] = mv;
     }
 
-    int res = n;
+    ll res = n + 1;
     for(auto m : mex) {
         res = min(res, m);
     }
@@ -40,9 +37,9 @@ int solve(int n, int m, vector<int> a) {
 
 #ifndef _LOCAL
 int main() {
-    int n, m;
+    ll n, m;
     cin >> n >> m;
-    vector<int> a(n);
+    vector<ll> a(n);
     for(int i = 0; i < n; i++)
         cin >> a[i];
     cout << solve(n, m, a) << endl;
