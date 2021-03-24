@@ -1,7 +1,11 @@
+add_executable(testabc146c c.cc)
 add_executable(TestColoringEdgesOnTree test_coloring_edges_on_tree.cc)
+
+target_link_libraries(testabc146c abc146c gtest_main)
 target_link_libraries(TestColoringEdgesOnTree ColoringEdgesOnTree gtest_main)
 
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include(GoogleTest)
 
+gtest_discover_tests(testabc146c)
 gtest_discover_tests(TestColoringEdgesOnTree)
