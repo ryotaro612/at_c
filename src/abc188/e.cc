@@ -5,28 +5,41 @@
 typedef long long ll;
 using namespace std;
 
-struct P {
-    ll to, cost;
-};
-
 ll solve(int n, int m, vector<ll> a, vector<ll> x, vector<ll> y) {
-    vector<vector<ll>> edges(n);
+    vector<vector<int>> edges(n);
     for(int i = 0; i < m; i++)
-        edges[x[i] - 1ll].push_back(y[i] - 1ll);
+        edges[x[i] - 1].push_back(y[i] - 1);
 
-    queue<P> que;
-    for(int i = 0; i < (int)edges[0].size(); i++)
-        que.push({edges[0][i], a[0]});
+    ll inf = 100000000000000ll;
+    vector<ll> costs(n, inf);
 
-    ll res = a[y[0] - 1] - a[x[0] - 1];
-    while(!que.empty()) {
-        P p = que.front();
-        que.pop();
-        res = max(a[p.to] - p.cost, res);
-        for(int i = 0; i < (int)edges[p.to].size(); i++) {
-            que.push({edges[p.to][i], min(a[p.to], p.cost)});
+    for(int i = 0; i < n; i++) {
+        if(costs[i] != inf)
+            continue;
+        queue<int> que;
+        for(int j = 0; j < (int)edges[i].size(); j++) {
+            int next = edges[i][j];
+            if(a[i] < costs[next]) {
+                costs[next] = a[i];
+                que.push(next);
+            }
+        }
+        while(!que.empty()) {
+            int node = que.front();
+            que.pop();
+            for(int j = 0; j < (int)edges[node].size(); j++) {
+                int next = edges[node][j];
+                ll cost = min(costs[node], a[node]);
+                if(cost < costs[next]) {
+                    costs[next] = cost;
+                    que.push(next);
+                }
+            }
         }
     }
+    ll res = -inf;
+    for(int i = 0; i < n; i++)
+        res = max(a[i] - costs[i], res);
     return res;
 }
 
