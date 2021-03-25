@@ -5,54 +5,39 @@
 typedef long long ll;
 using namespace std;
 
-vector<ll> par(200000ll);
+struct P {
+    ll to, cost;
+};
 
-void init(ll n) {
-    for(ll i = 0ll; i < n; i++)
-        par[i] = i;
-}
+ll solve(int n, int m, vector<ll> a, vector<ll> x, vector<ll> y) {
+    vector<vector<ll>> edges(n);
+    for(int i = 0; i < m; i++)
+        edges[x[i] - 1ll].push_back(y[i] - 1ll);
 
-ll find(ll v) {
-    if(par[v] == v)
-        return v;
-    return par[v] = find(par[v]);
-}
+    queue<P> que;
+    for(int i = 0; i < (int)edges[0].size(); i++)
+        que.push({edges[0][i], a[0]});
 
-void unite(ll a, ll b) {
-    ll par_a = find(a), par_b = find(b);
-    if(par_a == par_b)
-        return;
-    par[par_b] = par_a;
-}
-
-bool is_same(ll a, ll b) { return find(a) == find(b); }
-
-ll solve(ll n, ll m, vector<ll> a, vector<ll> x, vector<ll> y) {
-    init(n);
-    for(ll i = 0ll; i < m; i++)
-        unite(x[i] - 1, y[i] - 1);
-
-    vector<vector<ll>> d(n);
-    for(ll i = 0ll; i < n; i++)
-        d[find(i)].push_back(i);
-
-    for(ll i = 0; i < n; i++)
-        sort(d[i].begin(), d[i].end());
-    
-
-
-    ll res = -1000000000000000ll;
+    ll res = a[y[0] - 1] - a[x[0] - 1];
+    while(!que.empty()) {
+        P p = que.front();
+        que.pop();
+        res = max(a[p.to] - p.cost, res);
+        for(int i = 0; i < (int)edges[p.to].size(); i++) {
+            que.push({edges[p.to][i], min(a[p.to], p.cost)});
+        }
+    }
     return res;
 }
 
 #ifndef _LOCAL
 int main() {
-    ll n, m;
+    int n, m;
     cin >> n >> m;
     vector<ll> a(n), x(m), y(m);
-    for(ll i = 0ll; i < n; i++)
+    for(int i = 0; i < n; i++)
         cin >> a[i];
-    for(ll i = 0ll; i < m; i++)
+    for(int i = 0; i < m; i++)
         cin >> x[i] >> y[i];
     cout << solve(n, m, a, x, y) << endl;
 }
