@@ -50,7 +50,7 @@ ll solve(int n, vector<ll> a) {
         res = add(mul(a[i], a[i]), res);
 
     for(int i = 0; i < n - 1; i++) {
-        res += mul(divmod(a[i], pow2[i + 1]), sub(sum[n], sum[i + 1]));
+        res = add(mul(divmod(a[i], pow2[i + 1]), sub(sum[n], sum[i + 1])), res);
     }
 
     return res;
