@@ -5,23 +5,27 @@
 typedef long long ll;
 using namespace std;
 
-int solve(ll n, int k) {
-    string res;
+ll solve(int n, vector<ll> x) {
+    ll res = 100000000000000ll;
 
-    while(n != 0) {
-        char digit = (char)(((int)n % k) + '0');
-        res.push_back(digit);
-        n /= k;
+    for(ll i = 0; i <= 100; i++) {
+        ll temp = 0ll;
+        for(int j = 0; j < n; j++)
+            temp += (i - x[j]) * (i - x[j]);
+
+        res = min(res, temp);
     }
-    return (int)res.size();
+    return res;
 }
 
 #ifndef _LOCAL
 int main() {
-    ll n;
-    int k;
-    cin >> n >> k;
-    cout << solve(n, k) << endl;
+    int n;
+    cin >> n;
+    vector<ll> x(n);
+    for(int i = 0; i < n; i++)
+        cin >> x[i];
+    cout << solve(n, x) << endl;
     return 0;
 }
 #endif
