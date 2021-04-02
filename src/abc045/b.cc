@@ -14,7 +14,6 @@ char solve(string sa, string sb, string sc) {
     while(true) {
         if((int)mp[turn].size() == 0)
             return toupper(turn);
-
         char temp = mp[turn][0];
         mp[turn].erase(mp[turn].begin());
         turn = temp;
