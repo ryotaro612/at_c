@@ -6,17 +6,12 @@ typedef long long ll;
 using namespace std;
 
 ll solve(int n, vector<ll> a) {
-    map<ll, set<int>> m;
-    for(int i = 0; i < n; i++) {
-        m[i + 1 - a[i]].insert(i);
-    }
+    map<ll, ll> m;
+    for(int i = 0; i < n; i++)
+        m[i + 1 - a[i]]++;
     ll res = 0ll;
-    for(int i = 0; i < n - 1; i++) {
-        set<int> index = m[a[i] + i + 1];
-        auto it = upper_bound(index.begin(), index.end(), i);
-        int count = distance(it, index.end());
-        res += count;
-    }
+    for(int i = 0; i < n - 1; i++)
+        res += m[a[i] + i + 1];
     return res;
 }
 
