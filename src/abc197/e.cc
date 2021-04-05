@@ -5,7 +5,7 @@
 typedef long long ll;
 using namespace std;
 
-static const ll INF = 1000000000000ll;
+static const ll INF = 1000000000000000ll;
 
 void update_if_less(map<ll, ll> &mp, ll pos, ll v) {
     if(mp.find(pos) != mp.end())
@@ -14,10 +14,10 @@ void update_if_less(map<ll, ll> &mp, ll pos, ll v) {
         mp[pos] = v;
 }
 
-ll solve(int n, vector<ll> x, vector<ll> c) {
-    vector<ll> edge_min(n + 1, INF), edge_max(n + 1, -INF);
-    set<int> balls;
-    for(int i = 0; i < n; i++) {
+ll solve(ll n, vector<ll> x, vector<ll> c) {
+    vector<ll> edge_min(n + 1ll, INF), edge_max(n + 1ll, -INF);
+    set<ll> balls;
+    for(ll i = 0ll; i < n; i++) {
         edge_min[c[i]] = min(x[i], edge_min[c[i]]);
         edge_max[c[i]] = max(x[i], edge_max[c[i]]);
         balls.insert(c[i]);
@@ -25,7 +25,7 @@ ll solve(int n, vector<ll> x, vector<ll> c) {
     vector<ll> ball_vec(balls.begin(), balls.end());
     sort(ball_vec.begin(), ball_vec.end());
     map<ll, ll> mp;
-    mp[0] = 0ll;
+    mp[0ll] = 0ll;
     for(auto ball : ball_vec) {
         map<ll, ll> next_mp;
         for(auto pair : mp) {
@@ -40,11 +40,11 @@ ll solve(int n, vector<ll> x, vector<ll> c) {
             } else {
                 ll pos = edge_min[ball];
                 ll cost = abs(edge_max[ball] - pair.first) +
-                          abs(edge_max[ball] - edge_min[ball]) + pair.second;
+                          abs(edge_max[ball] - pos) + pair.second;
                 update_if_less(next_mp, pos, cost);
                 pos = edge_max[ball];
                 cost = abs(pair.first - edge_min[ball]) +
-                       abs(edge_max[ball] - edge_min[ball]) + pair.second;
+                       abs(pos - edge_min[ball]) + pair.second;
                 update_if_less(next_mp, pos, cost);
             }
         }
