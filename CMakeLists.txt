@@ -42,6 +42,8 @@ include_directories(${CMAKE_BINARY_DIR}/boost/base/src/boost)
 
 #  https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0
 enable_testing()
+add_subdirectory(src/arc037)
+add_subdirectory(tests/arc037)
 add_subdirectory(src/arc040)
 add_subdirectory(tests/arc040)
 add_subdirectory(src/arc041)
