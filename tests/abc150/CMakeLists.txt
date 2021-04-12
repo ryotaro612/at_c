@@ -1,10 +1,10 @@
 add_executable(TestSemiCommonMultiple test_semi_common_multiple.cc)
-add_executable(testabc150b b.cc)
+add_executable(testabc150c c.cc)
 target_link_libraries(TestSemiCommonMultiple SemiCommonMultiple gtest_main)
-target_link_libraries(testabc150b abc150b gtest_main)
+target_link_libraries(testabc150c abc150c gtest_main)
 
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include(GoogleTest)
 
-gtest_discover_tests(testabc150b)
+gtest_discover_tests(testabc150c)
 gtest_discover_tests(TestSemiCommonMultiple)
