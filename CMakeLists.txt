@@ -498,3 +498,6 @@ add_subdirectory(src/sumitrust2019)
 add_subdirectory(tests/sumitrust2019)
 add_subdirectory(src/panasonic2020)
 add_subdirectory(tests/panasonic2020)
+add_subdirectory(src/jsc2021)
+add_subdirectory(tests/jsc2021)
+ 
