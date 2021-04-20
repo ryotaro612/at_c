@@ -5,26 +5,36 @@
 typedef long long ll;
 using namespace std;
 
+struct A {
+    int start;
+    char color;
+};
+
 ll solve(string s) {
     int n = (int)s.size();
-    vector<int> prev(26, n);
-    ll res = 0ll;
-    for(int i = n - 3; i >= 0; i--) {
-        if(s[i] == s[i + 1] && s[i] != s[i + 2]) {
-            int last = prev[s[i] - 'a'];
-            cout << "last -> " << last << endl;
-            for(int j = 0; j < 26; j++) {
-                cout << (char)('a' + j) << prev[j] << " ";
-            }
-            cout << endl;
-            res += last - (i + 2);
-            for(int i = 0; i < 26; i++)
-                prev[i] = n;
-            prev[s[i] - 'a'] = i;
-        } else {
-            prev[s[i + 2] - 'a'] = i + 2;
+    vector<A> tasks;
+    int i = 0;
+    char prev = ' ';
 
+    while(i < n - 1) {
+        if(prev != s[i] && s[i] == s[i + 1]) {
+            tasks.push_back({i, s[i]});
+            prev = s[i];
+            i += 2;
+        } else {
+            i++;
         }
+    }
+    tasks.push_back({n, ' '});
+    ll res = 0ll;
+    for(int i = 0; i < (int)tasks.size() - 1; i++) {
+        ll temp = 0ll;
+        for(int j = tasks[i].start; j < (int)tasks[i + 1].start; j++) {
+            if(s[j] != tasks[i].color)
+                temp++;
+        }
+        temp += n - tasks[i + 1].start;
+        res += temp;
     }
     return res;
 }
