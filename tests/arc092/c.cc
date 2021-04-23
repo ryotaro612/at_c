@@ -1,4 +1,4 @@
-#include "abc092/c.cc"
+#include "arc092/c.cc"
 #include <gtest/gtest.h>
 
 TEST(abc092c, 1) {
