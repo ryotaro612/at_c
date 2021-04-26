@@ -28,14 +28,19 @@ bool same(int x, int y) { return find(x) == find(y); }
 vector<vector<int>> graph;
 
 ll dfs(int node, vector<int> &color) {
-    if(color[node] != -1)
-        return 1ll;
-
-    /*
     set<int> neigh;
     for(int i = 0; i < (int)graph[node].size(); i++) {
         neigh.insert(color[graph[node][i]]);
     }
+    for(int i=0;i< 3;i++) {
+        if(neigh.find(i) == neigh.end()) {
+            color[node] = i;
+            for(int j=0;j<(int) graph[node].size();j++) {
+
+            }
+        }
+    }
+    /*
     if(neigh.find(-1) == neigh.end()) {
         return 3 - neigh.size();
     }
