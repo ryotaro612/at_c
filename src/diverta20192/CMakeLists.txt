@@ -1,0 +1,1 @@
+add_library(diverta20192b STATIC b.cc)
