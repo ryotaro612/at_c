@@ -1,0 +1,1 @@
+add_library(ddcc2020c STATIC c.cc)
