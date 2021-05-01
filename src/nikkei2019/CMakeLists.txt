@@ -1,0 +1,1 @@
+add_library(nikkei2019c STATIC c.cc)
