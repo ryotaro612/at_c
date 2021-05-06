@@ -1,0 +1,1 @@
+add_library(agc036a STATIC a.cc)
