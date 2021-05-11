@@ -1,0 +1,1 @@
+add_library(ablc STATIC c.cc)
