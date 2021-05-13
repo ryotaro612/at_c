@@ -1,0 +1,1 @@
+add_library(msolutions2020d STATIC d.cc)
