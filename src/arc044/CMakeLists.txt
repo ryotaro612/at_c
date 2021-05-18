@@ -1,0 +1,1 @@
+add_library(arc044a STATIC a.cc)
