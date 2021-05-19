@@ -1,3 +1,4 @@
+#define _GLIBCXX_DEBUUG
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -6,7 +7,7 @@ typedef long long ll;
 int main() {
     int n;
     cin >> n;
-    vector<int> t(4, 0);
+    vector<int> t(n, 0);
     for(int i = 0; i < n; i++) {
         cin >> t[i];
     }
@@ -31,6 +32,7 @@ int main() {
     vector<int> v = {0, 1, 2, 3};
     do {
         ans = min(ans, max(t[v[0]] + t[v[1]], t[v[2]] + t[v[3]]));
+        ans = min(ans, max(t[v[0]], t[v[1]] + t[v[2]] + t[v[3]]));
     } while(next_permutation(v.begin(), v.end()));
 
     cout << ans << endl;
