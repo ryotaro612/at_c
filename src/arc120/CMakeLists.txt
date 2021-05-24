@@ -1,1 +1,1 @@
-add_libray(arc120b STATIC b.cc)
+add_library(arc120b STATIC b.cc)
