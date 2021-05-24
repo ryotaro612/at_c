@@ -158,6 +158,8 @@ add_subdirectory(src/arc118)
 add_subdirectory(tests/arc118)
 add_subdirectory(src/arc119)
 add_subdirectory(tests/arc119)
+add_subdirectory(src/arc120)
+add_subdirectory(tests/arc120)
 
 add_subdirectory(src/abc001)
 add_subdirectory(tests/abc001)
