@@ -22,6 +22,7 @@ int main() {
         switch((int)colors.size()) {
         case 0:
             ans *= 2;
+            ans %= MOD;
             break;
         case 1:
             break;
@@ -40,6 +41,7 @@ int main() {
         switch((int)colors.size()) {
         case 0:
             ans *= 2;
+            ans %= MOD;
             break;
         case 1:
             break;
