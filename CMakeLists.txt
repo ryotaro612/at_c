@@ -564,6 +564,8 @@ add_subdirectory(tests/abc201)
 add_subdirectory(src/abc202)
 add_subdirectory(tests/abc202)
 
+add_subdirectory(src/apc001)
+add_subdirectory(tests/apc001) 
 add_subdirectory(src/abl)
 add_subdirectory(tests/abl) 
 add_subdirectory(src/tenka1_2017)

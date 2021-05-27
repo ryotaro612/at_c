@@ -1,0 +1,1 @@
+add_library(apc001 STATIC a.cc)
