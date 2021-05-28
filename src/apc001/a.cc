@@ -19,7 +19,7 @@ int main() {
             c_a += (b[i] - a[i]) / 2ll;
         } else if(a[i] > b[i]) {
             c_b += a[i] - b[i];
-        }
+        
     }
     if(c_a >= c_b) {
         cout << "Yes" << endl;
