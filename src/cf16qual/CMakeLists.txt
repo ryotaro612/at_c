@@ -1,0 +1,1 @@
+add_library(cf16qualb STATIC b.cc)
