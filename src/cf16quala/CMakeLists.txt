@@ -1,1 +1,1 @@
-add_libary(cf16qualac STATIC c.cc);
+add_library(cf16qualac STATIC c.cc)
