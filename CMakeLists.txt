@@ -569,6 +569,8 @@ add_subdirectory(tests/abc202)
 add_subdirectory(src/abc203)
 add_subdirectory(tests/abc203)
 
+add_subdirectory(src/cf16quala)
+add_subdirectory(tests/cf16quala) 
 add_subdirectory(src/cf16qual)
 add_subdirectory(tests/cf16qual) 
 add_subdirectory(src/cf16final)

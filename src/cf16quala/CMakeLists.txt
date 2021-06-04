@@ -1,0 +1,1 @@
+add_libary(cf16qualac STATIC c.cc);
