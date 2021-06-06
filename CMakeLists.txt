@@ -569,6 +569,8 @@ add_subdirectory(tests/abc202)
 add_subdirectory(src/abc203)
 add_subdirectory(tests/abc203)
 
+add_subdirectory(src/dwango15p)
+add_subdirectory(tests/dwango15p) 
 add_subdirectory(src/cf15mm)
 add_subdirectory(tests/cf15mm) 
 add_subdirectory(src/cf16quala)

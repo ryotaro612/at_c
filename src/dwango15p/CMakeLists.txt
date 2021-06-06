@@ -1,0 +1,1 @@
+add_library(dwango15pb STATIC b.cc)
