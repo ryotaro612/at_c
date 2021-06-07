@@ -568,6 +568,8 @@ add_subdirectory(src/abc202)
 add_subdirectory(tests/abc202)
 add_subdirectory(src/abc203)
 add_subdirectory(tests/abc203)
+add_subdirectory(src/abc204)
+add_subdirectory(tests/abc204)
 
 add_subdirectory(src/dwango15p)
 add_subdirectory(tests/dwango15p) 
