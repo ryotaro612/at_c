@@ -1,0 +1,1 @@
+add_library(cf14finald STATIC d.cc)
