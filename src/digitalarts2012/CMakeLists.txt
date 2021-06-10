@@ -1,0 +1,1 @@
+add_library(digitalarts2012a STATIC a.cc)

@@ -571,6 +571,8 @@ add_subdirectory(tests/abc203)
 add_subdirectory(src/abc204)
 add_subdirectory(tests/abc204)
 
+add_subdirectory(src/digitalarts2012)
+add_subdirectory(tests/digitalarts2012) 
 add_subdirectory(src/cf14final)
 add_subdirectory(tests/cf14final) 
 add_subdirectory(src/dwango15p)
