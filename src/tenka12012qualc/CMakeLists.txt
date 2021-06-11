@@ -1,0 +1,1 @@
+add_library(tenka12012qualcb STATIC b.cc)
