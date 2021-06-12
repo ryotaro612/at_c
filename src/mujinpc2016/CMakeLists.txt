@@ -1,0 +1,1 @@
+add_library(mujinpc2016b STATIC b.cc)
