@@ -570,6 +570,8 @@ add_subdirectory(src/abc203)
 add_subdirectory(tests/abc203)
 add_subdirectory(src/abc204)
 add_subdirectory(tests/abc204)
+add_subdirectory(src/abc205)
+add_subdirectory(tests/abc205)
 
 add_subdirectory(src/tenka12012qualc)
 add_subdirectory(tests/tenka12012qualc) 
