@@ -1,0 +1,1 @@
+add_library(keyence2019b STATIC b.cc)
