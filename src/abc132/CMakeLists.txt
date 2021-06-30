@@ -1,4 +1,5 @@
 add_library(abc132a STATIC a.cc)
+add_library(abc132b STATIC b.cc)
 add_library(FiftyFifty STATIC fifty_fifty.cc)
 # add_library(OrdinaryNumber STATIC ordinary_number.cc)
 #add_library(DivideTheProblem divide_the_problem.cc)
