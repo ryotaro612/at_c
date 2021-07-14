@@ -10,8 +10,6 @@ struct item {
 };
 
 int solve() {
-    // Union findでゴールに行けるかは分かる。
-    // 最短を確定出来る道筋を探す。幅優先は最短を取得することが前提
     int h, w;
     cin >> h >> w;
     vector<vector<char>> a(h, vector<char>(w));
@@ -31,7 +29,6 @@ int solve() {
             }
         }
     }
-    // 最短のアルファベットが決まったら消す
     vector<vector<int>> d(h, vector<int>(w, INF));
     queue<item> que;
     vector<bool> done(26, false);
