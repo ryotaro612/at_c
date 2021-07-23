@@ -20,7 +20,7 @@ int main() {
             count += (a[i] - 1ll) / mid;
 		if(count <= k)
 			ub = mid;
-		else
+		else // count > k
 			lb = mid;
     }
 	cout << ub << endl;
