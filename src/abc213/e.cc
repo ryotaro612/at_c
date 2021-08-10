@@ -2,33 +2,71 @@
 typedef long long ll;
 using namespace std;
 
+struct P {
+    int cost, h, w;
+
+    bool operator<(const P &that) const { return cost < that.cost; };
+    bool operator>(const P &that) const { return cost > that.cost; };
+};
+
 ll solve(int h, int w, vector<string> s) {
-    vector<vector<int>> c(h, vector<int>(w, -1));
+    vector<vector<int>> c(h, vector<int>(w, 10000000));
 
-    priority_queue<pair<pair<int, int>, pair<int, int>>,
-                   vector<pair<pair<int, int>, pair<int, int>>>,
-                   greater<pair<pair<int, int>, pair<int, int>>>>
-        que;
+    priority_queue<P, vector<P>, greater<P>> que;
 
-    que.push({{0, 0}, {0, 0}});
-    ll ans;
+    que.push({0, 0, 0});
     while(!que.empty()) {
-        pair<pair<int, int>, pair<int, int>> p = que.top();
+        P p = que.top();
         que.pop();
-        int cost = p.first.first;
-        int wall = p.first.second;
-        int hh = p.second.first;
-        int ww = p.second.second;
-
-        if(hh > 0 && c[hh - 1][ww] == -1) {
-            if(s[hh - 1][ww] == '.') {
-                que.push({{cost, 0}, {hh - 1, ww}});
+        if(p.h < 0 || p.h >= h || p.w < 0 || p.w >= w || p.cost >= c[p.h][p.w])
+            continue;
+        c[p.h][p.w] = p.cost;
+        if(p.h > 0) {
+            int n_h = p.h - 1, n_w = p.w;
+            if(s[n_h][n_w] == '.') {
+                que.push({p.cost, n_h, n_w});
             } else {
-                que.push({{cost, 0}, {hh - 1, ww}});
-			}
+                for(int i = -1; i < 2; i++) {
+                    que.push({p.cost + 1, n_h, n_w + i});
+                    que.push({p.cost + 1, n_h - 1, n_w + i});
+                }
+            }
+        }
+        if(p.w < w - 1) {
+            int n_h = p.h, n_w = p.w + 1;
+            if(s[n_h][n_w] == '.') {
+                que.push({p.cost, n_h, n_w});
+            } else {
+                for(int i = -1; i < 2; i++) {
+                    que.push({p.cost + 1, n_h + i, n_w});
+                    que.push({p.cost + 1, n_h + i, n_w + 1});
+                }
+            }
+        }
+        if(p.h < h - 1) {
+            int n_h = p.h + 1, n_w = p.w;
+            if(s[n_h][n_w] == '.') {
+                que.push({p.cost, n_h, n_w});
+            } else {
+                for(int i = -1; i < 2; i++) {
+                    que.push({p.cost + 1, n_h, n_w + i});
+                    que.push({p.cost + 1, n_h + 1, n_w + i});
+                }
+            }
+        }
+        if(p.w > 0) {
+            int n_h = p.h, n_w = p.w - 1;
+            if(s[n_h][n_w] == '.') {
+                que.push({p.cost, n_h, n_w});
+            } else {
+                for(int i = -1; i < 2; i++) {
+                    que.push({p.cost + 1, n_h + i, n_w});
+                    que.push({p.cost + 1, n_h + i, n_w - 1});
+                }
+            }
         }
     }
-    return ans;
+    return c[h - 1][w - 1];
 }
 
 #ifndef _LOCAL
