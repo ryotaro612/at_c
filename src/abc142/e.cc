@@ -23,7 +23,8 @@ int solve(int n, int m, vector<int> &a, vector<int> &b,
                 min(dp[i - 1][j] + a[i - 1], dp[i][(j | bb[i - 1])]);
         }
     }
-    return dp[m][(1 << n) - 1];
+	int ans = dp[m][(1 << n) - 1];
+    return ans == INF ? -1 : ans;
 }
 
 #ifndef _LOCAL
