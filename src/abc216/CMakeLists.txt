@@ -1,0 +1,5 @@
+add_library(abc216a STATIC a.cc)
+add_library(abc216b STATIC b.cc)
+add_library(abc216c STATIC c.cc)
+add_library(abc216d STATIC d.cc)
+#add_library(abc216e STATIC e.cc)
