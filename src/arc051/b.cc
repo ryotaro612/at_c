@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -14,7 +14,7 @@ pair<int, int> temp(int k) {
 }
 pair<ll, ll> solve(int k) { return temp(k); }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int k;
     cin >> k;

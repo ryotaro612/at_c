@@ -2,7 +2,7 @@
 typedef long long ll;
 using namespace std;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, c, k, ans = 0ll;
     cin >> n >> c >> k;

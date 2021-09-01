@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 static const ll MOD = 1000000007ll;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n;
     string s;

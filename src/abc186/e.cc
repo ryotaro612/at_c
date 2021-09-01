@@ -29,7 +29,7 @@ ll solve(ll n, ll s, ll k) {
     return temp % (n / g) + (n / g);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int t;
     cin >> t;

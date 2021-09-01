@@ -4,7 +4,7 @@ typedef long long ll;
 
 static const ll MOD = 998244353ll;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int h, w;
     cin >> h >> w;

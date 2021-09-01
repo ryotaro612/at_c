@@ -44,7 +44,7 @@ ll solve(int h, int w, int m, vector<int> hv, vector<int> wv) {
     return mx_w + c_h[h - 1].first - 1;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int h, w, m;
     cin >> h >> w >> m;

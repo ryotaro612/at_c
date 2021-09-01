@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -28,7 +28,7 @@ ll solve(ll n, ll p) {
     return ((p - 1ll) * pow_kai(p - 2ll, n - 1ll)) % MOD;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, p;
     cin >> n >> p;

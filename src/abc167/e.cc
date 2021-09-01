@@ -59,7 +59,7 @@ ll solve(ll n, ll m, ll k) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, m, k;
     cin >> n >> m >> k;

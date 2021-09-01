@@ -31,7 +31,7 @@ ll dfs(int i, int j) {
     return dp[i][j] = ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     cin >> h >> w;
     a.resize(h);

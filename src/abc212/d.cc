@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 ll const INF = 10000000000000ll;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int q;
     cin >> q;

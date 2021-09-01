@@ -62,7 +62,7 @@ void dfs(int i, int j, bool t) {
     }
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     cin >> h >> w;
     a.resize(h);

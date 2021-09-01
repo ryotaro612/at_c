@@ -13,7 +13,7 @@ ll solve(ll n, ll m) {
     return (n - 2ll) * (m - 2ll);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, m;
     cin >> n >> m;

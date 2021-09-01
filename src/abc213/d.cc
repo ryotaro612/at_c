@@ -16,7 +16,7 @@ void rec(int index) {
     }
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

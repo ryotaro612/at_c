@@ -59,7 +59,7 @@ ll solve(int h, int w, vector<string> a) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int h, w;
     cin >> h >> w;

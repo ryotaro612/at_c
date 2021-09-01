@@ -15,6 +15,6 @@ jobs:
         cache-name: atcoder-build
       with:
         path: ./build
-        key: ${{ env.cache-name }}-${{ hashFiles('libs/Boost.txt.in') }}-${{ hashFiles('libs/Googletest.txt.in') }}
+        key: ${{ env.cache-name }}-${{ hashFiles('src/CMakeLists.txt') }}-${{ hashFiles('test/CMakeLists.txt') }}
     - name: make
       run: make

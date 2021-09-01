@@ -41,7 +41,7 @@ vector<string> solve(int n, int m, vector<ll> P, vector<ll> Y) {
     return res;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

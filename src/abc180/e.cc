@@ -29,7 +29,7 @@ ll solve(int n, vector<ll> x, vector<ll> y, vector<ll> z) {
     return rec(0, 0, n, x, y, z);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

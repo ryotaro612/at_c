@@ -8,7 +8,7 @@ ll gcd(ll a, ll b) {
     return gcd(b, a % b);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, x;
     cin >> n >> x;

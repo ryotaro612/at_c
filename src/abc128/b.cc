@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -33,7 +33,7 @@ vector<int> solve(int n, vector<string> s, vector<int> p) {
     return hoge;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

@@ -2,7 +2,7 @@
 using namespace std;
 typedef long long ll;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int a, b, c;
     cin >> a >> b >> c;

@@ -11,7 +11,7 @@ typedef pair<ll, ll> P;
 
 vector<vector<ll>> dd;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

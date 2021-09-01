@@ -32,7 +32,7 @@ ll solve(ll n, ll m, vector<ll> a, vector<ll> b) {
     return (int)ans.size() - 1;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, m;
     cin >> n >> m;

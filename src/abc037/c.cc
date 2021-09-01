@@ -15,7 +15,7 @@ ll solve(int n, int k, vector<ll> a) {
     return res;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, k;
     cin >> n >> k;

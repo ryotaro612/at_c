@@ -8,7 +8,7 @@ string solve(int a, string s) {
     return "red";
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int a;
     string s;

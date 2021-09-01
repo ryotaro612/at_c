@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -21,7 +21,7 @@ char solve(string sa, string sb, string sc) {
     return ' ';
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string sa, sb, sc;
     cin >> sa >> sb >> sc;

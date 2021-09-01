@@ -30,7 +30,7 @@ void solve() {
 
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     solve();
     return 0;

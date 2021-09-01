@@ -53,7 +53,7 @@ ll solve(string s, ll k) {
     return dp[n][0][k] + dp[n][1][k];
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s;
     cin >> s;

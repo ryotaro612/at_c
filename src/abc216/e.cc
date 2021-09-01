@@ -11,7 +11,7 @@ ll acc(ll a, ll num) {
 }
 
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     ll k;

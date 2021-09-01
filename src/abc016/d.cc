@@ -70,7 +70,7 @@ void solve() {
     cout << count / 2 + 1 << endl;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     solve();
     return 0;

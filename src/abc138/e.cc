@@ -45,7 +45,7 @@ ll solve(string s, string t) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s, t;
     cin >> s >> t;

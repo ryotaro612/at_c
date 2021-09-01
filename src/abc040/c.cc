@@ -20,7 +20,7 @@ ll solve(int n, vector<ll> a) {
     return dp[0];
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

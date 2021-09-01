@@ -28,7 +28,7 @@ ll solve(string s) {
     return res;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s;
     cin >> s;

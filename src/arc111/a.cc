@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -21,7 +21,7 @@ ll powmod(ll n, ll mod) {
 
 ll solve(ll n, ll m) { return (powmod(n, m * m) / m) % m; }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, m;
     cin >> n >> m;

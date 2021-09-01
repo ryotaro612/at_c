@@ -65,7 +65,7 @@ int solve(int n, vector<vector<int>> a) {
     return *max_element(dist.begin(), dist.end());
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

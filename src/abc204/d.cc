@@ -33,7 +33,7 @@ ll solve(int n, vector<ll> t) {
     return max(dp[top], sum - dp[top]);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

@@ -22,7 +22,7 @@ ll solve(ll n, ll m) {
     return 2 * mul % MOD;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, m;
     cin >> n >> m;

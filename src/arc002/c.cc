@@ -30,7 +30,7 @@ int solve(int n, string s) {
     return res;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

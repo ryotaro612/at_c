@@ -62,7 +62,7 @@ vector<ll> solve(int n, vector<int> a, vector<int> b, int q, vector<int> t,
     return acc;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, q;
     cin >> n;

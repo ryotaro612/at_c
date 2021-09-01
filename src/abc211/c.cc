@@ -6,7 +6,7 @@ ll MOD = 1000000007ll;
 
 ll dp[100001][9];
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s;
     cin >> s;

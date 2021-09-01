@@ -19,7 +19,7 @@ int solve(ll n, ll k, vector<ll> a, vector<ll> b) {
     return -1;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, k;
     cin >> n >> k;

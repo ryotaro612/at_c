@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -54,7 +54,7 @@ int solve(int h, int w, int a, int b) {
     return dfs(t, h, w, a, b, 0);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int h, w, a, b;
     cin >> h >> w >> a >> b;

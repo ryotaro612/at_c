@@ -37,7 +37,7 @@ ll solve(ll h, ll w, ll c, vector<vector<ll>> a) {
     return min(ans, sub(h, w, c, aa));
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll h, w, c;
     cin >> h >> w >> c;

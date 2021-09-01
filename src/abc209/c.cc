@@ -4,7 +4,7 @@ using namespace std;
 
 const ll MOD = 1000000007ll;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

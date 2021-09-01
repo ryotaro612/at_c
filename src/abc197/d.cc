@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -21,7 +21,7 @@ pair<ld, ld> solve(int n, ld x, ld y, ld x2, ld y2) {
     return make_pair(xm + vec_xc, ym + vec_yc);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     ld x, y, x2, y2;

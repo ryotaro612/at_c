@@ -30,7 +30,7 @@ ld solve(int n, ld d, ld h, vector<ld> dv, vector<ld> hv) {
     // return ub;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     ld d, h;

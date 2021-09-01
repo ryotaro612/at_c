@@ -40,7 +40,7 @@ ll solve(ll n, ll k, vector<ll> a) {
     }
     return res;
 }
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, k;
     cin >> n >> k;

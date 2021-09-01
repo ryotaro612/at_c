@@ -25,7 +25,7 @@ string solve(string s) {
     return "NO";
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s;
     cin >> s;

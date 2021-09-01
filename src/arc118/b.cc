@@ -7,7 +7,7 @@ struct P {
     ll index, b1, b2, diff1, diff2;
 };
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll k, n, m;
     cin >> k >> n >> m;

@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -14,7 +14,7 @@ vector<int> solve(int n, int m, int q, vector<int> w, vector<int> v,
     }
     sort(b.begin(), b.end(), greater<pair<int, int>>());
     for(int i = 0; i < q; i++) {
-        #ifdef _LOCAL
+        #ifdef _debug
         cout << "i: " << i << endl;
         #endif
         vector<int> xx;
@@ -23,7 +23,7 @@ vector<int> solve(int n, int m, int q, vector<int> w, vector<int> v,
                 xx.push_back(x[j]);
         }
         sort(xx.begin(), xx.end());
-#ifdef _LOCAL
+#ifdef _debug
         cout << "begin available" << endl;
         for(auto xxx : xx) {
             cout << xxx << endl;
@@ -45,7 +45,7 @@ vector<int> solve(int n, int m, int q, vector<int> w, vector<int> v,
     return res;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m, q;
     cin >> n >> m >> q;

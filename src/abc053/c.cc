@@ -15,7 +15,7 @@ ll solve(ll x) {
     return a * 2ll + 2ll;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll x;
     cin >> x;

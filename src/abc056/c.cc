@@ -10,7 +10,7 @@ ll solve(ll x) {
     return -1;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll x;
     cin >> x;

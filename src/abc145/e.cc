@@ -24,7 +24,7 @@ int solve(int n, int t, vector<int> &a, vector<int> &b) {
     return max(dp[n][t][0], dp[n][t][1]);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, t;
     cin >> n >> t;

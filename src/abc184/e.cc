@@ -85,7 +85,7 @@ int solve() {
     return d[goal.first][goal.second];
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     cout << solve() << endl;
     return 0;

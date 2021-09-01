@@ -11,7 +11,7 @@ bool comp(string s, string sub, int from) {
     return true;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s;
     cin >> s;

@@ -95,7 +95,7 @@ ll solve(int n, int m, vector<int> a, vector<int> b) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

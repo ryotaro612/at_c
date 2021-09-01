@@ -44,7 +44,7 @@ string solve(int n, int m, vector<int> &k, vector<vector<int>> &a) {
     return "Yes";
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

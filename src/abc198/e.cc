@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -32,7 +32,7 @@ vector<int> solve(int n, vector<int> c, vector<int> a, vector<int> b) {
     sort(res.begin(), res.end());
     return res;
 }
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

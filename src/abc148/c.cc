@@ -10,7 +10,7 @@ ll gcd(ll a, ll b) {
 
 ll lcm(ll a, ll b) { return a * b / gcd(a, b); }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll a, b;
     cin >> a >> b;

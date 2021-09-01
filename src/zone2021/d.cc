@@ -84,7 +84,7 @@ string solve(string s) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s;
     cin >> s;

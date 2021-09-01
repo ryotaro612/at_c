@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -32,7 +32,7 @@ pair<int, int> solve(int a, int b, int w) {
     return make_pair(calc_max(a, b, w * 1000), calc_min(a, b, w * 1000));
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int a, b, w;
     cin >> a >> b >> w;

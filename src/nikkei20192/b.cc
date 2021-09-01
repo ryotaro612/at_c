@@ -33,7 +33,7 @@ ll solve(ll n, vector<ll> d) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n;
     cin >> n;

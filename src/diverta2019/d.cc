@@ -27,7 +27,7 @@ ll solve(ll n) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n;
     cin >> n;

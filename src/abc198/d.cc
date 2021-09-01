@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -45,7 +45,7 @@ vector<string> solve(string s1, string s2, string s3) {
     return {"UNSOLVABLE"};
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s1, s2, s3;
     cin >> s1 >> s2 >> s3;

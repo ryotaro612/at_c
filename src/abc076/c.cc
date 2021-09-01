@@ -5,7 +5,7 @@ using namespace std;
 string solve(string s, string t) {
     int s_len = (int)s.size(), t_len = (int)t.size();
     for(int i = s_len - t_len; i >= 0; i--) {
-#ifdef _LOCAL
+#ifdef _debug
         cout << "check " << i << endl;
 #endif
         bool ok = true;
@@ -25,7 +25,7 @@ string solve(string s, string t) {
 
     return "UNRESTORABLE";
 }
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s, t;
     cin >> s >> t;

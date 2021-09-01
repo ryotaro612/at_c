@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -22,7 +22,7 @@ ll solve(int n, int m, vector<ll> a, vector<ll> b, vector<ll> t) {
             }
         }
     }
-#ifdef _LOCAL
+#ifdef _debug
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++)
             cout << d[i][j] << " ";
@@ -41,7 +41,7 @@ ll solve(int n, int m, vector<ll> a, vector<ll> b, vector<ll> t) {
     return res;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

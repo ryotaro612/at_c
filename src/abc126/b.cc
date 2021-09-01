@@ -17,7 +17,7 @@ bool is_mm(string s) {
     return false;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s;
     cin >> s;

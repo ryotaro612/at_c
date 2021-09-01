@@ -54,7 +54,7 @@ void solve(int n, int q, vector<ll> a, vector<int> b, vector<int> c,
     }
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, q;
     cin >> n >> q;

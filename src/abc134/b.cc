@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, d;
     cin >> n >> d;

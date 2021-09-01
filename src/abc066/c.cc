@@ -24,7 +24,7 @@ vector<ll> solve(int n, vector<ll> a) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

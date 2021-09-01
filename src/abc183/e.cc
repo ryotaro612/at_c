@@ -145,7 +145,7 @@ ll solve(int h, int w, vector<vector<char>> s) {
     return dp[h - 1][w - 1];
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int h, w;
     cin >> h >> w;

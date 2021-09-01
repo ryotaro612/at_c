@@ -18,7 +18,7 @@ string solve(ll n, vector<ll> h) {
     return "Yes";
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n;
     cin >> n;

@@ -49,7 +49,7 @@ ll solve(int n, string &s) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     string s;

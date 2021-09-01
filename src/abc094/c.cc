@@ -17,7 +17,7 @@ vector<ll> solve(int n, vector<ll> x) {
     return temp;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

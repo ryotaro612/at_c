@@ -14,7 +14,7 @@ ll lcm(ll a, ll b) {
     return (aa * bb) / gcd(aa, bb);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;

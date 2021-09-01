@@ -75,7 +75,7 @@ vector<int> solve(int n, string s, int q, vector<Query> queries) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, q;
     cin >> n;

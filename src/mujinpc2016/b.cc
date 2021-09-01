@@ -2,7 +2,7 @@
 typedef long double ld;
 using namespace std;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ld pi = acos(-1), oa, ab, bc;
     cin >> oa >> ab >> bc;

@@ -1,11 +1,11 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
 typedef long long ll;
 using namespace std;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll h, n;
     cin >> h >> n;

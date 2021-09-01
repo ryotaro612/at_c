@@ -46,7 +46,7 @@ ll solve(string x, ll m) {
     return ub - (d + 1ll);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string x;
     ll m;

@@ -34,7 +34,7 @@ ll solve(int n, ll x, vector<ll> a) {
     return min(res_l, res_r);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     ll x;

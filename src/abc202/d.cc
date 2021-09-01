@@ -42,7 +42,7 @@ ll calc_pattern(ll a, ll b) {
     return fact(ab, m) / fact(m, m);
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll a, b, k;
     cin >> a >> b >> k;

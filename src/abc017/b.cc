@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -15,7 +15,7 @@ string solve(int peek, string &x) {
     return "NO";
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string x;
     cin >> x;

@@ -2,7 +2,7 @@
 using namespace std;
 typedef long long ll;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);

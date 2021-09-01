@@ -52,7 +52,7 @@ ll solve(int n, int m, vector<ll> a, vector<ll> b) {
     return dp[n][m];
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

@@ -4,7 +4,7 @@ typedef long long ll;
 
 const ll INF = 100000000000ll;
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

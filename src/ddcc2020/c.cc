@@ -53,7 +53,7 @@ vector<vector<int>> solve(int h, int w, int k, vector<string> s) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int h, w, k;
     cin >> h >> w >> k;

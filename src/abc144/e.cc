@@ -32,7 +32,7 @@ ll solve(int n, ll k, vector<ll> &a, vector<ll> &f) {
     return ub;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     ll k;

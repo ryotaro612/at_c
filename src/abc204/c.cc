@@ -14,7 +14,7 @@ void dfs(int i) {
     }
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

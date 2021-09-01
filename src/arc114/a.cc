@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -35,7 +35,7 @@ ll solve(ll n, vector<ll> x) {
     return cands[0];
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n;
     cin >> n;

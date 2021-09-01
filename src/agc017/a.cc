@@ -10,7 +10,7 @@ ll pow2(ll n) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, p;
     cin >> n >> p;

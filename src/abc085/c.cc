@@ -13,7 +13,7 @@ vector<ll> solve(ll n, ll y) {
     return {-1, -1, -1};
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ll n, y;
     cin >> n >> y;

@@ -15,7 +15,7 @@ ld pow_kai(ld a, int n) { // aのn乗を計算します。
     return x;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     ld n, m;
     cin >> n >> m;

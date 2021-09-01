@@ -27,7 +27,7 @@ int solve(int n, int m, vector<int> &a, vector<int> &b,
     return ans == INF ? -1 : ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n, m;
     cin >> n >> m;

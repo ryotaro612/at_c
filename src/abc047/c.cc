@@ -13,7 +13,7 @@ ll solve(string s) {
     return (int)a.size() - 1;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string s;
     cin >> s;

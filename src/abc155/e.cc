@@ -32,7 +32,7 @@ ll solve(string &s) {
     return ans;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     string n;
     cin >> n;

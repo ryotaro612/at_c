@@ -16,7 +16,7 @@ void solve() {
     cout << ans << endl;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     solve();
 

@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -40,7 +40,7 @@ string solve(vector<vector<int>> a, int n, vector<int> b) {
     return "No";
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     vector<vector<int>> a(3, vector<int>(3));
     for(int i = 0; i < 3; i++)

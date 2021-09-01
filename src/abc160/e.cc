@@ -1,4 +1,4 @@
-#ifdef _LOCAL
+#ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
@@ -37,7 +37,7 @@ ll solve(int x, int y, int a, int b, int c, vector<ll> p, vector<ll> q,
     return res;
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int x, y, a, b, c;
     cin >> x >> y >> a >> b >> c;

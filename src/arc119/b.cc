@@ -4,7 +4,7 @@
 using namespace std;
 int N;
 string S, T;
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
 	// Step #1. 入力
 	cin >> N;

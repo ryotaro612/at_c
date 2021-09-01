@@ -14,7 +14,7 @@ int solve(int n, vector<ll> &a) {
     return distance(dp.begin(), lower_bound(dp.begin(), dp.end(), INF));
 }
 
-#ifndef _LOCAL
+#ifndef _debug
 int main() {
     int n;
     cin >> n;
