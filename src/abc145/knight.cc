@@ -1,5 +1,4 @@
 #include <iostream>
-#include <boost/math/special_functions/factorials.hpp>
 using namespace std;
 
 const long long MAX = 800000;

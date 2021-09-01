@@ -3,9 +3,28 @@
 #include <cmath>
 #include <limits>
 #include <numeric>
-#include <boost/math/common_factor_rt.hpp>
 
 using namespace std;
+
+typedef long long ll;
+
+
+ll gcd(ll x,ll y){
+    if(x<y) swap(x,y);
+    //xの方が常に大きい
+    ll r;
+    while(y>0){
+        r=x%y;
+        x=y;
+        y=r;
+    }
+    return x;
+}
+
+//オーバフローしないようにかける順番を気を付ける
+ll lcm(ll x,ll y){
+    return ll(x/gcd(x,y))*y;
+}
 
 long long div_count(long long a) {
   long long count =0;
@@ -23,7 +42,7 @@ long long semi_common_multiple(long long n, long long m, long long a[]) {
     long long half = a[i]/2;
     if(count != div_count(half))
       return 0;
-    base = boost::math::lcm(half, base);
+    base = lcm(half, base);
   }
 
   long long num = m / base; 
