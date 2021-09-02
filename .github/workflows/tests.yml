@@ -15,6 +15,6 @@ jobs:
         cache-name: atcoder-build
       with:
         path: ./build
-        key: ${{ env.cache-name }}-${{ hashFiles('src/CMakeLists.txt') }}-${{ hashFiles('test/CMakeLists.txt') }}
+        key: ${{ env.cache-name }}-${{ hashFiles('CMakeLists.txt') }}
     - name: make
       run: make
