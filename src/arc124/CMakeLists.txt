@@ -1,0 +1,1 @@
+add_library(arc124a a.cc)
