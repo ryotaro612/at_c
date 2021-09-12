@@ -43,7 +43,6 @@ int main() {
     rep(i, n) cin >> b[i];
     rep(i, n) cin >> c[i];
     cout << solve(n, a, b, c) << endl;
-
     return 0;
 }
 #endif

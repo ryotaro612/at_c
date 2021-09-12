@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+typedef long long ll;
+using namespace std;
+
+#ifndef _debug
+int main() {
+    int n;
+    string s;
+    cin >> n >> s;
+
+    if(s[n - 1] == 'o')
+        cout << "Yes";
+    else
+        cout << "No";
+
+    cout << endl;
+    return 0;
+}
+#endif
