@@ -16,18 +16,20 @@ ll solve(int n, vector<ll> &x, vector<ll> &y) {
     for(auto d : to_delete)
         c.erase(d);
 
-    vector<ll> keys;
+    vector<ll> xs;
     for(auto e : c) {
-        keys.push_back(e.first);
+        xs.push_back(e.first);
     }
-	//cout << keys.size() << endl;
+    // cout << keys.size() << endl;
     ll ans = 0ll;
-    rep(i, keys.size() - 1) {
-        for(int j = i + 1; j < (int)keys.size(); j++) {
-            for(auto e : c[i]) {
-                if(c[j].find(e) != c[j].end())
-                    ans++;
-            }
+    rep(i, xs.size() - 1) {
+        for(int j = i + 1; j < (int)xs.size(); j++) {
+            set<int> common;
+            set_intersection(c[xs[i]].begin(), c[xs[i]].end(), c[xs[j]].begin(),
+                             c[xs[j]].end(), inserter(common, common.end()));
+            int common_num = common.size();
+            if(common_num > 1)
+                ans += common_num * (common_num - 1) / 2;
         }
     }
     return ans;
@@ -36,7 +38,7 @@ ll solve(int n, vector<ll> &x, vector<ll> &y) {
 #ifndef _debug
 int main() {
     int n;
-	cin >> n;
+    cin >> n;
     vector<ll> x(n), y(n);
     rep(i, n) cin >> x[i] >> y[i];
     cout << solve(n, x, y) << endl;
