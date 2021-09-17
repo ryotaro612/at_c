@@ -1,6 +1,6 @@
 # at_c
 
-Solutions to problems listed on AtCoder.
+<!-- Solutions to problems listed on AtCoder. -->
 
 
 ## Build status
@@ -10,7 +10,8 @@ Solutions to problems listed on AtCoder.
 ## Build
 
     make
-
+<!--
 ## Coverage
 
 [coverage](https://kenkoooo.com/atcoder/#/table/nryotaro)
+-->
