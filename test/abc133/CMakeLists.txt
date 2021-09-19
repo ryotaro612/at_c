@@ -1,7 +1,10 @@
-add_executable(TestRainFlowsIntoDams test_rain_flows_into_dams.cc)
-target_link_libraries(TestRainFlowsIntoDams RainFlowsIntoDams gtest_main)
-
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include(GoogleTest)
 
+add_executable(TestRainFlowsIntoDams test_rain_flows_into_dams.cc)
+target_link_libraries(TestRainFlowsIntoDams RainFlowsIntoDams gtest_main)
 gtest_discover_tests(TestRainFlowsIntoDams)
+
+add_executable(testabc133e e.cc)
+target_link_libraries(testabc133e abc133e gtest_main)
+gtest_discover_tests(testabc133e)
