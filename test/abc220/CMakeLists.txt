@@ -4,3 +4,7 @@ include(GoogleTest)
 add_executable(testabc220c c.cc)
 target_link_libraries(testabc220c abc220c gtest_main)
 gtest_discover_tests(testabc220c)
+
+add_executable(testabc220f f.cc)
+target_link_libraries(testabc220f abc220f gtest_main)
+gtest_discover_tests(testabc220f)
