@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+using namespace std;
 
 #ifndef _debug
 int main() {
