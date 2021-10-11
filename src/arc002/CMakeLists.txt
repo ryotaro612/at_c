@@ -1,2 +1,2 @@
 
-add_library(arc002c STATIC c.cc)
+add_library(arc002c c.cc)

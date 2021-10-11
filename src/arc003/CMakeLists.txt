@@ -1,0 +1,1 @@
+add_library(arc003a a.cc)

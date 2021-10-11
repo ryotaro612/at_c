@@ -13,6 +13,7 @@ add_subdirectory(agc043)
 add_subdirectory(agc048)
 
 add_subdirectory(arc002)
+add_subdirectory(arc003)
 add_subdirectory(arc004)
 add_subdirectory(arc005)
 add_subdirectory(arc006)
