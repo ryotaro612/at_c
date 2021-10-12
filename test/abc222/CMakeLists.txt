@@ -8,3 +8,7 @@ gtest_discover_tests(testabc222c)
 add_executable(testabc222d d.cc)
 target_link_libraries(testabc222d abc222d gtest_main)
 gtest_discover_tests(testabc222d)
+
+add_executable(testabc222e e.cc)
+target_link_libraries(testabc222e abc222e gtest_main)
+gtest_discover_tests(testabc222e)
