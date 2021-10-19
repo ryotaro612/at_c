@@ -1,0 +1,1 @@
+add_library(abc223d d.cc)
