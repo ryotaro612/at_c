@@ -1,1 +1,2 @@
-add_library(arc128a b.cc)
+add_library(arc128a a.cc)
+add_library(arc128b b.cc)
