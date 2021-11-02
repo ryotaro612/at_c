@@ -16,12 +16,6 @@ ll solve(int n, vector<vector<ll>> &av) {
             }
             patterns.insert(pattern);
         }
-        // cout << " --- " << endl;
-        // cout << "mid: " << mid << endl;
-        // for(auto s : patterns) {
-        //     cout << s << endl;
-        // }
-        // cout << " --- " << endl;
         vector<int> scores(patterns.begin(), patterns.end());
         int size = scores.size();
         bool ok = false;
