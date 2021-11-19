@@ -1,11 +1,14 @@
-add_executable(testsumitrust2019d d.cc)
-add_executable(testsumitrust2019e e.cc)
-
-target_link_libraries(testsumitrust2019d sumitrust2019d gtest_main)
-target_link_libraries(testsumitrust2019e sumitrust2019e gtest_main)
-
 include_directories(${PROJECT_SOURCE_DIR}/src)
 include(GoogleTest)
 
+add_executable(testsumitrust2019d d.cc)
+target_link_libraries(testsumitrust2019d sumitrust2019d gtest_main)
 gtest_discover_tests(testsumitrust2019d)
+
+add_executable(testsumitrust2019e e.cc)
+target_link_libraries(testsumitrust2019e sumitrust2019e gtest_main)
 gtest_discover_tests(testsumitrust2019e)
+
+add_executable(testsumitrust2019f f.cc)
+target_link_libraries(testsumitrust2019f sumitrust2019f gtest_main)
+gtest_discover_tests(testsumitrust2019f)
