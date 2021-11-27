@@ -1,3 +1,4 @@
 # https://atcoder.jp/contests/abc121
-add_library(abc121c STATIC c.cc)
-add_library(XORWorld STATIC xor_world.cc)
+add_library(abc121a a.cc)
+add_library(abc121c c.cc)
+add_library(XORWorld xor_world.cc)
