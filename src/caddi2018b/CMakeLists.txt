@@ -1,2 +1,2 @@
-add_library(caddi2018bc STATIC c.cc)
-add_library(caddi2018bd STATIC d.cc)
+add_library(caddi2018bc c.cc)
+add_library(caddi2018bd d.cc)
