@@ -71,6 +71,7 @@ add_subdirectory(arc126)
 add_subdirectory(arc127)
 add_subdirectory(arc128)
 add_subdirectory(arc129)
+add_subdirectory(arc130)
 
 add_subdirectory(abc001)
 add_subdirectory(abc002)

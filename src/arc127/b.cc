@@ -3,9 +3,9 @@ using namespace std;
 typedef long long ll;
 #define rep(i, n) for(int i=0;i<(int)(n);i++)
 
-vector<string> solve(int n, int l) {
+// vector<string> solve(int n, int l) {
 
-}
+// }
 
 #ifndef _debug
 int main() {
