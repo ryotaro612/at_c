@@ -1,0 +1,1 @@
+add_library(abc230a a.cc)
