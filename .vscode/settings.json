@@ -3,5 +3,8 @@
     "workbench.tree.indent": 4,
     "files.associations": {
         "random": "cpp"
-    }
+    },
+    "files.watcherExclude": {
+        "build": true
+    },
 }
