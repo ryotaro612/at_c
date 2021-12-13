@@ -1,2 +1,3 @@
-add_library(abc120c STATIC c.cc)
-add_library(DecayedBridges STATIC decayed_bridges.cc)
+add_library(abc120a a.cc)
+add_library(abc120c c.cc)
+add_library(DecayedBridges decayed_bridges.cc)
