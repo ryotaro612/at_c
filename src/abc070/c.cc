@@ -2,13 +2,13 @@
 using namespace std;
 typedef long long ll;
 
-__int128 gcd(__int128 a, __int128 b) {
+__int128 mygcd(__int128 a, __int128 b) {
     if(b == 0)
         return a;
-    return gcd(b, a % b);
+    return mygcd(b, a % b);
 }
 
-__int128 lcm(__int128 a, __int128 b) {
+__int128 mylcm(__int128 a, __int128 b) {
     __int128 aa, bb;
     if(a >= b) {
         aa = a;
@@ -17,14 +17,14 @@ __int128 lcm(__int128 a, __int128 b) {
         aa = b;
         bb = a;
     }
-    return aa * bb / gcd(aa, bb);
+    return aa * bb / mygcd(aa, bb);
 }
 
 ll solve(int n, vector<ll> t) {
 
     __int128 ans = t[0];
     for(int i = 1; i < n; i++) {
-        ans = lcm(ans, t[i]);
+        ans = mylcm(ans, t[i]);
     }
     return ans;
 }

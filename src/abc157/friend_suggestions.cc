@@ -15,12 +15,12 @@ using namespace std;
 
 static const int MAX_N = 100001;
 int par[MAX_N];
-int size[MAX_N];
+int uf_size[MAX_N];
 
 void init(int n) {
   for(int i=0;i<n;i++) {
     par[i] = i;
-    size[i] = 1;
+    uf_size[i] = 1;
   }
 }
 
@@ -29,13 +29,13 @@ int find(int x) {
     return x;
 
   int root = find(par[x]);
-  size[x] = size[root];
+  uf_size[x] = uf_size[root];
   return par[x] = root;
 }
 
 int group_size(int x) {
   int root = find(x);
-  return size[root];
+  return uf_size[root];
 }
 
 void unite(int x, int y) {
@@ -44,9 +44,9 @@ void unite(int x, int y) {
   if(root_of_x == root_of_y)
     return;
 
-  int united_size = size[root_of_y] + size[root_of_x];
+  int united_size = uf_size[root_of_y] + uf_size[root_of_x];
   par[root_of_y] = root_of_x;
-  size[root_of_x] = united_size;
+  uf_size[root_of_x] = united_size;
 }
 
 bool same(int x, int y) {

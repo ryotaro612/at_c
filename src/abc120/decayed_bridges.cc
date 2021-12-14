@@ -6,12 +6,12 @@
 using namespace std;
 
 long long par[MAX_N];
-int size[MAX_N];
+int uf_size[MAX_N];
 
 void init(long long n) {
   for(int i=0;i<n;i++) {
     par[i] = i;
-    size[i] = 1;
+    uf_size[i] = 1;
   }
 }
 
@@ -33,7 +33,7 @@ void unite(long long x, long long y) {
     return;
   }
   par[root_y] = root_x;
-  size[root_x] += size[root_y];
+  uf_size[root_x] += uf_size[root_y];
 }
 
 bool same(long long x, long long y) {
@@ -41,7 +41,7 @@ bool same(long long x, long long y) {
 }
 
 long long size_tree(long long x) {
-  return size[find(x)];
+  return uf_size[find(x)];
 }
 /*
  * n 島の数 
