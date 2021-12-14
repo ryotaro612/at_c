@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

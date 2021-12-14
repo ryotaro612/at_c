@@ -41,7 +41,7 @@ ll solve(int n, ll x, vector<ll> &av) {
     return dp[n][0];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     ll x;

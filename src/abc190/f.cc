@@ -42,7 +42,7 @@ vector<ll> solve(int n, vector<int> &a) {
     */
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

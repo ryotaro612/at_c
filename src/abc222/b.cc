@@ -12,7 +12,7 @@ int solve(int n, int p, vector<int> &a) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, p;
 	cin >> n >> p;

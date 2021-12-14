@@ -11,7 +11,7 @@ ll acc(ll a, ll num) {
 }
 
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     ll k;

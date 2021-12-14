@@ -12,7 +12,7 @@ double solve(ll n, ll m, ll d) {
     return ((ld)(m - 1ll) * (ld)2 * ((ld)n - (ld)d)) / ((ld)n * (ld)n);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, m, d;
     cin >> n >> m >> d;

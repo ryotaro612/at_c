@@ -24,7 +24,7 @@ int solve(int n, int m, vector<int> s, vector<char> c) {
     return -1;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

@@ -34,7 +34,7 @@ ll solve(int n, vector<vector<bool>> f, vector<vector<ll>> p) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

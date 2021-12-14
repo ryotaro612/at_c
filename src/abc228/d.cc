@@ -37,7 +37,7 @@ vector<ll> solve(int q, vector<int> &t, vector<ll> &x) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int q;
     cin >> q;

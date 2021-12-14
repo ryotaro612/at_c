@@ -19,7 +19,7 @@ ll count(string s, int offset) {
     return ans + 1ll;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

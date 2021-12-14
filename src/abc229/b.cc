@@ -17,7 +17,7 @@ string solve(ll a, ll b) {
     return "Easy";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll a, b;
     cin >> a >> b;

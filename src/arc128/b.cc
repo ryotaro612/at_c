@@ -26,7 +26,7 @@ ll solve(ll r, ll g, ll b) {
   return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int t;
     cin >> t;

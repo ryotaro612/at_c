@@ -31,7 +31,7 @@ ll solve(string s) {
     return dfs(n, "");
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string n;
     cin >> n;

@@ -26,7 +26,7 @@ vector<string> solve(ll n, ll a, ll b, ll p, ll q, ll r, ll s) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, a, b, p, q, r, s;
     cin >> n >> a >> b >> p >> q >> r >> s;

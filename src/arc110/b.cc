@@ -52,7 +52,7 @@ ll solve(int n, string t) {
     }
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     string t;

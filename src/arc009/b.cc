@@ -7,7 +7,7 @@ typedef long long ll;
 
 bool comp() {}
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     vector<int> b(10);
     for(int i = 0; i < 10; i++)

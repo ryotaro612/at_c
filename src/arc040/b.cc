@@ -29,7 +29,7 @@ int solve(int n, int r, string s) {
     return res + 1;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, r;
     cin >> n >> r;

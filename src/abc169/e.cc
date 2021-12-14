@@ -20,7 +20,7 @@ ll solve(int n, vector<ll> &a, vector<ll> &b) {
         return bb[mid] - aa[mid] + 1ll;
     }
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 
 int main() {
     int n;

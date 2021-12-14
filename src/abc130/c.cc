@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 typedef long double ld;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ld w, h, x, y;
     cin >> w >> h >> x >> y;

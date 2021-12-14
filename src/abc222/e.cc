@@ -103,7 +103,7 @@ ll solve(int n, int m, int k, vector<int> &a, vector<int> &u, vector<int> &v) {
     return dp[b.size()][red];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m, k;
     cin >> n >> m >> k;

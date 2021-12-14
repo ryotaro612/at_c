@@ -58,7 +58,7 @@ int solve(int h, int w, vector<string> area) {
     return dp[H - 1][W - 1];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int h, w;
     cin >> h >> w;

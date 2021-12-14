@@ -62,7 +62,7 @@ void dfs(int i, int j, bool t) {
     }
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     cin >> h >> w;
     a.resize(h);

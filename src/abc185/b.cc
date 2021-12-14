@@ -20,7 +20,7 @@ string solve(ll n, ll m, ll t, vector<ll> a, vector<ll> b) {
     return "Yes";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, m, t;
     cin >> n >> m >> t;

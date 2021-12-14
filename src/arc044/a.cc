@@ -11,7 +11,7 @@ bool is_prime(ll n) {
     return true;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

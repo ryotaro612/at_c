@@ -14,7 +14,7 @@ pair<int, int> temp(int k) {
 }
 pair<ll, ll> solve(int k) { return temp(k); }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int k;
     cin >> k;

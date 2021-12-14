@@ -17,7 +17,7 @@ bool is_mm(string s) {
     return false;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

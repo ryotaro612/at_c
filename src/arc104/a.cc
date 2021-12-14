@@ -9,7 +9,7 @@ pair<int, int> solve(int a, int b) {
     return make_pair((a + b) / 2, (a - b) / 2);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int a, b;
     cin >> a >> b;

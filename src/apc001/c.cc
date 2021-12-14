@@ -2,7 +2,7 @@
 using namespace std;
 typedef long long ll;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);

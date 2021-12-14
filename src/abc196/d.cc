@@ -54,7 +54,7 @@ int solve(int h, int w, int a, int b) {
     return dfs(t, h, w, a, b, 0);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int h, w, a, b;
     cin >> h >> w >> a >> b;

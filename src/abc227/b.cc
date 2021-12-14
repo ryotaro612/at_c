@@ -20,7 +20,7 @@ int solve(int n, vector<int> &s) {
     }
     return res;
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

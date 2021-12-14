@@ -33,7 +33,7 @@ vector<int> solve(int n, vector<string> s, vector<int> p) {
     return hoge;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

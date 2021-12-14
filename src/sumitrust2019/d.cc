@@ -30,7 +30,7 @@ ll solve(ll n, string s) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     string s;

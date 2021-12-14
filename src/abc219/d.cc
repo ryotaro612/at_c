@@ -22,7 +22,7 @@ int solve(int n, int x, int y, vector<int> &a, vector<int> &b) {
     return dp[n][x][y] == inf ? -1 : dp[n][x][y];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, x, y;
     cin >> n >> x >> y;

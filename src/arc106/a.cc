@@ -16,7 +16,7 @@ pair<ll, ll> solve(ll n) {
     return make_pair(-1, -1);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

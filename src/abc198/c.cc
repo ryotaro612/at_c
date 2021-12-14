@@ -52,7 +52,7 @@ ll solve(ll r, ll x, ll y) {
     */
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll r, x, y;
     cin >> r >> x >> y;

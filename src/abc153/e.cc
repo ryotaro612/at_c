@@ -24,7 +24,7 @@ int solve(ll h, ll n, vector<ll> a, vector<ll> b) {
     return dp[h];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll h, n;
     cin >> h >> n;

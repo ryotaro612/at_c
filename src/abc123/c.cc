@@ -34,7 +34,7 @@ ll solve(ll n, ll a, ll b, ll c, ll d, ll e) {
     */
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, a, b, c, d, e;
     cin >> n >> a >> b >> c >> d >> e;

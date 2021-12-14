@@ -69,7 +69,7 @@ ll solve(int h, int w, vector<string> s) {
     return c[h - 1][w - 1];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int h, w;
     cin >> h >> w;

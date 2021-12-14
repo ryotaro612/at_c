@@ -21,7 +21,7 @@ ll powmod(ll n, ll mod) {
 
 ll solve(ll n, ll m) { return (powmod(n, m * m) / m) % m; }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, m;
     cin >> n >> m;

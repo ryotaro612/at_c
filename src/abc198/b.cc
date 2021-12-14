@@ -24,7 +24,7 @@ string solve(ll n) {
     return ok ? "Yes" : "No";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

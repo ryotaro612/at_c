@@ -33,7 +33,7 @@ ll solve(ll n, ll m, ll k, vector<ll> u, vector<ll> v) {
     return dp[k][0];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, m, k;
     cin >> n >> m >> k;

@@ -38,7 +38,7 @@ ll solve(ll a, ll b, ll c) {
     return v[aa][3];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll a, b, c;
     cin >> a >> b >> c;

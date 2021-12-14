@@ -7,7 +7,7 @@ using namespace std;
 
 string solve(int x, int y) { return abs(x - y) < 3 ? "Yes" : "No"; }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int x, y;
     cin >> x >> y;

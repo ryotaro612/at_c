@@ -10,7 +10,7 @@ int solve(int a, int b, int c) {
 	return -1;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
 	int a, b, c;
 	cin >> a >> b >> c;

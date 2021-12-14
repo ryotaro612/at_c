@@ -31,7 +31,7 @@ pair<ll, ll> solve(int n, vector<ll> &d) {
     return make_pair(sum[n], res);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

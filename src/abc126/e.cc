@@ -35,7 +35,7 @@ int solve(int n, int m, vector<int> &x, vector<int> &y, vector<int> &z) {
     return groups.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

@@ -9,7 +9,7 @@ string solve(int m, int h) {
     return h % m == 0 ? "Yes" : "No";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int m, h;
     cin >> m >> h;

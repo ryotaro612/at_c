@@ -27,7 +27,7 @@ ll solve(int n, vector<ll> a) {
     return dfs(n, aa);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

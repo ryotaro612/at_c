@@ -25,7 +25,7 @@ string solve(string s, string t) {
 
     return "UNRESTORABLE";
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s, t;
     cin >> s >> t;

@@ -15,7 +15,7 @@ string solve(string s) {
     return "-1 -1";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

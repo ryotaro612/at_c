@@ -40,7 +40,7 @@ char solve(int n, int k, string s) {
     return s[0];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, k;
     cin >> n >> k;

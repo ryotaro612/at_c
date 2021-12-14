@@ -21,7 +21,7 @@ char solve(string sa, string sb, string sc) {
     return ' ';
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string sa, sb, sc;
     cin >> sa >> sb >> sc;

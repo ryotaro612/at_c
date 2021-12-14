@@ -25,7 +25,7 @@ ll solve(string l) {
     return (dp[0][n - 1] + dp[1][n - 1]) % MOD;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string l;
     cin >> l;

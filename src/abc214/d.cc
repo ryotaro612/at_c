@@ -30,7 +30,7 @@ void merge(int a, int b) {
 
 int size(int a) { return -par[root(a)]; }
 
-//#ifndef _debug
+//#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

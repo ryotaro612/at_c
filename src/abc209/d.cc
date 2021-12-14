@@ -6,7 +6,7 @@ typedef pair<int, int> P;
 
 const int INF = 100010;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 main() {
     int n, q;
     cin >> n >> q;

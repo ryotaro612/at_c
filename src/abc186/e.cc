@@ -29,7 +29,7 @@ ll solve(ll n, ll s, ll k) {
     return temp % (n / g) + (n / g);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int t;
     cin >> t;

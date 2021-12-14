@@ -45,7 +45,7 @@ ll solve(string s, string t) {
     return ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s, t;
     cin >> s >> t;

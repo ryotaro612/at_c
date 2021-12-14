@@ -13,7 +13,7 @@ int solve(int n, int m, int l, int p, int q, int r) {
     return *max_element(ans.begin(), ans.end());
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m, l, p, q, r;
     cin >> n >> m >> l >> p >> q >> r;

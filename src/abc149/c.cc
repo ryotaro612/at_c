@@ -31,7 +31,7 @@ int solve(int x) {
     return -1;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int x;
     cin >> x;

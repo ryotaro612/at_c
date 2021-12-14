@@ -14,7 +14,7 @@ ll solve(ll x, ll y) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll x, y;
     cin >> x >> y;

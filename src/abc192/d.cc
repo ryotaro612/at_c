@@ -46,7 +46,7 @@ ll solve(string x, ll m) {
     return ub - (d + 1ll);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string x;
     ll m;

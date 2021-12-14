@@ -35,7 +35,7 @@ int solve(int h, int w, int x, int y, vector<string> s) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int h, w, x, y;
     cin >> h >> w >> x >> y;

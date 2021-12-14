@@ -18,7 +18,7 @@ string solve(ll n, vector<ll> h) {
     return "Yes";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

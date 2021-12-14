@@ -15,7 +15,7 @@ ll solve(int a, int b, int x, int y) {
     return min(x + diff * y, (diff * 2 + 1) * x);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int a, b, x, y;
     cin >> a >> b >> x >> y;

@@ -74,7 +74,7 @@ int solve(int m, vector<int> &u, vector<int> &v, vector<int> &p) {
     return d["01234567"];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int m;
     cin >> m;

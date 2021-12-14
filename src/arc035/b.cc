@@ -43,7 +43,7 @@ pair<ll, ll> solve(int n, vector<ll> t) {
     return make_pair(penalty, patterns);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

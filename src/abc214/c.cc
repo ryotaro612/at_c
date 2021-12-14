@@ -4,7 +4,7 @@ typedef long long ll;
 
 ll const INF = 1000000000000000ll;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

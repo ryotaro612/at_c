@@ -17,7 +17,7 @@ double calc_length(vector<int> &a, vector<int> &b, double time) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

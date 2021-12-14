@@ -42,7 +42,7 @@ bool solve(ll x, ll y, ll a, ll b, ll c) {
 
     return false;
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll x, y, a, b, c;
     cin >> x >> y >> a >> b >> c;

@@ -26,7 +26,7 @@ string solve(ll a, ll b, ll c, ll d) {
     return "No";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll a, b, c, d;
 

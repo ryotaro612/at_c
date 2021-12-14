@@ -30,7 +30,7 @@ ll solve(ll k) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll k;
     cin >> k;

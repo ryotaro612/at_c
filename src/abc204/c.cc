@@ -14,7 +14,7 @@ void dfs(int i) {
     }
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

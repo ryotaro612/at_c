@@ -58,7 +58,7 @@ string solve(int n, vector<string> &s, vector<string> &t) {
     return "No";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

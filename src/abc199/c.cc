@@ -37,7 +37,7 @@ string solve(ll n, string s, ll q, vector<ll> t, vector<ll> a, vector<ll> b) {
     return ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, q;
     string s;

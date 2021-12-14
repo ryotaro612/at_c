@@ -15,7 +15,7 @@ ll solve(ll x) {
     return a * 2ll + 2ll;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll x;
     cin >> x;

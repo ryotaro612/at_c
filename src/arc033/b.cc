@@ -19,7 +19,7 @@ double solve(int a, int b, vector<int> &av, vector<int> &bv) {
     return (double)inter.size() / (double)uni.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int a, b;
     cin >> a >> b;

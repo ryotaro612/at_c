@@ -19,7 +19,7 @@ int solve(int n, ll d, vector<ll> &l, vector<ll> &r) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     ll d;

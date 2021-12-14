@@ -25,7 +25,7 @@ vector<string> solve(int n) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

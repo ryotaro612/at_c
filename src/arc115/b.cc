@@ -33,7 +33,7 @@ Res solve(ll n, vector<vector<ll>> c) {
     return {"Yes", a, b};
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

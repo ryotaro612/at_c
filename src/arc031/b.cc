@@ -58,7 +58,7 @@ string solve(vector<string> &area) {
     return "NO";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     vector<string> area(10);
     for(int i = 0; i < 10; i++)

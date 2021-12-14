@@ -18,7 +18,7 @@ ll solve(int n, vector<ll> x) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

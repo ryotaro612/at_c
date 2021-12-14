@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 const ll MX = 1000000000ll;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, k, s;
     cin >> n >> k >> s;

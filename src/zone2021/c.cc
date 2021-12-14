@@ -48,7 +48,7 @@ ll solve(int n, vector<vector<ll>> &av) {
     return lb;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

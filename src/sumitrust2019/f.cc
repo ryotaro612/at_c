@@ -37,7 +37,7 @@ ll solve(__int128_t t1, __int128_t t2, __int128_t a1, __int128_t a2,
     return lb * 2ll + 1ll;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll t1, t2, a1, a2, b1, b2;
     cin >> t1 >> t2 >> a1 >> a2 >> b1 >> b2;

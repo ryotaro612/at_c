@@ -51,7 +51,7 @@ ll solve(ll n, ll p) {
     }
     return ans;
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, p;
     cin >> n >> p;

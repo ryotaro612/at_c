@@ -13,7 +13,7 @@ int solve(int n, vector<int> &h) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

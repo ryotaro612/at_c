@@ -15,7 +15,7 @@ string solve(int n, vector<ll> a) {
     return "YES";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

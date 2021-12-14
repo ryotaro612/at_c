@@ -29,7 +29,7 @@ int solve(int n, string s) {
     return (int)stack.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     string s;

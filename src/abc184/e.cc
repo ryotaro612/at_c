@@ -85,7 +85,7 @@ int solve() {
     return d[goal.first][goal.second];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     cout << solve() << endl;
     return 0;

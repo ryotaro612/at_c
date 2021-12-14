@@ -8,7 +8,7 @@ string solve(string s) {
 	return zeros + s;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
 	string n;
 	cin >> n;

@@ -20,7 +20,7 @@ vector<int> solve(int n, int m, set<int> &a, set<int> &b) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

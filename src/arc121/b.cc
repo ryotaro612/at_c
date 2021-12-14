@@ -44,7 +44,7 @@ ll calc2(vector<ll> odd, vector<ll> odd2, vector<ll> even) {
     return ans + ans2;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

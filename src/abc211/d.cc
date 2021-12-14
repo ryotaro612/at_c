@@ -18,7 +18,7 @@ void rec(int node, vector<vector<int>> &g, vector<ll> &d, vector<ll> &path) {
     }
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

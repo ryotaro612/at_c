@@ -34,7 +34,7 @@ ld solve(ld x, ld y, int n, vector<ld> xv, vector<ld> yv) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ld x, y;
     int n;

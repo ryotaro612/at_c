@@ -11,7 +11,7 @@ int solve(string s) {
     return res.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

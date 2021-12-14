@@ -25,7 +25,7 @@ ll solve(ll w, ll n, ll k, vector<ll> a, vector<ll> b) {
     return ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll w, n, k;
     cin >> w >> n >> k;

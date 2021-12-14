@@ -62,7 +62,7 @@ ll solve(int n, int m, vector<int> &u, vector<int> &v) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

@@ -58,7 +58,7 @@ ll solve(ll n) {
     return res.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

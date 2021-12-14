@@ -24,7 +24,7 @@ vector<pair<int, int>> solve(int n, int k) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, k;
     cin >> n >> k;

@@ -10,7 +10,7 @@ ll solve(ll x) {
     return -1;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll x;
     cin >> x;

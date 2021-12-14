@@ -45,7 +45,7 @@ ll solve(vector<ll> a) {
     return a[0] - a[1] + solve({a[0], a[0], a[2]});
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     vector<ll> a(3);
     cin >> a[0] >> a[1] >> a[2];

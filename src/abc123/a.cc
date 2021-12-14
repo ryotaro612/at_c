@@ -11,7 +11,7 @@ string solve(vector<int> &a, int k) {
         }
     return "Yay!";
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     vector<int> a(5);
     rep(i, 5) cin >> a[i];

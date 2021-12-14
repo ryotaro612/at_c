@@ -74,7 +74,7 @@ ll solve(int n, int m, vector<int> &a, vector<int> &b, vector<ll> &c) {
     return ans + temp / 2ll;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

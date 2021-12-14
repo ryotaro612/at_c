@@ -7,7 +7,7 @@ using namespace std;
 
 static const ll MOD = 1000000007ll;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

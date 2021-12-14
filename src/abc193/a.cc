@@ -7,7 +7,7 @@ using namespace std;
 
 double solve(int a, int b) { return ((double)(100 * (a - b))) / (double)a; }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int a, b;
     cin >> a >> b;

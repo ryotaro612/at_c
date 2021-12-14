@@ -34,7 +34,7 @@ ll solve(int n, ll x, vector<ll> a) {
     return min(res_l, res_r);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     ll x;

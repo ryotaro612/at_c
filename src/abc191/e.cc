@@ -11,7 +11,7 @@ typedef pair<ll, ll> P;
 
 vector<vector<ll>> dd;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

@@ -27,7 +27,7 @@ ll solve(ll n, ll k, ll m) {
     return pow(m, b, MOD);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, k, m;
     cin >> n >> k >> m;

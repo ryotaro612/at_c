@@ -53,7 +53,7 @@ ll solve(string s, ll k) {
     return dp[n][0][k] + dp[n][1][k];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

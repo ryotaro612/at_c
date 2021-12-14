@@ -21,7 +21,7 @@ ll solve(int l) {
     return calc(l, 11);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int l;
     cin >> l;

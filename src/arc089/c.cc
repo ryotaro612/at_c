@@ -24,7 +24,7 @@ string solve(int n, vector<int> &t, vector<int> &x, vector<int> &y) {
     return "Yes";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

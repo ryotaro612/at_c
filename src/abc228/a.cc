@@ -18,7 +18,7 @@ string solve(int s, int t, int x) {
     }
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int s, t, x;
     cin >> s >> t >> x;

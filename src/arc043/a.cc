@@ -21,7 +21,7 @@ pair<ld, ld> solve(ll n, ll a, ll b, vector<ll> s) {
     return make_pair(p, q);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, a, b;
     cin >> n >> a >> b;

@@ -39,7 +39,7 @@ int solve(int w, int h, int n, vector<int> x, vector<int> y, vector<int> a) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int w, h, n;
     cin >> w >> h >> n;

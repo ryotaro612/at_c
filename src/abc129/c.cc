@@ -22,7 +22,7 @@ ll solve(int n, int m, vector<int> a) {
     return dp[n];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

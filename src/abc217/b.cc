@@ -2,7 +2,7 @@
 typedef long long ll;
 using namespace std;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     map<string, bool> mp;
     mp["ABC"] = mp["ARC"] = mp["AGC"] = mp["AHC"] = false;

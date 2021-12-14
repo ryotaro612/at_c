@@ -19,7 +19,7 @@ int solve(vector<int> &a) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     vector<int> a(5);
     rep(i, 5) cin >> a[i];

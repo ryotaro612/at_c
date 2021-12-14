@@ -15,7 +15,7 @@ string solve(int peek, string &x) {
     return "NO";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string x;
     cin >> x;

@@ -31,7 +31,7 @@ ll dfs(int i, int j) {
     return dp[i][j] = ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     cin >> h >> w;
     a.resize(h);

@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.16.3)
 
 project (at_c)
 # https://codeforces.com/blog/entry/15547#comment-205104
-set(CMAKE_CXX_FLAGS "-D=_debug -std=c++17 -Wextra -O2 -Wall -ftrapv")
+set(CMAKE_CXX_FLAGS "-std=c++17 -Wextra -O2 -Wall -ftrapv")
 
 include(FetchContent)
 FetchContent_Declare(

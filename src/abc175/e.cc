@@ -45,7 +45,7 @@ ll solve(int r, int c, int k, vector<int> &rv, vector<int> &cv, vector<ll> &v) {
     return max4(dp[r][c][3], dp[r][c][2], dp[r][c][1], dp[r][c][0]);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int r, c, k;
     cin >> r >> c >> k;

@@ -23,7 +23,7 @@ int solve(int n, string &s) {
     return ans <= 1 ? 0 : ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

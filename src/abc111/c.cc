@@ -58,7 +58,7 @@ int solve(int n, vector<int> v) {
     return n - e - o;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

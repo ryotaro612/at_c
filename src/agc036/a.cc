@@ -19,7 +19,7 @@ vector<ll> solve(ll s) {
     return {0, 0, 1, pow9, x, y};
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll s;
     cin >> s;

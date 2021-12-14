@@ -14,7 +14,7 @@ string solve(int n, vector<string> s) {
     sort(order.begin(), order.end());
     return order.back().second;
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

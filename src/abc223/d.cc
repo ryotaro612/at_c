@@ -33,7 +33,7 @@ vector<int> solve(int n, int m, vector<int> &a, vector<int> &b) {
         return {-1};
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

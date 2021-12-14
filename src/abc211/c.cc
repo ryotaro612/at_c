@@ -6,7 +6,7 @@ ll MOD = 1000000007ll;
 
 ll dp[100001][9];
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

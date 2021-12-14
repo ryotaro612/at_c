@@ -18,7 +18,7 @@ int solve_maximal_value(int n, vector<int> b) {
     return acc;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

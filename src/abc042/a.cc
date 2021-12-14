@@ -21,7 +21,7 @@ vector<int> solve(int n, int m, vector<int> a) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

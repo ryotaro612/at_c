@@ -25,7 +25,7 @@ string solve(string s) {
     return "NO";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

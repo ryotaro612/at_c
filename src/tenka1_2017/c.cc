@@ -28,7 +28,7 @@ Res solve(ll N) {
     return {0, 0, 0};
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

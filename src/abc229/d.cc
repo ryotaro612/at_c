@@ -48,7 +48,7 @@ int solve(string &s, int k) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

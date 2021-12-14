@@ -19,7 +19,7 @@ int solve(ll n, ll k, vector<ll> a, vector<ll> b) {
     return -1;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, k;
     cin >> n >> k;

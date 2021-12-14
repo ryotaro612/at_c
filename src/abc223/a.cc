@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 #define rep(i,n) for(int i=0;i<(int)(n);i++)
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
   int x;
   cin >> x;

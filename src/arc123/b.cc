@@ -34,7 +34,7 @@ int solve(int n, vector<ll> &a, vector<ll> &b, vector<ll> &c) {
     return third.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

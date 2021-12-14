@@ -4,7 +4,7 @@
 using namespace std;
 int N;
 string S, T;
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
 	// Step #1. 入力
 	cin >> N;

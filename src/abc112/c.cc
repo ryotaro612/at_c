@@ -32,7 +32,7 @@ chokudai solve(int n, vector<ll> xv, vector<ll> yv, vector<ll> hv) {
     return {0, 0, 0};
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

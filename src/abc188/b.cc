@@ -13,7 +13,7 @@ string solve(int n, vector<ll> a, vector<ll> b) {
     return res == 0ll ? "Yes" : "No";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

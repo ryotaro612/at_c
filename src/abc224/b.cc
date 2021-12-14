@@ -19,7 +19,7 @@ string solve(int h, int w, vector<vector<ll>> &a) {
     return "Yes";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int h, w;
     cin >> h >> w;

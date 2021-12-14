@@ -19,7 +19,7 @@ int can_palindrome(string s) {
     return (n + 1) / 2;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

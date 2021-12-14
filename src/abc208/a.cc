@@ -13,7 +13,7 @@ void solve() {
     cout << endl;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     solve();
     return 0;

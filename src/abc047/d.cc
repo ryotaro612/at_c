@@ -26,7 +26,7 @@ ll solve(int n, ll t, vector<ll> a) {
     return ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

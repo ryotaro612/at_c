@@ -47,7 +47,7 @@ int solve(int n, int m, vector<int> u, vector<int> v) {
     return (int)groups.size() - (int)closed_groups.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

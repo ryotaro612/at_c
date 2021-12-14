@@ -39,7 +39,7 @@ vector<vector<char>> solve(int h, int w, vector<vector<char>> a) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int h, w;
     cin >> h >> w;

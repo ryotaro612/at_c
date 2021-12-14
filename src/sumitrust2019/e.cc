@@ -23,7 +23,7 @@ ll solve(ll n, vector<int> a) {
     return sum;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

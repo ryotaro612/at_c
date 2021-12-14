@@ -2,7 +2,7 @@
 using namespace std;
 typedef long long ll;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll a, b, k, l;
     cin >> a >> b >> k >> l;

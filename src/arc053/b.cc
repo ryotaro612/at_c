@@ -34,7 +34,7 @@ int solve(string s) {
     return que.top();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     cin >> s;

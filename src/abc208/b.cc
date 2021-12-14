@@ -16,7 +16,7 @@ void solve() {
     cout << ans << endl;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     solve();
 

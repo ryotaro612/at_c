@@ -20,7 +20,7 @@ ll solve(ll n) {
     return n - (ll)found.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

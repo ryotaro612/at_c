@@ -46,7 +46,7 @@ int solve(int n, vector<int> p, vector<int> q) {
     return abs(aa - bb);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

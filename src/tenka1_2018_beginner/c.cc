@@ -50,7 +50,7 @@ ll solve(int n, vector<ll> a) {
     return max(pattern(n, a), pattern2(n, a));
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

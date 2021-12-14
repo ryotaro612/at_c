@@ -36,7 +36,7 @@ int solve(int n, vector<int> a, vector<vector<int>> x, vector<vector<int>> y) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

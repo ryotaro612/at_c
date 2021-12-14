@@ -14,7 +14,7 @@ ll solve(string s, int k) {
     return (ll)patterns.size();
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s;
     int k;

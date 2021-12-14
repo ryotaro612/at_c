@@ -60,7 +60,7 @@ int solve(int n, vector<string> s) {
     return ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

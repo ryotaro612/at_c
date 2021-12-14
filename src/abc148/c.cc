@@ -10,7 +10,7 @@ ll gcd(ll a, ll b) {
 
 ll lcm(ll a, ll b) { return a * b / gcd(a, b); }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll a, b;
     cin >> a >> b;

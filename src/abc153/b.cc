@@ -5,7 +5,7 @@
 typedef long long ll;
 using namespace std;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll h, n;
     cin >> h >> n;

@@ -18,7 +18,7 @@ vector<string> solve(int t, vector<ll> cases) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int t;
     cin >> t;

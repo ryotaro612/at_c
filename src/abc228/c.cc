@@ -35,7 +35,7 @@ vector<string> solve(int n, int k, vector<vector<int>> &p) {
 }
 
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, k;
     cin >> n >> k;

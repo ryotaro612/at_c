@@ -44,7 +44,7 @@ ll solve(int n, ll d, ll a, vector<ll> &x, vector<ll> &h) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

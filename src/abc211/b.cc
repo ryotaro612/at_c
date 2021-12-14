@@ -2,7 +2,7 @@
 typedef long long ll;
 using namespace std;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     vector<string> s(4);
     for(int i = 0; i < 4; i++)

@@ -11,7 +11,7 @@ string solve(string s, string t) {
     return s < t ? "Yes" : "No";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s, t;
     cin >> s >> t;

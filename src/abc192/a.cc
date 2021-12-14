@@ -8,7 +8,7 @@ int solve(int x) {
     return 100 - (x - (x / 100) * 100);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int x;
     cin >> x;

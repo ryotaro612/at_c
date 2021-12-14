@@ -4,7 +4,7 @@ typedef long long ll;
 
 static const ll MOD = 998244353ll;
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int h, w;
     cin >> h >> w;

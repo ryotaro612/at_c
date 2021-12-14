@@ -14,7 +14,7 @@ string solve(vector<int> &p) {
     return s;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     vector<int> p(26);
     rep(i, 26) cin >> p[i];

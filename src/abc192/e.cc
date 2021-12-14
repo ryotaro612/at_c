@@ -57,7 +57,7 @@ ll solve(int n, int m, int x, int y, vector<ll> a, vector<ll> b, vector<ll> t,
     return d[y] == INF ? -1 : d[y];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m, x, y;
     cin >> n >> m >> x >> y;

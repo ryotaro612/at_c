@@ -29,7 +29,7 @@ ll solve(int n, vector<ll> t) {
     return ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

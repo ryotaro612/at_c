@@ -99,7 +99,7 @@ int solve(int n, int u, int v, vector<int> &a, vector<int> &b) {
     return -1;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, u, v;
     cin n >> u >> v;

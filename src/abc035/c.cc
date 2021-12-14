@@ -19,7 +19,7 @@ string solve(ll n, ll q, vector<ll> l, vector<ll> r) {
     }
     return res_str;
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n, q;
     cin >> n >> q;

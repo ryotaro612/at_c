@@ -51,7 +51,7 @@ ll solve(ll n, vector<ll> f) {
     return calc_patterns((ll)loop_set.size());
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     ll n;
     cin >> n;

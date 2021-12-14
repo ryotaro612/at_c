@@ -17,7 +17,7 @@ int solve(int n, vector<ll> h) {
     return max(temp, ans);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

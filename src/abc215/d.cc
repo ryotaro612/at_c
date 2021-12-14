@@ -26,7 +26,7 @@ set<int> calc_primes(vector<int> &a) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

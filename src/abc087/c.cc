@@ -14,7 +14,7 @@ int solve(int n, vector<vector<int>> &a) {
     return dp[1][n];
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

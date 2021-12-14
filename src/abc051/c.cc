@@ -50,7 +50,7 @@ string solve(int sx, int sy, int tx, int ty) {
     return s;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int sx, sy, tx, ty;
     cin >> sx >> sy >> tx >> ty;

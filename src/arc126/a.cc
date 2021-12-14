@@ -30,7 +30,7 @@ vector<ll> solve(int t, vector<ll> &a, vector<ll> &b, vector<ll> &c) {
     return ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int t;
     cin >> t;

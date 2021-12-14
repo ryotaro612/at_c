@@ -15,7 +15,7 @@ ll solve(int n, int m, vector<string> s) {
     return even * odd;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

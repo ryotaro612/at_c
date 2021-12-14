@@ -43,7 +43,7 @@ ll solve(int n, int m, vector<ll> a, vector<ll> x, vector<ll> y) {
     return res;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n, m;
     cin >> n >> m;

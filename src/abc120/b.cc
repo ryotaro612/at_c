@@ -14,7 +14,7 @@ int solve(int a, int b, int k) {
     throw runtime_error("unreachable");
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int a, b, k;
     cin >> a >> b >> k;

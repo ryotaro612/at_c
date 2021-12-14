@@ -32,7 +32,7 @@ pair<int, int> solve(int a, int b, int w) {
     return make_pair(calc_max(a, b, w * 1000), calc_min(a, b, w * 1000));
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int a, b, w;
     cin >> a >> b >> w;

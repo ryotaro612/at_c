@@ -17,7 +17,7 @@ pair<string, string> solve(int r, vector<int> x, vector<int> y) {
     return make_pair("YES", "YES");
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int r;
     vector<int> x(3), y(3);

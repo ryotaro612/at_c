@@ -32,7 +32,7 @@ vector<int> solve(int n, vector<int> c, vector<int> a, vector<int> b) {
     sort(res.begin(), res.end());
     return res;
 }
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

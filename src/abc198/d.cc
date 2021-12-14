@@ -45,7 +45,7 @@ vector<string> solve(string s1, string s2, string s3) {
     return {"UNSOLVABLE"};
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string s1, s2, s3;
     cin >> s1 >> s2 >> s3;

@@ -8,7 +8,7 @@ string solve(int a, string s) {
     return "red";
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int a;
     string s;

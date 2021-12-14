@@ -33,7 +33,7 @@ ll solve(int n, vector<ll> t) {
     return max(dp[top], sum - dp[top]);
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;

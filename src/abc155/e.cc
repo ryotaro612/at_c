@@ -32,7 +32,7 @@ ll solve(string &s) {
     return ans;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     string n;
     cin >> n;

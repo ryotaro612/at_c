@@ -8,7 +8,7 @@ ll solve(int k, string a, string b ) {
 	return ad * bd;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
 	int k;
 	cin >> k;

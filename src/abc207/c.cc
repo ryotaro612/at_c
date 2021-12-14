@@ -38,7 +38,7 @@ if(a == 1 && b == 2) {
     return true;
 }
 
-#ifndef _debug
+#ifdef ONLINE_JUDGE
 int main() {
     int n;
     cin >> n;
