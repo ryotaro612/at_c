@@ -1,3 +1,4 @@
 # https://atcoder.jp/contests/abc119
-add_library(abc119c STATIC c.cc)
-add_library(LazyFaith STATIC lazy_faith.cc)
+add_library(abc119a a.cc)
+add_library(abc119c c.cc)
+add_library(LazyFaith lazy_faith.cc)
