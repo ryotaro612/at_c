@@ -1,2 +1,3 @@
-add_library(abc117c STATIC c.cc)
-add_library(Xxor STATIC xxor.cc)
+add_library(abc117a a.cc)
+add_library(abc117c c.cc)
+add_library(Xxor xxor.cc)
