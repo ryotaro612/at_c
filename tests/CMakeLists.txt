@@ -71,7 +71,7 @@ add_subdirectory(arc126)
 add_subdirectory(arc127)
 add_subdirectory(arc129)
 add_subdirectory(arc130)
-add_subdirectory(abc231)
+
 
 add_subdirectory(abc001)
 add_subdirectory(abc002)
@@ -292,6 +292,8 @@ add_subdirectory(abc227)
 add_subdirectory(abc228)
 add_subdirectory(abc229)
 add_subdirectory(abc230)
+add_subdirectory(abc231)
+add_subdirectory(abc232)
 
 add_subdirectory(tenka12012qualc) 
 add_subdirectory(digitalarts2012) 

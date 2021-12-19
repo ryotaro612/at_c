@@ -1,0 +1,4 @@
+add_library(abc232a a.cc)
+add_library(abc232b b.cc)
+add_library(abc232c c.cc)
+add_library(abc232d d.cc)
