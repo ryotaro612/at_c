@@ -1,1 +1,2 @@
-add_library(arc132a a.cc ../mydebug.h)
+add_library(arc132a a.cc)
+add_library(arc132b b.cc)
