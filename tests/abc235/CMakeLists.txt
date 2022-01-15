@@ -1,0 +1,3 @@
+add_executable(testabc235d d.cc)
+target_link_libraries(testabc235d abc235d gtest_main)
+gtest_discover_tests(testabc235d)
