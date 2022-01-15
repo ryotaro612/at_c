@@ -24,7 +24,7 @@ vector<int> solve(int n, int q, vector<ll> &av, vector<ll> &xv,
     return res;
 }
 
-// #ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
     int n, q;
     cin >> n >> q;
@@ -38,4 +38,4 @@ int main() {
         cout << e << endl;
     return 0;
 }
-// #endif
+#endif
