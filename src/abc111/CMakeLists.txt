@@ -1,3 +1,4 @@
 # https://atcoder.jp/contests/abc111
-add_library(abc111c STATIC c.cc)
-add_library(RobotArms STATIC robot_arms.cc)
+add_library(abc111a a.cc)
+add_library(abc111c c.cc)
+add_library(RobotArms  robot_arms.cc)
