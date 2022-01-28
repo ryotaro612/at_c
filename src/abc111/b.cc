@@ -2,7 +2,7 @@
 using namespace std;
 typedef long long ll;
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n;
   cin >> n;
@@ -15,4 +15,4 @@ int main() {
   }
   return 0;
 }
-//#endif
+#endif
