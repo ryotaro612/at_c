@@ -4,7 +4,7 @@ typedef long long ll;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #define debug(arg) cout << #arg << ": " << arg << endl;
 
-ll solve(int n, ll l, ll w, vector<ll> &av) {
+ll solve(ll l, ll w, vector<ll> &av) {
   ll res = 0ll, cover = 0ll;
   for (auto &a : av) {
     // cout << a << ", cover: " << cover << ", res: " << res << endl;
@@ -30,6 +30,6 @@ int main() {
   cin >> n >> l >> w;
   vector<ll> av(n);
   rep(i, n) { cin >> av[i]; }
-  cout << solve(n, l, w, av) << endl;
+  cout << solve(l, w, av) << endl;
 }
 #endif
