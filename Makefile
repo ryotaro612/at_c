@@ -6,7 +6,7 @@ compile_commands_file_dest := $(base_dir)compile_commands.json
 
 all:
 	@mkdir -p $(base_dir)build && \
-       	cd $(base_dir)build && \
+	cd $(base_dir)build && \
 	cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_CXX_COMPILER=g++ .. && \
 	make && \
 	ctest -V
