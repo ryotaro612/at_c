@@ -7,7 +7,7 @@ typedef long long ll;
 typedef long double ld;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n;
   cin >> n;
@@ -22,4 +22,4 @@ int main() {
   cout << "No" << endl;
   return 0;
 }
-//#endif
+#endif
