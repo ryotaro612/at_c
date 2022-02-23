@@ -20,7 +20,7 @@ struct Case {
 vector<ll> solve(vector<Case> &cases) {
   vector<ll> res;
   for (Case c : cases) {
-    // cout << "=== case====" << endl;
+    //    cout << "=== case====" << endl;
     vector<ll> bv(c.n, 0ll);
     rep(i, c.n) {
       if (0 < i) {
@@ -50,22 +50,28 @@ vector<ll> solve(vector<Case> &cases) {
     // rep(j, c.n) cout << av[j] << " ";
     // cout << endl;
     ll res_e = max(c.xv[0], *max_element(av.begin(), av.end()));
-
     for (int i = 1; i < c.n; i++) {
       if (bv[i - 1] > 0 && c.xv[i] < 0) {
-        ll lb = -1ll, ub = c.m;
-        while (ub - lb > 1ll) {
-          ll mid = (ub + lb) / 2ll;
-          ll delta = bv[i - 1] * mid + (c.xv[i] + (c.xv[i] * mid)) * mid / 2ll;
-          if (delta < 0)
-            ub = mid;
-          else // delta >= 0
-            lb = mid;
+        // cout << "3bun " << i << endl;
+        ll lb = -1ll, ub = c.yv[i];
+        while (ub - lb > 2ll) {
+          ll mid1 = (ub + lb) / 2ll;
+          ll mid2 = mid1 + 1ll;
+          ll delta1 =
+              bv[i - 1] * mid1 + (c.xv[i] + (c.xv[i] * mid1)) * mid1 / 2ll;
+          ll delta2 =
+              bv[i - 1] * mid2 + (c.xv[i] + (c.xv[i] * mid2)) * mid2 / 2ll;
+          if (delta1 < delta2)
+            lb = mid1;
+          else // delta1 >=delta2
+            ub = mid2;
         }
-        res_e = max(av[i - 1] + bv[i - 1] * lb +
-                        (c.xv[i] + (c.xv[i] * lb)) * lb / 2ll,
+
+        res_e = max(av[i - 1] + bv[i - 1] * (lb + 1) +
+                        (c.xv[i] + (c.xv[i] * (lb + 1))) * (lb + 1) / 2ll,
                     res_e);
-      } else if (bv[i - 1] < 0 && c.xv[i] > 0) {
+        // cout << "found: " << av[i - 1] << " " << bv[i - 1] << " " << c.xv[i]
+        //      << " " << c.yv[i] << lb + 1 << " " << res_e << endl;
       }
     }
     res.push_back(res_e);
@@ -73,7 +79,7 @@ vector<ll> solve(vector<Case> &cases) {
   return res;
 }
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int t;
   cin >> t;
@@ -90,4 +96,17 @@ int main() {
     cout << e << endl;
   return 0;
 }
-//#endif
+#endif
+
+// 10 472
+
+// -4 12
+// 1 29
+// 2 77
+// -1 86
+// 0 51
+// 3 81
+// 3 17
+// -2 31
+// -4 65
+// 4 23
