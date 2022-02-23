@@ -1,3 +1,4 @@
 # https://atcoder.jp/contests/abc104
-add_library(abc104c STATIC c.cc)
-add_library(WeLoveABC STATIC we_love_abc.cc)
+add_library(abc104a a.cc)
+add_library(abc104c c.cc)
+add_library(WeLoveABC we_love_abc.cc)
