@@ -1,3 +1,3 @@
 # https://atcoder.jp/contests/abc103
-add_library(abc103c STATIC c.cc)
-add_library(IslandsWar STATIC islands_war.cc)
+add_library(abc103c c.cc)
+add_library(IslandsWar islands_war.cc)
