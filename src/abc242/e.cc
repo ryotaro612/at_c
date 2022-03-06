@@ -24,25 +24,26 @@ ll solve_item(int n, string &s) {
   // 0ならまだおなじ
   // 1なら小さい
   dp[0][0] = 1ll;
-  rep(i, (n + 1) / 2) {
+  int dp_size = static_cast<int>(dp.size());
+  rep(i, dp_size - 1) {
     char c = s[i];
-    char counter_c = s[n - 1 - i];
-    if (c <= counter_c) {
-      dp[i + 1][0] = dp[i][0];
-      dp[i + 1][1] = dp[i][0] * (ll)(c - 'A') % MOD;
-      dp[i + 1][1] += dp[i][1] * (ll)(c - 'A' + 1) % MOD;
-      dp[i + 1][1] %= MOD;
-    } else { // counter_c < c
-      dp[i + 1][1] = dp[i][0] * (ll)(counter_c - 'A' + 1) % MOD;
-      dp[i + 1][1] += dp[i][1] * (ll)(counter_c - 'A' + 1) % MOD;
-      dp[i + 1][1] %= MOD;
+    dp[i + 1][0] = dp[i][0];
+    dp[i + 1][1] = dp[i][0] * (ll)(c - 'A') % MOD;
+    dp[i + 1][1] += dp[i][1] * 26ll % MOD;
+    dp[i + 1][1] %= MOD;
+  }
+
+  // rep(i, dp.size()) {
+  //   cout << i << " -> " << dp[i][0] << " , " << dp[i][1] << endl;
+  // }
+  for (int i = n / 2 - 1; 0 <= i; i--) {
+    if (s[i] < s[n - 1 - i]) {
+      return (dp.back()[0] + dp.back()[1]) % MOD;
+    } else if (s[n - 1 - i] < s[i]) {
+      return dp.back()[0];
     }
   }
-  ll res = (dp[(n + 1) / 2][0] + dp[(n + 1) / 2][1]) % MOD;
-  rep(i, dp.size()) {
-    cout << i << " -> " << dp[i][0] << " , " << dp[i][1] << endl;
-  }
-  return res;
+  return (dp.back()[0] + dp.back()[1]) % MOD;
 }
 
 vector<ll> solve(int t, vector<int> &nv, vector<string> &sv) {
