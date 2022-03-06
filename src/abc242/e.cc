@@ -7,20 +7,31 @@ typedef long long ll;
 typedef long double ld;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 
-template <ll prime> class Mod final {
+template <long long prime> class Mod final {
 public:
-  Mod(ll v) : v(v){};
+  long long raw;
+  Mod(long long raw) : raw(raw){};
 
-private:
-  ll v;
+  Mod<prime> operator+(Mod<prime> &other) const {
+    return (raw + other.raw) % prime;
+  }
+  Mod<prime> operator*(Mod<prime> &other) const {
+    return (raw * other.raw) % prime;
+  }
+  Mod<prime> operator*(long long other) const { return (raw * other) % prime; }
+  Mod<prime> &operator+=(const Mod<prime> &other) {
+    raw += other.raw;
+    raw %= prime;
+    return *this;
+  }
 };
 
 using Mod998244353 = Mod<998244353ll>;
-const ll MOD = 998244353ll;
 
 ll solve_item(int n, string &s) {
 
-  vector<vector<ll>> dp((n + 1) / 2 + 1, vector<ll>(2, 0ll));
+  vector<vector<Mod998244353>> dp((n + 1) / 2 + 1,
+                                  vector<Mod998244353>(2, 0ll));
   // 0ならまだおなじ
   // 1なら小さい
   dp[0][0] = 1ll;
@@ -28,9 +39,8 @@ ll solve_item(int n, string &s) {
   rep(i, dp_size - 1) {
     char c = s[i];
     dp[i + 1][0] = dp[i][0];
-    dp[i + 1][1] = dp[i][0] * (ll)(c - 'A') % MOD;
-    dp[i + 1][1] += dp[i][1] * 26ll % MOD;
-    dp[i + 1][1] %= MOD;
+    dp[i + 1][1] = dp[i][0] * (c - 'A');
+    dp[i + 1][1] += dp[i][1] * 26;
   }
 
   // rep(i, dp.size()) {
@@ -38,12 +48,12 @@ ll solve_item(int n, string &s) {
   // }
   for (int i = n / 2 - 1; 0 <= i; i--) {
     if (s[i] < s[n - 1 - i]) {
-      return (dp.back()[0] + dp.back()[1]) % MOD;
+      return (dp.back()[0] + dp.back()[1]).raw;
     } else if (s[n - 1 - i] < s[i]) {
-      return dp.back()[0];
+      return dp.back()[1].raw;
     }
   }
-  return (dp.back()[0] + dp.back()[1]) % MOD;
+  return (dp.back()[0] + dp.back()[1]).raw;
 }
 
 vector<ll> solve(int t, vector<int> &nv, vector<string> &sv) {

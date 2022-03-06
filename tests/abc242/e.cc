@@ -6,3 +6,9 @@ TEST(abc242e, 1) {
   ll res = solve_item(s.size(), s);
   EXPECT_EQ(29ll, res);
 }
+
+TEST(abc242e, 5) {
+  string s = "KVOHEEMSOZZASHENDIGOJRTJVMVSDWW";
+  ll res = solve_item(s.size(), s);
+  EXPECT_EQ(231364016ll, res);
+}
