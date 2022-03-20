@@ -1,2 +1,3 @@
-add_library(abc088c STATIC c.cc)
-add_library(abc088d STATIC d.cc)
+add_library(abc088a a.cc)
+add_library(abc088c c.cc)
+add_library(abc088d d.cc)
