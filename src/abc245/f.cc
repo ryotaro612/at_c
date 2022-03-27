@@ -7,36 +7,8 @@ using ll = long long;
 using ld = long double;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 
-class UnionFind final {
-public:
-  UnionFind(int size) : par(size, -1) {}
-
-  bool find_root(int i) {
-    if (par[i] < 0)
-      return i;
-    return par[i] = find_root(par[i]);
-  }
-  void unite(int a, int b) {
-    int root_a = find_root(a);
-    int root_b = find_root(b);
-    if (root_a == root_b)
-      return;
-    if (par[root_a] < par[root_b]) {
-      par[root_a] += par[root_b];
-      par[root_b] = root_a;
-    } else {
-      par[root_b] += par[root_a];
-      par[root_a] = root_b;
-    }
-  }
-  bool same_group(int a, int b) { return find_root(a) == find_root(b); }
-
-private:
-  vector<int> par;
-};
-
 void rec(vector<vector<int>> &g, vector<int> &cycle, unordered_set<int> &nodes,
-         vector<int> &trail, int node) {
+         int node) {
   if (0 <= cycle[node])
     return;
   if (nodes.find(node) != nodes.end()) {
@@ -48,16 +20,14 @@ void rec(vector<vector<int>> &g, vector<int> &cycle, unordered_set<int> &nodes,
     return;
   }
   nodes.insert(node);
-  trail.push_back(node);
   int result = 0;
   for (int neighbor : g[node]) {
-    rec(g, cycle, nodes, trail, neighbor);
+    rec(g, cycle, nodes, neighbor);
     if (cycle[neighbor])
       result = 1;
   }
   cycle[node] = result;
   nodes.erase(node);
-  trail.pop_back();
 }
 
 int solve(int n, int m, vector<int> &uv, vector<int> &vv) {
@@ -67,8 +37,7 @@ int solve(int n, int m, vector<int> &uv, vector<int> &vv) {
   rep(i, n) {
     if (cycle[i] < 0) {
       unordered_set<int> nodes;
-      vector<int> trail;
-      rec(g, cycle, nodes, trail, i);
+      rec(g, cycle, nodes, i);
     }
   }
   int res = 0;
@@ -78,7 +47,6 @@ int solve(int n, int m, vector<int> &uv, vector<int> &vv) {
 
 #ifdef ONLINE_JUDGE
 int main() {
-
   int n, m;
   cin >> n >> m;
   vector<int> uv(m), vv(m);
