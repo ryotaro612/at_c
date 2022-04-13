@@ -40,7 +40,7 @@ vector<ll> solve(vector<Query> &queries) {
   return res;
 }
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int q;
   cin >> q;
@@ -60,4 +60,4 @@ int main() {
   rep(i, res.size()) { cout << res[i] << endl; }
   return 0;
 }
-//#endif
+#endif
