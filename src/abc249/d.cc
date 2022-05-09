@@ -40,7 +40,7 @@ ll solve(int n, vector<ll> &av) {
   return res;
 }
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n;
   cin >> n;
@@ -50,4 +50,4 @@ int main() {
   cout << solve(n, av) << endl;
   return 0;
 }
-//#endif
+#endif

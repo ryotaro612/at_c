@@ -18,16 +18,16 @@ const int a[] = {25,   155,  335,  545,  795,  1075, 1385,
                  1715, 2075, 2445, 2845, 3265, 20000};
 pair<string, int> solve(int deg, int dis) {
 
-    int i = 0;
-    while(deg * 10 >= 1125 + 2250 * i)
-        ++i;
+  int i = 0;
+  while (deg * 10 >= 1125 + 2250 * i)
+    ++i;
 
-    int j = 0;
-    while(dis * 10 >= a[j] * 6)
-        ++j;
+  int j = 0;
+  while (dis * 10 >= a[j] * 6)
+    ++j;
 
-    if(j == 0)
-        return make_pair("C", j);
-    else
-        return make_pair(s[i], j);
+  if (j == 0)
+    return make_pair("C", j);
+  else
+    return make_pair(s[i], j);
 }

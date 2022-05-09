@@ -8,13 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-    - name: Cache node modules
+    - name: Cache 
       uses: actions/cache@v1
       env:
         cache-name: atcoder-build
       with:
         path: ./build
-        key: ${{ env.cache-name }}-${{ hashFiles('CMakeLists.txt') }}
+        key: ${{ env.cache-name }}-${{ hashFiles('src/CMakeLists.txt') }}
     - name: make
       run: make
+    - uses: seanmiddleditch/gha-setup-ninja@master
+    - run: |
+      mkdir build
+      cd build
+      cmake -G Ninja ..
+    - run: cmake --build build      
+    - run: |
+      cd build
+      ctest
