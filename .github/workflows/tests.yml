@@ -15,14 +15,21 @@ jobs:
       with:
         path: ./build
         key: ${{ env.cache-name }}-${{ hashFiles('src/CMakeLists.txt') }}
-    - name: make
-      run: make
-    - uses: seanmiddleditch/gha-setup-ninja@master
-    - run: |
-        mkdir build
+    - name: build
+      run: |
+        mkdir -p build
         cd build
-        cmake -G Ninja ..
-    - run: cmake --build build      
-    - run: |
-        cd build
+        cmake -G"Ninja" ..
+        ninja
         ctest
+    # - name: make
+    #   run: make
+    # - uses: seanmiddleditch/gha-setup-ninja@master
+    # - run: |
+    #     mkdir build
+    #     cd build
+    #     cmake -G Ninja ..
+    # - run: cmake --build build      
+    # - run: |
+    #     cd build
+    #     ctest
