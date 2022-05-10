@@ -17,6 +17,7 @@ jobs:
         key: ${{ env.cache-name }}-${{ hashFiles('src/CMakeLists.txt') }}
     - name: build
       run: |
+        pip install ninja
         mkdir -p build
         cd build
         cmake -G"Ninja" ..
