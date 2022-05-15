@@ -1,3 +1,4 @@
+
 #ifndef ONLINE_JUDGE
 #define _GLIBCXX_DEBUG
 #endif
