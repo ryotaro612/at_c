@@ -311,6 +311,7 @@ add_subdirectory(abc248)
 add_subdirectory(abc249)
 add_subdirectory(abc251)
 add_subdirectory(abc252)
+add_subdirectory(abc253)
 
 add_subdirectory(tenka12012qualc) 
 add_subdirectory(digitalarts2012) 
