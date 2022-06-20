@@ -83,6 +83,7 @@ add_subdirectory(arc138)
 add_subdirectory(arc139)
 add_subdirectory(arc140)
 add_subdirectory(arc141)
+add_subdirectory(arc142)
 
 add_subdirectory(abc001)
 add_subdirectory(abc002)
