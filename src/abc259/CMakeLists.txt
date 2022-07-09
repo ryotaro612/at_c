@@ -1,0 +1,5 @@
+add_library(abc259a a.cc)
+add_library(abc259b b.cc)
+add_library(abc259c c.cc)
+add_library(abc259d d.cc)
+add_library(abc259e e.cc)
