@@ -52,7 +52,7 @@ ll solve(int n, vector<int> &cv, vector<int> &xv) {
   return res;
 }
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n;
   cin >> n;
@@ -63,4 +63,4 @@ int main() {
 
   return 0;
 }
-//#endif
+#endif
