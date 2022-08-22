@@ -20,7 +20,8 @@ ll solve(int n, ll a, ll b, ll c, ll d, ll e, ll f,
       for (int k = 0; k <= i - j; k++) {
         ll x = a * j + c * k + e * (i - j - k);
         ll y = b * j + d * k + f * (i - j - k);
-        if (obstacles[x][y])
+        if (obstacles.find(x) != obstacles.end() &&
+            obstacles[x].find(y) != obstacles[x].end())
           continue;
         if (0 < j && 0 <= i - 1 - (j - 1) - k) {
           dp[i][j][k] += dp[i - 1][j - 1][k];
