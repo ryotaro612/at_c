@@ -1,0 +1,17 @@
+
+string solve(ll n, ll p, ll q, ll r, vector<ll> &av) {
+
+  ll running_sum = 0ll;
+  for (int start = 0, end = 0; start < n; start++) {
+    end = max(end, start);
+    while (running_sum + av[end] <= p) {
+      running_sum += av[end];
+      end += 1;
+    }
+    if (running_sum == p && end - start >= 3)
+      return "Yes";
+
+    running_sum -= av[start];
+  }
+  return "No";
+}

@@ -1,0 +1,5 @@
+add_library(abc265a a.cc)
+add_library(abc265b b.cc)
+add_library(abc265c c.cc)
+add_library(abc265d d.cc)
+add_library(abc265e e.cc)
