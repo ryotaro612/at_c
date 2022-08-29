@@ -64,7 +64,7 @@ void find_nearest_inters(vector<vector<int>> &g, int node,
   }
 }
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n;
   cin >> n;
@@ -117,4 +117,4 @@ int main() {
   }
   return 0;
 }
-//#endif
+#endif
