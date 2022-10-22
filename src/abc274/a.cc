@@ -7,7 +7,7 @@ using ll = long long;
 using ld = long double;
 #define rep(i, n) for (int i = 0; i < static_cast<int>(n); i++)
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   double a, b;
   cin >> a >> b;
@@ -20,4 +20,4 @@ int main() {
 
   return 0;
 }
-//#endif
+#endif
