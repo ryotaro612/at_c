@@ -24,7 +24,7 @@ long long modinv(long long a, long long m) {
   return u;
 }
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n, m, k;
   cin >> n >> m >> k;
@@ -50,4 +50,4 @@ int main() {
 
   return 0;
 }
-//#endif
+#endif
