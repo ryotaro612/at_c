@@ -95,6 +95,7 @@ add_subdirectory(arc148)
 add_subdirectory(arc149)
 add_subdirectory(arc150)
 add_subdirectory(arc151)
+add_subdirectory(arc152)
 
 add_subdirectory(abc001)
 add_subdirectory(abc002)
