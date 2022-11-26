@@ -1,2 +1,4 @@
 add_library(abc279a a.cc)
 add_library(abc279b b.cc)
+add_library(abc279c c.cc)
+add_library(abc279d d.cc)
