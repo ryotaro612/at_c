@@ -1,2 +1,4 @@
 add_library(abc280a a.cc)
 add_library(abc280b b.cc)
+add_library(abc280c c.cc)
+add_library(abc280d d.cc)
