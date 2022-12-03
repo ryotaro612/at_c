@@ -23,22 +23,22 @@ long long modinv(ll a) {
   return u;
 }
 
-/ #ifdef ONLINE_JUDGE int main() {
-  int n;
-  ll p;
-  cin >> n >> p;
-  vector<ll> dp(n + 1);
-  dp[0] = 0ll;
-  dp[1] = 1ll;
-  dp[2] = 1ll * p % MOD * modinv(100ll) % MOD +
-          2ll * (100ll - p) % MOD * modinv(100ll) % MOD;
+#ifdef ONLINE_JUDGE int main() {
+int n;
+ll p;
+cin >> n >> p;
+vector<ll> dp(n + 1);
+dp[0] = 0ll;
+dp[1] = 1ll;
+dp[2] = 1ll * p % MOD * modinv(100ll) % MOD +
+        2ll * (100ll - p) % MOD * modinv(100ll) % MOD;
 
-  for (int i = 3; i <= n; i++) {
-    dp[i] = (dp[i - 2] + 1ll) % MOD * p % MOD * modinv(100ll) % MOD;
-    dp[i] += (dp[i - 1] + 1ll) % MOD * (100ll - p) % MOD * modinv(100ll) % MOD;
-    dp[i] %= MOD;
-  }
-  cout << dp[n] << endl;
-  return 0;
+for (int i = 3; i <= n; i++) {
+  dp[i] = (dp[i - 2] + 1ll) % MOD * p % MOD * modinv(100ll) % MOD;
+  dp[i] += (dp[i - 1] + 1ll) % MOD * (100ll - p) % MOD * modinv(100ll) % MOD;
+  dp[i] %= MOD;
+}
+cout << dp[n] << endl;
+return 0;
 }
 #endif
