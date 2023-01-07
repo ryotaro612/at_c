@@ -8,6 +8,7 @@ using ld = long double;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 
 int find_root(int a, vector<int> &par) {
+  
   if(par[a] < 0)
     return a;
   return par[a] = find_root(par[a], par);
