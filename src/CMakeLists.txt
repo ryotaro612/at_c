@@ -1,4 +1,3 @@
-
 add_subdirectory(agc002)
 add_subdirectory(agc005)
 add_subdirectory(agc011)
@@ -383,6 +382,7 @@ add_subdirectory(abc282)
 add_subdirectory(abc283)
 add_subdirectory(abc284)
 add_subdirectory(abc285)
+add_subdirectory(abc286)
 
 add_subdirectory(tenka12012qualc)
 add_subdirectory(digitalarts2012)
@@ -419,3 +419,4 @@ add_subdirectory(ddcc2020)
 add_subdirectory(msolutions2020)
 add_subdirectory(jsc2021)
 add_subdirectory(zone2021)
+add_subdirectory(diverta20192)

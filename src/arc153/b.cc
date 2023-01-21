@@ -1,5 +1,7 @@
 #ifndef ONLINE_JUDGE
 #define _GLIBCXX_DEBUG
+#include <unordered_set>
+#include <vector>
 #endif
 #include <bits/stdc++.h>
 using namespace std;
@@ -42,6 +44,7 @@ int main() {
       }
     }
   }
+
   vector<string> res(h, string(w, ' '));
   for (ll i = 0ll; i < h; i++) {
     for (ll j = 0; j < w; j++) {
@@ -65,7 +68,6 @@ int main() {
     }
   }
   rep(i, h) { cout << res[i] << endl; }
-
   return 0;
 }
 #endif
