@@ -1,1 +1,2 @@
+add_library(hhkb2020a a.cc)
 add_library(hhkb2020e e.cc)
