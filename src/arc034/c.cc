@@ -8,7 +8,7 @@ using ld = long double;
 using ull = unsigned long long;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #define as_int(a) static_cast<int>(a)
-const ll MOD = 1000000007ll;
+ll MOD = 1000000007ll;
 
 map<ll, ll> prime_factorization(ll num) {
   map<ll, ll> mp;
