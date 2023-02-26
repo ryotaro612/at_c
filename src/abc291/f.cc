@@ -9,7 +9,7 @@ using ull = unsigned long long;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #define as_int(a) static_cast<int>(a)
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n, m;
   cin >> n >> m;
@@ -69,4 +69,4 @@ int main() {
 
   return 0;
 }
-//#endif
+#endif
