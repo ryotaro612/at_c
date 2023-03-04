@@ -17,6 +17,7 @@ using ull = unsigned long long;
 ld dtor(ld degree) { return degree * M_PI / 180.0; }
 
 /**
+ * 2次元ベクトルをdegree度回転させる
  */
 pair<ld, ld> rotate_vector(ld x, ld y, ld degree) {
   ld theta = dtor(degree);
