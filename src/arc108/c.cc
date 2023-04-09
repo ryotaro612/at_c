@@ -26,7 +26,7 @@ bool rec(int node, vector<int> &res, vector<map<int, int>> &g) {
   return true;
 }
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n, m;
   cin >> n >> m;
@@ -48,4 +48,4 @@ int main() {
 
   return 0;
 }
-//#endif
+#endif
