@@ -74,7 +74,7 @@ ll solve(int r, int c, vector<vector<ll>> &dp,
   return dp[r][c] = res;
 }
 
-//#ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int h, w, k;
   cin >> h >> w >> k;
@@ -124,4 +124,4 @@ int main() {
   cout << res << endl;
   return 0;
 }
-//#endif
+#endif
