@@ -8,42 +8,91 @@ using ld = long double;
 using ull = unsigned long long;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #define as_int(a) static_cast<int>(a)
-ll mod = 998244353ll;
-long long modinv(long long a, long long m) {
-  long long b = m, u = 1, v = 0;
-  while (b) {
-    long long t = a / b;
-    a -= t * b;
-    swap(a, b);
-    u -= t * v;
-    swap(u, v);
-  }
-  u %= m;
-  if (u < 0)
-    u += m;
-  return u;
-}
+const ll mod = 998244353ll;
 
-ll mypow(ll x, ll n) {
-  ll res = 1ll;
-  while (n) {
-    if (n & 1) {
-      res *= x;
-      res %= mod;
-    }
-    n >>= 1;
-    x *= x;
-    x %= mod;
+template <ll P> class Mod {
+public:
+  ll v;
+  Mod<P>() : v(0) {}
+  Mod<P>(ll v) : v(v % P) {}
+  ll get() { return v; }
+  Mod<P> operator*(Mod<P> &a) { return Mod<P>(v * a.v % P); }
+  Mod<P> operator*(ll &b) { return Mod<P>(v * b % P); }
+  friend Mod<P> operator+(const Mod<P> &lhs, const ll &rhs) {
+    return Mod(lhs.v + rhs % P);
   }
-  return res;
-}
+  friend Mod<P> operator-(const Mod<P> &lhs, const Mod<P> &rhs) {
+    ll res = lhs.v - rhs.v;
+    if (res < 0)
+      res += P;
+    return Mod<P>(res);
+  }
+  friend Mod<P> operator*(const Mod<P> &lhs, const Mod<P> &rhs) {
+    return Mod<P>(lhs.v * rhs.v % P);
+  }
+  friend bool operator<(const Mod<P> &lhs, const int &rhs) {
+    return lhs.v < rhs;
+  }
+
+  Mod<P> &operator*=(const Mod &rhs) {
+    v *= rhs.v;
+    v %= P;
+    return *this;
+  }
+  Mod<P> &operator+=(const Mod &rhs) {
+    v += rhs.v;
+    v %= P;
+    return *this;
+  }
+  Mod<P> &operator-=(const Mod &rhs) {
+    v -= rhs.v;
+    if (v < 0)
+      v += P;
+    return *this;
+  }
+  Mod<P> &operator=(const ll &number) {
+    v = number;
+    return this;
+  }
+  Mod<P> &operator++() {
+    v++;
+    v %= P;
+    return *this;
+  }
+  friend bool operator==(const Mod<P> &lhs, const int &rhs) {
+    return lhs.v == rhs;
+  }
+  friend ostream &operator<<(ostream &os, Mod<P> &mod) {
+    os << mod.v;
+    return os;
+  }
+  friend istream &operator>>(istream &is, Mod<P> &mod) {
+    is >> mod.v;
+    return is;
+  }
+
+  Mod<P> pow(ll n) {
+    ll res = 1ll;
+    ll x = v;
+    while (n) {
+      if (n & 1) {
+        res *= x;
+        res %= P;
+      }
+      n >>= 1;
+      x *= x;
+      x %= P;
+    }
+    return res;
+  }
+};
 
 #ifdef ONLINE_JUDGE
 int main() {
   int q;
   cin >> q;
-  deque<int> que;
-  ll v = 1ll;
+  deque<Mod<mod>> que;
+  Mod<mod> v = 1ll;
   que.push_back(v);
   rep(_, q) {
     int type;
@@ -53,26 +102,16 @@ int main() {
       cin >> x;
       que.push_back(x);
       v *= 10ll;
-      v %= mod;
       v += x;
-      v %= mod;
     } else if (type == 2) {
       int d = que.size();
-      int front = que.front();
+      Mod<mod> front = que.front();
       que.pop_front();
-      v -= front * mypow(10ll, d - 1) % mod;
-      if (v < 0)
-        v += mod;
+      v -= front * Mod<mod>(10ll).pow(d - 1);
     } else {
       cout << v << endl;
     }
   }
-  // while (que.size()) {
-  //   cout << que.front();
-  //   cout << " ";
-  //   que.pop_front();
-  // }
-  // cout << endl;
   return 0;
 }
 #endif
