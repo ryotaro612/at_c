@@ -21,7 +21,7 @@ ll solve(int i, ll g_a, ll g_b, ll aa[], ll ba[],
                  solve(i + 1, gcd(g_a, ba[i]), gcd(g_b, aa[i]), aa, ba, dp, n));
 }
 
-// #ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n;
   cin >> n;
@@ -31,4 +31,4 @@ int main() {
   cout << solve(0, 0, 0, aa, ba, dp, n) << endl;
   return 0;
 }
-// #endif
+#endif
