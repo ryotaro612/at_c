@@ -1,4 +1,4 @@
-]#ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
