@@ -25,7 +25,7 @@ template <typename T> ostream &operator<<(ostream &os, vector<T> &v) {
   return os;
 }
 
-// #ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   int n;
   cin >> n;
@@ -67,4 +67,4 @@ int main() {
 
   return 0;
 }
-// #endif
+#endif
