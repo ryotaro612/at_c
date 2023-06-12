@@ -22,10 +22,8 @@ void sub(int current, vector<bool> &visit) {
       cout << current << endl;
       int x;
       cin >> x;
-      rep(j, x) {
-        int temp;
-        cin >> temp;
-      }
+      int temp;
+      rep(j, x) { cin >> temp; }
     }
   }
 }
