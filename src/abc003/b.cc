@@ -1,10 +1,13 @@
+#include <string>
 #ifdef _debug
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-
+/**
+   a
+ */
 string solve(string s, string t) {
   string res = "You can win";
   set<char> atcoder = {'a', 't', 'c', 'o', 'd', 'e', 'r'};
@@ -18,6 +21,7 @@ string solve(string s, string t) {
     res = "You will lose";
     break;
   }
+
   return res;
 }
 
@@ -26,6 +30,7 @@ int main() {
   string s, t;
   cin >> s >> t;
   cout << solve(s, t) << endl;
+  
   return 0;
 }
 #endif
