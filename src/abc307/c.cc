@@ -79,7 +79,7 @@ vector<set<pair<int, int>>> match(vector<pair<int, int>> &av,
   return res;
 }
 
-#ifdef ONLINE_JUDGE
+// #ifdef ONLINE_JUDGE
 int main() {
   int ha, wa, hb, wb, hx, wx;
   vector<string> am, bm, xm;
