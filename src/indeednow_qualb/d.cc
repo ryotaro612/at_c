@@ -46,7 +46,7 @@ template <typename Head, typename... Tail> void debug_(Head H, Tail... T) {
 #define debug(...)
 #endif
 
-// #ifdef ONLINE_JUDGE
+#ifdef ONLINE_JUDGE
 int main() {
   ll n, c;
   cin >> n >> c;
@@ -69,4 +69,4 @@ int main() {
   }
   return 0;
 }
-// #endif
+#endif
