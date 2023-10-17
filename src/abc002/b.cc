@@ -5,9 +5,9 @@ using ld = long double;
 using ull = unsigned long long;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #ifndef ONLINE_JUDGE
-#define dbg(...)							\
-  cerr << "\e[91m" << __func__ << ":" << __LINE__ << " " << #__VA_ARGS__ \
-  << " = ";								\
+#define dbg(...)                                                               \
+  cerr << "\e[91m" << __func__ << ":" << __LINE__ << " " << #__VA_ARGS__       \
+       << " = ";                                                               \
   debug_(__VA_ARGS__);
 #else
 #define dbg(...)
@@ -38,8 +38,8 @@ int main() {
   string w;
   cin >> w;
   set<char> vowels = {'a', 'e', 'i', 'o', 'u'};
-  for(auto c: w) {
-    if(!vowels.count(c)) {
+  for (auto c : w) {
+    if (!vowels.count(c)) {
       cout << c;
     }
   }
