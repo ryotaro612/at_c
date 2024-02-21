@@ -5,9 +5,9 @@ using ld = long double;
 using ull = unsigned long long;
 #define rep(i, n) for (int i = 0; i < (int)(n); i++)
 #ifndef ONLINE_JUDGE
-#define dbg(...)							\
-  cerr << "\e[91m" << __func__ << ":" << __LINE__ << " " << #__VA_ARGS__ \
-  << " = ";								\
+#define dbg(...)                                                               \
+  cerr << "\e[91m" << __func__ << ":" << __LINE__ << " " << #__VA_ARGS__       \
+       << " = ";                                                               \
   debug_(__VA_ARGS__);
 #else
 #define dbg(...)
@@ -35,5 +35,16 @@ template <typename Head, typename... Tail> void debug_(Head H, Tail... T) {
   debug_(T...);
 }
 int main() {
+  int n;
+  cin >> n;
+  vector<ll> av(n);
+  rep(i, n) cin >> av[i];
+
+  rep(i, n - 1) {
+    ll s, t;
+    cin >> s >> t;
+    av[i + 1] += av[i] / s * t;
+  }
+  cout << av[n - 1] << endl;
   return 0;
 }
