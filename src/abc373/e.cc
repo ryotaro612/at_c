@@ -71,7 +71,8 @@ int main() {
 	  // 
       ll right = n - num_larger - 1ll;
       ll left = right - n_competitor + 1ll;
-	  if(left == 0) {
+
+	 if(left == 0) {
 		ub = mid;
 		continue;
 	  }
