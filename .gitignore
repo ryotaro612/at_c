@@ -53,3 +53,4 @@ launch.json
 
 # python
 venv
+src/*.egg-info

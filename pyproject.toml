@@ -1,0 +1,16 @@
+[project]
+name = "atc"
+version = "0.0.1"
+readme = "README.md"
+
+[project.optional-dependencies]
+dev = [
+  "python-lsp-server[all]", 
+  "python-lsp-black"
+]
+
+[pylsp.plugins.black]
+enabled=true
+
+[tool.black]
+line-length = 79
