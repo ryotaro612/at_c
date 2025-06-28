@@ -1,16 +1,12 @@
 [project]
-name = "atc"
-version = "0.0.1"
+name = "at-c"
+version = "0.1.0"
+description = "Add your description here"
 readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
-  "python-lsp-server[all]", 
-  "python-lsp-black"
+    "black>=25.1.0",
 ]
-
-[pylsp.plugins.black]
-enabled=true
-
-[tool.black]
-line-length = 79
