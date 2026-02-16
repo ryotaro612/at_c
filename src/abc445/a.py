@@ -11,3 +11,4 @@ for s in sl:
     a = (mx_len - l) // 2
 
     print("." * a + s + "." * a)
+
