@@ -6,8 +6,6 @@
 .cquery_cached_index
 compile_commands.json
 # Emacs
-.projectile
-.dir-locals.el
 *~
 **/\#*
 .\#*
