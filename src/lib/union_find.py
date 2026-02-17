@@ -1,5 +1,4 @@
 class UnionFind:
-
     def __init__(self, n):
         self.par = [-1] * n
 

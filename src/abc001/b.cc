@@ -2,11 +2,14 @@
 using namespace std;
 typedef long long ll;
 
+
 #ifdef ONLINE_JUDGE
 int main() {
 
     ll m;
     cin >> m;
+
+    
     if(m < 100)
         cout << "00" << endl;
     else if(m >= 100 && m <= 5000) {
