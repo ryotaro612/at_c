@@ -5,8 +5,9 @@
 #cquery
 .cquery_cached_index
 compile_commands.json
-# emacs
+# Emacs
 .projectile
+.dir-locals.el
 *~
 **/\#*
 .\#*
@@ -53,3 +54,4 @@ launch.json
 # python
 venv
 src/*.egg-info
+
