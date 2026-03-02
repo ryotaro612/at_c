@@ -208,6 +208,7 @@ vector<ll> solve(vector<ll> &av, vector<ll> &lpf_vec) {
 vector<long long> linear_sieve(int n) {
   vector<long long> lpf(n, 0);
   iota(lpf.begin(), lpf.end(), 0);
+
   vector<long long> primes;
   for (int i = 2; i < n; i++) {
     if (lpf[i] == i)
