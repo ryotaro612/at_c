@@ -1,0 +1,65 @@
+#include <algorithm>
+#include <cassert>
+#include <iostream>
+#include <map>
+#include <numeric>
+#include <set>
+#include <string>
+#include <unordered_set>
+#include <vector>
+using namespace std;
+using ll = long long;
+using ld = long double;
+using ull = unsigned long long;
+#define rep(i, n) for (int i = 0; i < (int)(n); i++)
+#ifndef ONLINE_JUDGE
+#define dbg(...)                                                               \
+  cerr << "\e[91m" << __func__ << ":" << __LINE__ << " " << #__VA_ARGS__       \
+       << " = ";                                                               \
+  debug_(__VA_ARGS__);
+#else
+#define dbg(...)
+#endif
+template <typename Os, typename... Ts>
+Os &operator<<(Os &os, const pair<Ts...> &p) {
+  return os << "{" << p.first << ", " << p.second << "}";
+}
+template <typename Os, typename T>
+typename enable_if<is_same<Os, ostream>::value, Os &>::type
+operator<<(Os &os, const T &v) {
+  os << "[";
+  string sep = "";
+  for (auto &x : v) {
+    os << sep << x;
+    sep = ", ";
+  };
+  return os << "]";
+}
+
+void debug_() { cerr << "\e[39m" << endl; }
+
+template <typename Head, typename... Tail> void debug_(Head H, Tail... T) {
+  cerr << H << " ";
+  debug_(T...);
+}
+int solve(int a) {
+  int res = 0;
+  while (a % 2 == 0 || a % 3 == 2) {
+    a--;
+    res++;
+  }
+  dbg(res);
+  return res;
+}
+int main() {
+  int n;
+  cin >> n;
+  vector<int> av(n);
+  rep(i, n) cin >> av[i];
+
+  int res = 0;
+  rep(i, n) res += solve(av[i]);
+  cout << res << endl;
+
+  return 0;
+}
