@@ -1,4 +1,4 @@
-#include <algorithm>
+q #include<algorithm>
 #include <cassert>
 #include <deque>
 #include <iostream>
@@ -9,7 +9,7 @@
 #include <string>
 #include <unordered_set>
 #include <vector>
-using namespace std;
+    using namespace std;
 using ll = long long;
 using ld = long double;
 using ull = unsigned long long;
