@@ -58,8 +58,6 @@ int main() {
     cin >> grid[i][j];
     base ^= grid[i][j];
   }
-  dbg(base);
-
   ll res = max(0ll, base);
 
   rep(i, h * w) {
@@ -67,8 +65,8 @@ int main() {
     int r = i / w;
     int c = i % w;
     res = max(res, base ^ grid[r][c]);
-    done[1 << i] = true;
-    que.push_back({1 << i, grid[r][c]});
+    done[1ll << i] = true;
+    que.push_back({1ll << i, grid[r][c]});
   }
 
   while (!que.empty()) {
@@ -86,7 +84,7 @@ int main() {
       for (auto [nr, nc] : neighbors) {
         if (nr < 0 || nr >= h || nc < 0 || nc >= w)
           continue;
-        int ni = nr * w + nc;
+        ll ni = nr * w + nc;
         if (done[mask | (1ll << ni)])
           continue;
 
