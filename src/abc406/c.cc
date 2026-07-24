@@ -1,5 +1,7 @@
+
 #include <algorithm>
 #include <cassert>
+#include <cmath>
 #include <deque>
 #include <iostream>
 #include <map>
@@ -45,19 +47,50 @@ template <typename Head, typename... Tail> void debug_(Head H, Tail... T) {
   debug_(T...);
 }
 int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
   int n;
   cin >> n;
   vector<ll> pv(n);
   rep(i, n) cin >> pv[i];
 
   ll res = 0;
+  ll cond1 = -1, cond2 = -1;
+  for (ll left = 0, right = 1; left < n - 3; left++) {
 
-  deque<int> cond, cond2;
-
-  for (int left = 0, right = 0; left < n - 3; left++) {
     if (pv[left] >= pv[left + 1])
       continue;
-    right = max(left, right);
+
+    right = max(left + 1, right);
+    if (cond1 <= left)
+      cond1 = -1;
+    if (cond2 <= left)
+      cond2 = -1;
+
+    while (right < n - 1) { //  && (cond1 == -1 || cond2 == -1)
+      if (pv[right - 1] < pv[right] && pv[right] > pv[right + 1]) {
+        if (cond1 == -1) {
+          cond1 = right;
+        } else {
+          break;
+        }
+      }
+      if (pv[right - 1] > pv[right] && pv[right] < pv[right + 1]) {
+        if (cond2 == -1) {
+          cond2 = right;
+        } else {
+          break;
+        }
+      }
+      right++;
+    }
+
+    if (cond1 == -1 || cond2 == -1)
+      continue;
+
+    ll inc = right - (max(cond1, cond2) + 1ll) + 1ll;
+    dbg(left, right, cond1, cond2, inc);
+    res += inc;
   }
   cout << res << endl;
   return 0;
