@@ -33,71 +33,43 @@ class Bit:
         return self.sum(r) - self.sum(l)
 
 
-def calc_dist(a: int, b: int, n: int):
-    counter = b - a
-    clockwise = 2 * n + a - b
-    if counter < clockwise:
-        dbg("a", a, "b", b, counter, -a)
-        return counter, -a
-
-    dbg("a", a, "b", b, counter, 2 * n - b)
-    return clockwise, 2 * n - b
-
-
 n, m = map(int, input().split())
-abl = []
+bit = Bit(n * 2)
+
+bal = []
 
 for _ in range(m):
     a, b = map(int, input().split())
-    abl.append((a - 1, b - 1))
+    a -= 1
+    b -= 1
+
+    bit.add(a, 1)
+    bal.append((b, a))
+
+bal.sort(reverse=True)
+
+
 q = int(input())
 
+cdl = []
 
-pivot_dist, move = calc_dist(abl[0][0], abl[0][1], n)
-pivot_i = 0
+for i in range(q):
+    c, d = map(int, input().split())
+    c -= 1
+    d -= 1
+    cdl.append((d, c, i))
 
-for i in range(1, m):
-    current_dist, currrent_move = calc_dist(abl[i][0], abl[i][1], n)
-    if current_dist < pivot_dist:
-        pivot_i = i
-        pivot_dist = current_dist
-        move = currrent_move
+cdl.sort()
 
-dbg("move", move)
+res = [0] * q
 
-for i in range(m):
-    a, b = abl[i]
-    a = (a + move) % (2 * n)
-    b = (b + move) % (2 * n)
-    abl[i] = (min(a, b), max(a, b))
+for d, c, i in cdl:
+    while bal and bal[-1][0] <= d:
+        b, a = bal.pop()
+        bit.add(a, -2)
+        bit.add(b, 1)
 
-abl.sort()
+    res[i] = bit.range_sum(c, d + 1)
 
-dbg("abl", abl)
-
-order = []
-for i in range(m):
-    if i == 0:
-        order.append((abl[i][0], 0))
-        order.append((abl[i][1], 1))
-    else:
-        order.append((abl[i][0], i + 1))
-        order.append((abl[i][1], i))
-
-order.sort()
-dbg("order", order)
-
-for _ in range(q):
-    c, d = [int(x) - 1 for x in input().split()]
-
-    c = (c + move + 2 * n) % (2 * n)
-    dbg("c", c)
-    d = (d + move + 2 * n) % (2 * n)
-    c, d = min(c, d), max(c, d)
-
-    dbg("c", c, "d", d)
-
-    c_i = bisect.bisect_left(order, (c, 0))
-    d_i = bisect.bisect_left(order, (d, 0))
-
-    print(abs(order[c_i - 1][1] - order[d_i - 1][1]))
+for e in res:
+    print(e)
